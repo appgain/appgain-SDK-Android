@@ -1,3 +1,3 @@
 # appgain-SDK-Android
 
-this is repo for appgain SDK for android platform 
+this is repo for appgain.io SDK for android platform 
