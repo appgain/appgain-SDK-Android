@@ -1,0 +1,111 @@
+<resources>
+
+    <color name="active_theme">#ededed</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="transparent_footer">#fff0f2f7</color>
+    <color name="avatar_border">#FFFFFF</color>
+    <color name="pure_white">#FFF</color>
+    <color name="white">#DCDCDA</color>
+    <color name="white_light">#F6F6F6</color>
+    <color name="white_overlay">#30DCDCDA</color>
+    <color name="white_overlay_2x">#0CDCDCDA</color>
+    <color name="white_overlay_7x">#90717274</color>
+    <color name="white_overlay_8x">#80DCDCDA</color>
+    <color name="theme_overlay_1x">#70FEC92b</color>
+    <color name="theme_overlay_2x">#E3FCFF76</color>
+    <color name="overlay">#808F7F9C</color>
+
+    <color name="white_chat">#999999</color>
+    <color name="menu_white">#ccc</color>
+
+
+    <color name="holo_blue_bright">#ff00ddff</color>
+    <color name="menu_bg">#101F2D</color>
+    <color name="light_gray">#AA808080</color>
+    <color name="gray">#dddddd</color>
+    <color name="tab_bg">#142029</color>
+    <color name="bg_light_blue">#EBF5FF</color>
+    <color name="light_black">#CC000000</color>
+    <color name="light_black_AA">#AA000000</color>
+    <color name="light_black_">#33000000</color>
+    <color name="light_white_">#33FFFFFF</color>
+    <color name="dialog_bg">#f0f0f0</color>
+
+    <drawable name="light_black_">#33000000</drawable>
+
+    <color name="text_color">#050505</color>
+    <color name="text_color1x">#3d3d3d</color>
+    <color name="text_color2x">#ff686868</color>
+    <color name="text_color3x">#adb4c9</color>
+    <color name="text_color4x">#717274</color>
+
+    <color name="text_color_feed">#eff1f4</color>
+    <color name="text_color_feed1x">#042f60</color>
+    <color name="text_color_feed2x">#8e949b</color>
+
+    <color name="divider_color">#ffbbbbc5</color>
+    <color name="green">#6CC37E</color>
+    <color name="green_light">#806CC37E</color>
+
+    <color name="red_select">#E80243</color>
+    <color name="red_light">#80E70145</color>
+    <color name="red">#E22A5E</color>
+    <color name="red_dark">#AF022F</color>
+    <color name="red_dark_overlay">#70AF022F</color>
+    <color name="red_box">#E70145</color>
+    <color name="message_text">#CD5A87</color>
+
+    <color name="seprater">#D9B98F</color>
+    <color name="seprater1">#d1d1d1</color>
+    <color name="actionbar">#ffa9a9a9</color>
+
+
+    <color name="theme_color_1">#A4899A</color>
+    <color name="theme_color_2">#524D76</color>
+    <color name="theme_color">#052F61</color>
+    <color name="theme_color_dark">#042B54</color>
+    <color name="theme_color_TRANSPRENT">#60604e97</color>
+    <color name="theme_color_round">#9DAAB5</color>
+
+    <color name="black_overlay_x">#ededed</color>
+    <color name="black_overlay_y">#2b2b2b</color>
+    <color name="black_overlay_x2">#DD000000</color>
+    <color name="black_overlay">#999999</color>
+    <color name="black_light_overlay">#d9d9d9</color>
+    <color name="black_light_overlay1x">#E3E3E3</color>
+    <color name="holo_blue_dark">#ff0099cc</color>
+    <color name="view_divider_color">#BABABA</color>
+    <color name="view_divider_color_2">#DADADA</color>
+
+    <color name="pink">#c22d91</color>
+    <color name="pinks">#F26122</color>
+    <color name="pink_overlay">#80c22d91</color>
+
+    <color name="blue">#263c76</color>
+    <color name="blue_round">#ff1059fd</color>
+    <color name="blue_light">#0C6DB4</color>
+    <color name="blue_light_border">#5EB0F0</color>
+    <color name="blue_light1x">#6DCFF6</color>
+    <color name="blue_light2x">#019CDE</color>
+    <color name="blue_overlay">#cccccc</color>
+    <color name="black_overlay_2x">#ffe5e5e5</color>
+    <color name="blue_overlay_1x">#20263c76</color>
+    <color name="blue_overlay_2x">#F6F6F6</color>
+    <color name="blue_box">#043061</color>
+
+    <color name="green_box">#6BE279</color>
+
+    <color name="light_font">#FBFBFB</color>
+    <color name="grey_font">#ff9e9e9e</color>
+    <color name="text_shadow">#7F000000</color>
+    <color name="text_shadow_white">#FFFFFF</color>
+
+    <color name="text_image">#6A84A0</color>
+    <color name="text_headnig">#333333</color>
+    <color name="text_search">#9a9a9a</color>
+
+    <color name="radio_button_selected_color">@color/pure_white</color>
+    <color name="radio_button_unselected_color">@android:color/transparent</color>
+
+</resources>
