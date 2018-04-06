@@ -57,7 +57,7 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        Automator.enqueue("DUMM", new AutomatorListener() {
+        Automator.enqueue("dummy", new AutomatorListener() {
             @Override
             public void onAutomatorCreated(@Nullable AutomatorResponse response) {
                 showLoading(false);
@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-     boolean sdk_inti = false;
+     public  static boolean sdk_inti = false;
 
     @OnClick(R.id.smart_link_create_button)
     void smartLinkCreate(){
@@ -163,11 +163,14 @@ public class MainActivity extends AppCompatActivity {
         }
         showLoading(true);
 
-        SmartLinkMatch.enqueue(new SmartLinkMatchListener() {
+         SmartLinkMatch.enqueue(new SmartLinkMatchListener() {
             @Override
             public void onSmartLinkCreated(@Nullable SmartLinkMatchResponse response) {
                 showLoading(false);
-                showLinkDialog("worked" , response.getSmartLinkPrimary());
+                String s = " userId : " + response.getExtraData().getUserId()
+                        +"\n"
+                        +"link : " +response.getSmartLinkPrimary();
+                showLinkDialog(s , response.getSmartLinkPrimary());
             }
 
             @Override
@@ -177,7 +180,9 @@ public class MainActivity extends AppCompatActivity {
                 Timber.e(failure.toString());
             }
         });
+
     }
+
 
     @OnClick(R.id.inti_anonymous)
     void inti_anonymous(){

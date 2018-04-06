@@ -37,7 +37,15 @@ public class Injector
                 .addConverterFactory( GsonConverterFactory.create() )
                 .build();
     }
-    private static OkHttpClient provideOkHttpClient ()
+    public static OkHttpClient provideOkHttpClient ()
+    {
+        String ua = System.getProperty( "http.agent" ) ;
+        Timber.e(ua);
+        return provideOkHttpClientBuilder().build();
+    }
+
+
+    public static OkHttpClient.Builder provideOkHttpClientBuilder ()
     {
         String ua = System.getProperty( "http.agent" ) ;
         Timber.e(ua);
@@ -53,8 +61,10 @@ public class Injector
                                 .addHeader("Accept", "application/json").build();
                         return chain.proceed(request);
                     }
-                }).build();
+                });
     }
+
+
 
 
     private static OkHttpClient provideOkHttpClient (final String userAgent)

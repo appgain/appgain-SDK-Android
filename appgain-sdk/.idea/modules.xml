@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/AndroidSdk.iml" filepath="$PROJECT_DIR$/AndroidSdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
-      <module fileurl="file://G:\AppGain\AndroidSdk\appgain-SDK-Android.iml" filepath="G:\AppGain\AndroidSdk\appgain-SDK-Android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/appgain-sdk.iml" filepath="$PROJECT_DIR$/appgain-sdk.iml" />
       <module fileurl="file://$PROJECT_DIR$/com.appgain.io.sdk/com.appgain.io.sdk.iml" filepath="$PROJECT_DIR$/com.appgain.io.sdk/com.appgain.io.sdk.iml" />
     </modules>
   </component>

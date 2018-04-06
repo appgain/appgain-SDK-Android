@@ -10,16 +10,14 @@ import com.parse.Parse;
 import com.parse.ParseAnonymousUtils;
 import com.parse.ParseException;
 import com.parse.ParseInstallation;
+import com.parse.ParseObject;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
 
-import java.io.IOException;
-
 import io.appgain.sdk.Model.SdkKeys;
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.Model.User;
-import io.appgain.sdk.R;
 import io.appgain.sdk.Service.CallbackWithRetry;
 import io.appgain.sdk.Service.Injector;
 import io.appgain.sdk.SmartLinkMatch.SmartLinkMatch;
@@ -34,6 +32,8 @@ import io.appgain.sdk.interfaces.ParseSignUpListener;
 import retrofit2.Call;
 import retrofit2.Response;
 import timber.log.Timber;
+
+import static com.parse.Parse.LOG_LEVEL_ERROR;
 
 /**
  * Created by Sotra on 2/12/2018.
@@ -54,70 +54,46 @@ public class AppGain {
 
 
     public  static void initialize(final Context context , String appID , final String appApiKey){
-        Timber.plant(new Timber.DebugTree());
-        getInstance().setContext(context);
-        getInstance().setAppID(appID);
-        getInstance().setAppApiKey(appApiKey);
-
-        getCredentials(new Auth2Listener() {
-            @Override
-            public void onSuccess(SdkKeys sdkKeys, String userId) {
-                Log.e("AppGaInitialize" , "success") ;
-                smartLinkMatch();
-            }
-
-            @Override
-            public void onFailure(BaseResponse failure) {
-                Log.e("AppGaInitialize" , "Code " + failure.getStatus()+"Message: " +failure.getMessage()) ;
-            }
-        });
+        initialize(context , appID , appApiKey , (InitListener) null);
     }
     public  static void initialize(final Context context , String appID , final String appApiKey , final InitListener initListener){
-        Timber.plant(new Timber.DebugTree());
-        getInstance().setContext(context);
-        getInstance().setAppID(appID);
-        getInstance().setAppApiKey(appApiKey);
-
-        getCredentials(new Auth2Listener() {
-            @Override
-            public void onSuccess(SdkKeys sdkKeys, String userId) {
-                Log.e("AppGaInitialize" , "success") ;
-                smartLinkMatch();
-                initListener.onSuccess();
-            }
-
-            @Override
-            public void onFailure(BaseResponse failure) {
-                Log.e("AppGaInitialize" , "Code " + failure.getStatus()+"Message: " +failure.getMessage()) ;
-                initListener.onFail(failure);
-            }
-        });
+        initialize(context , appID , appApiKey , (User) null ,initListener) ;
     }
-
-    public  static void initialize(final Context context , String appID , String appApiKey , User user , final InitListener initListener){
+    public  static void initialize(final Context context , String appID , String appApiKey , User user){
+        initialize(context,appID,appApiKey,user,(InitListener)null);
+    }
+    public  static void initialize(final Context context , String appID , String appApiKey , final User user , final InitListener initListener){
         Timber.plant(new Timber.DebugTree());
         getInstance().setContext(context);
         getInstance().setAppID(appID);
         getInstance().setAppApiKey(appApiKey);
+        if (user !=null)
         getInstance().getPreferencesManager().saveUserProvidedData(user);
 
+        // get cred
         getCredentials(new Auth2Listener() {
             @Override
             public void onSuccess(SdkKeys sdkKeys, String userId) {
                 Log.e("AppGaInitialize" , "success") ;
+                // smart link match  internal use case
                 smartLinkMatch();
+                // saving user NotificationChannels
+                saveNotificationChannel(userId);
+                if (initListener!=null)
                 initListener.onSuccess();
             }
 
             @Override
             public void onFailure(BaseResponse failure) {
                 Log.e("AppGaInitialize" , "Code " + failure.getStatus()+"Message: " +failure.getMessage()) ;
-                initListener.onFail(failure);
+                if (initListener!=null)
+                    initListener.onFail(failure);
             }
         });
 
 
     }
+
 
 
     //-----------------------------------------------------------------------------------------------------------------------------------
@@ -182,12 +158,17 @@ public class AppGain {
             return;
         }
 
+        if (!server.isEmpty() && !server.endsWith("/")){
+            server = server+"/" ;
+        }
         // inti parse
         Parse.initialize(new Parse.Configuration.Builder(context)
+                .clientBuilder(Injector.provideOkHttpClientBuilder())
                 .applicationId(applicationId)
                 .server(server)
                 .build()
         );
+        Parse.setLogLevel(LOG_LEVEL_ERROR);
 
 
 //
@@ -267,10 +248,12 @@ public class AppGain {
         getSdkKeys(new AuthListener() {
             @Override
             public void onSuccess(final SdkKeys sdkKeys) {
+
                 // parse setup
                 parseSetup(sdkKeys.getParseAppId(), sdkKeys.getParseServerUrl(), new ParseLoginListener() {
                     @Override
                     public void onSuccess(String userId) {
+
                         authListener.onSuccess(sdkKeys , userId);
                     }
 
@@ -281,7 +264,7 @@ public class AppGain {
                             authListener.onSuccess(sdkKeys , null);
                         else
                         authListener.onFailure(new BaseResponse(e.getCode()+"", "Parse setup " +e.getMessage()));
-                        Timber.tag("AppGainParseSetup").e(  "getAppGainCredentials" + e.toString())  ;
+                        Timber.tag("AppGainParseSetup").e(  "getAppGainCredentials " + e.toString())  ;
                     }
                 });
             }
@@ -322,6 +305,7 @@ public class AppGain {
 
         ParseInstallation installation = ParseInstallation.getCurrentInstallation();
         installation.put("user",parseUser);
+        installation.put("userId" ,parseUser.getObjectId() );
         installation.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
@@ -350,6 +334,7 @@ public class AppGain {
                     if (parseLoginListener!=null)
                         parseLoginListener.onSuccess(parseUser.getObjectId());
                 } else {
+                    e.printStackTrace();
                     Timber.e( "Anonymous login failed. "+e.toString());
                     if (parseLoginListener!=null)
                         parseLoginListener.onFail(e);
@@ -379,6 +364,7 @@ public class AppGain {
                         parseSignUpListener.onSuccess(user);
                         return;
                     }
+
                     Timber.e("createParseUser : " + e.getCode() +e.toString() );
                     if (parseSignUpListener!=null)
                    parseSignUpListener.onFail(e);
@@ -408,6 +394,36 @@ public class AppGain {
     }
 
 
+
+    /*
+     *  saveNotificationChannel method :
+     *  save object to parse with user id
+     */
+    private static void saveNotificationChannel(String userId) {
+        if (TextUtils.isEmpty(userId)){
+            Timber.tag("saveNotificationChannel").e("userId =  null || empty  >> " + userId);
+            return;
+        }
+        ParseObject notificationChannel = new ParseObject("NotificationChannels");
+        notificationChannel.put("type", "appPush");
+        notificationChannel.put("appPush", true);
+        notificationChannel.put("userId", userId);
+        notificationChannel.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e!=null){
+                    Timber.tag("saveNotificationChannel").e(e.toString());
+                }else {
+                    // ParseInstallation succeed
+                    Timber.tag("saveNotificationChannel").e("ParseInstallation succeed" );
+                }
+            }
+        });
+    }
+
+    /*
+     * clear all PreferencesManager data
+     */
     public  static  void clear (){
         getPreferencesManager().clear();
     }
