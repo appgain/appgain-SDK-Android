@@ -1,1 +1,1 @@
-include ':app', ':com.appgain.io.sdk'
+include ':app', ':sdk'

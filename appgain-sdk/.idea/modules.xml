@@ -4,7 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://$PROJECT_DIR$/appgain-sdk.iml" filepath="$PROJECT_DIR$/appgain-sdk.iml" />
-      <module fileurl="file://$PROJECT_DIR$/com.appgain.io.sdk/com.appgain.io.sdk.iml" filepath="$PROJECT_DIR$/com.appgain.io.sdk/com.appgain.io.sdk.iml" />
+      <module fileurl="file://$PROJECT_DIR$/sdk/sdk.iml" filepath="$PROJECT_DIR$/sdk/sdk.iml" />
     </modules>
   </component>
 </project>
