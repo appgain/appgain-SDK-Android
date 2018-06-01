@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<merger version="3"><dataSet config="main"><source path="G:\AppGain\appgain-SDK-Android\appgain-sdk\sdk\src\main\assets"/><source path="G:\AppGain\appgain-SDK-Android\appgain-sdk\sdk\build\generated\assets\shaders\release"/></dataSet><dataSet config="release"><source path="G:\AppGain\appgain-SDK-Android\appgain-sdk\sdk\src\release\assets"/></dataSet></merger>

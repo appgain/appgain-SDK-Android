@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd" xmlns="http://maven.apache.org/POM/4.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>io.appgain</groupId>
+  <artifactId>sdk</artifactId>
+  <version>1.0.5</version>
+  <packaging>aar</packaging>
+  <name>Appgain</name>
+  <description>appgain sdk desc</description>
+  <url>https://github.com/appgain/appgain-SDK-Android</url>
+  <licenses>
+    <license>
+      <name> The Apache Software License, Version 2.0</name>
+      <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+    </license>
+  </licenses>
+  <developers>
+    <developer>
+      <id>52143c8aa6d74f2</id>
+      <name>sotra</name>
+      <email>developers@appgain.io</email>
+    </developer>
+  </developers>
+  <scm>
+    <connection>https://github.com/appgain/appgain-SDK-Android</connection>
+    <developerConnection>https://github.com/appgain/appgain-SDK-Android</developerConnection>
+    <url>https://github.com/appgain/appgain-SDK-Android</url>
+  </scm>
+</project>

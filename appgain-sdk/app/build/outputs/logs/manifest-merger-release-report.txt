@@ -1,0 +1,119 @@
+-- Merging decision tree log ---
+manifest
+ADDED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml:2:1-8:12
+INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml:2:1-8:12
+INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml:2:1-8:12
+INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml:2:1-8:12
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\c0bea346c142a4b92aa3c0bb718f7d76\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\a8dfa0971b2f6d8d500670afe0eb2c7d\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\207df4732adf62365630ea56460c3b0b\AndroidManifest.xml:17:1-28:12
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a021689c00b0ee573da1fafc7e4bb0d3\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\d6e7b60b42f9c3b360847b7145f2a083\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\e7a3fd728857c95a0860e41255625952\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\43484cd5a240371edd9fc076ae2021e0\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\34f751ac7a9cfe189a3e31f2060fd888\AndroidManifest.xml:17:1-31:12
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\612bd3f4c35adc7a31afc241eb7a1201\AndroidManifest.xml:17:1-31:12
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\157569f2f6ab63d5ccb42de3eab0f9be\AndroidManifest.xml:17:1-30:12
+INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml:2:1-8:12
+INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml:2:1-8:12
+INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml:2:1-8:12
+	package
+		ADDED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml:3:5-30
+		INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+		INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+	android:versionName
+		INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+		ADDED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml:2:1-8:12
+		INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+	android:versionCode
+		INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+		ADDED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml:2:1-8:12
+		INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml:2:11-69
+application
+ADDED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml:5:5-20
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\c0bea346c142a4b92aa3c0bb718f7d76\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\c0bea346c142a4b92aa3c0bb718f7d76\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\a8dfa0971b2f6d8d500670afe0eb2c7d\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\a8dfa0971b2f6d8d500670afe0eb2c7d\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\207df4732adf62365630ea56460c3b0b\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\207df4732adf62365630ea56460c3b0b\AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a021689c00b0ee573da1fafc7e4bb0d3\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a021689c00b0ee573da1fafc7e4bb0d3\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\d6e7b60b42f9c3b360847b7145f2a083\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\d6e7b60b42f9c3b360847b7145f2a083\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\e7a3fd728857c95a0860e41255625952\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\e7a3fd728857c95a0860e41255625952\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\43484cd5a240371edd9fc076ae2021e0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\43484cd5a240371edd9fc076ae2021e0\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\34f751ac7a9cfe189a3e31f2060fd888\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\34f751ac7a9cfe189a3e31f2060fd888\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\612bd3f4c35adc7a31afc241eb7a1201\AndroidManifest.xml:25:5-29:19
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\612bd3f4c35adc7a31afc241eb7a1201\AndroidManifest.xml:25:5-29:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\157569f2f6ab63d5ccb42de3eab0f9be\AndroidManifest.xml:24:5-28:19
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\157569f2f6ab63d5ccb42de3eab0f9be\AndroidManifest.xml:24:5-28:19
+uses-sdk
+INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\c0bea346c142a4b92aa3c0bb718f7d76\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\c0bea346c142a4b92aa3c0bb718f7d76\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\a8dfa0971b2f6d8d500670afe0eb2c7d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\a8dfa0971b2f6d8d500670afe0eb2c7d\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\207df4732adf62365630ea56460c3b0b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\207df4732adf62365630ea56460c3b0b\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a021689c00b0ee573da1fafc7e4bb0d3\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a021689c00b0ee573da1fafc7e4bb0d3\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\d6e7b60b42f9c3b360847b7145f2a083\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\d6e7b60b42f9c3b360847b7145f2a083\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\e7a3fd728857c95a0860e41255625952\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\e7a3fd728857c95a0860e41255625952\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\43484cd5a240371edd9fc076ae2021e0\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\43484cd5a240371edd9fc076ae2021e0\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\34f751ac7a9cfe189a3e31f2060fd888\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\34f751ac7a9cfe189a3e31f2060fd888\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\612bd3f4c35adc7a31afc241eb7a1201\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\612bd3f4c35adc7a31afc241eb7a1201\AndroidManifest.xml:21:5-23:58
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\157569f2f6ab63d5ccb42de3eab0f9be\AndroidManifest.xml:20:5-22:41
+MERGED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\157569f2f6ab63d5ccb42de3eab0f9be\AndroidManifest.xml:20:5-22:41
+INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+	tools:overrideLibrary
+		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\c0bea346c142a4b92aa3c0bb718f7d76\AndroidManifest.xml:23:9-75
+	android:targetSdkVersion
+		INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+		ADDED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+		INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+		ADDED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+		INJECTED from G:\AppGain\appgain-SDK-Android\appgain-sdk\app\src\main\AndroidManifest.xml
+meta-data#android.support.VERSION
+ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\c0bea346c142a4b92aa3c0bb718f7d76\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\a8dfa0971b2f6d8d500670afe0eb2c7d\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:animated-vector-drawable:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-26.1.0.aar\a8dfa0971b2f6d8d500670afe0eb2c7d\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\207df4732adf62365630ea56460c3b0b\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-vector-drawable:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-26.1.0.aar\207df4732adf62365630ea56460c3b0b\AndroidManifest.xml:23:9-25:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a021689c00b0ee573da1fafc7e4bb0d3\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-v4:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-v4-26.1.0.aar\a021689c00b0ee573da1fafc7e4bb0d3\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\d6e7b60b42f9c3b360847b7145f2a083\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-media-compat:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-media-compat-26.1.0.aar\d6e7b60b42f9c3b360847b7145f2a083\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\e7a3fd728857c95a0860e41255625952\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-fragment:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-fragment-26.1.0.aar\e7a3fd728857c95a0860e41255625952\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\43484cd5a240371edd9fc076ae2021e0\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-utils:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-core-utils-26.1.0.aar\43484cd5a240371edd9fc076ae2021e0\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\34f751ac7a9cfe189a3e31f2060fd888\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-core-ui:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-core-ui-26.1.0.aar\34f751ac7a9cfe189a3e31f2060fd888\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\612bd3f4c35adc7a31afc241eb7a1201\AndroidManifest.xml:26:9-28:38
+MERGED from [com.android.support:support-compat:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\support-compat-26.1.0.aar\612bd3f4c35adc7a31afc241eb7a1201\AndroidManifest.xml:26:9-28:38
+	android:value
+		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\c0bea346c142a4b92aa3c0bb718f7d76\AndroidManifest.xml:28:13-35
+	android:name
+		ADDED from [com.android.support:appcompat-v7:26.1.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-26.1.0.aar\c0bea346c142a4b92aa3c0bb718f7d76\AndroidManifest.xml:27:13-51
+meta-data#android.arch.lifecycle.VERSION
+ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\157569f2f6ab63d5ccb42de3eab0f9be\AndroidManifest.xml:25:9-27:47
+	android:value
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\157569f2f6ab63d5ccb42de3eab0f9be\AndroidManifest.xml:27:13-44
+	android:name
+		ADDED from [android.arch.lifecycle:runtime:1.0.0] C:\Users\Sotra\.gradle\caches\transforms-1\files-1.1\runtime-1.0.0.aar\157569f2f6ab63d5ccb42de3eab0f9be\AndroidManifest.xml:26:13-58

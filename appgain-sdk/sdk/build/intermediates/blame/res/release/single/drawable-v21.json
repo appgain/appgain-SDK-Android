@@ -1,0 +1,18 @@
+[
+    {
+        "merged": "G:\\AppGain\\appgain-SDK-Android\\appgain-sdk\\sdk\\build\\intermediates\\res\\merged\\release\\drawable-v21\\abc_edit_text_material.xml",
+        "source": "C:\\Users\\Sotra\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\c0bea346c142a4b92aa3c0bb718f7d76\\res\\drawable-v21\\abc_edit_text_material.xml"
+    },
+    {
+        "merged": "G:\\AppGain\\appgain-SDK-Android\\appgain-sdk\\sdk\\build\\intermediates\\res\\merged\\release\\drawable-v21\\notification_action_background.xml",
+        "source": "C:\\Users\\Sotra\\.gradle\\caches\\transforms-1\\files-1.1\\support-compat-26.1.0.aar\\612bd3f4c35adc7a31afc241eb7a1201\\res\\drawable-v21\\notification_action_background.xml"
+    },
+    {
+        "merged": "G:\\AppGain\\appgain-SDK-Android\\appgain-sdk\\sdk\\build\\intermediates\\res\\merged\\release\\drawable-v21\\abc_action_bar_item_background_material.xml",
+        "source": "C:\\Users\\Sotra\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\c0bea346c142a4b92aa3c0bb718f7d76\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
+    },
+    {
+        "merged": "G:\\AppGain\\appgain-SDK-Android\\appgain-sdk\\sdk\\build\\intermediates\\res\\merged\\release\\drawable-v21\\abc_btn_colored_material.xml",
+        "source": "C:\\Users\\Sotra\\.gradle\\caches\\transforms-1\\files-1.1\\appcompat-v7-26.1.0.aar\\c0bea346c142a4b92aa3c0bb718f7d76\\res\\drawable-v21\\abc_btn_colored_material.xml"
+    }
+]

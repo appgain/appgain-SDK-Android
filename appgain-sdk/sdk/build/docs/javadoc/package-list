@@ -1,0 +1,14 @@
+io.appgain.sdk.Automator
+io.appgain.sdk.Controller
+io.appgain.sdk.LandingPageCreate
+io.appgain.sdk.LandingPageCreate.RequestModels
+io.appgain.sdk.LandingPageCreate.RequestModels.ComponentsModels
+io.appgain.sdk.Model
+io.appgain.sdk.PushNotfication
+io.appgain.sdk.Service
+io.appgain.sdk.SmartLinkCreate
+io.appgain.sdk.SmartLinkCreate.Models
+io.appgain.sdk.SmartLinkMatch
+io.appgain.sdk.SmartLinkMatch.ResponseModels
+io.appgain.sdk.Utils
+io.appgain.sdk.interfaces

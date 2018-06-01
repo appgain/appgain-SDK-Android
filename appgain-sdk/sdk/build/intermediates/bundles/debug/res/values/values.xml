@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="slug_invalid_inputs">
+        <item>app</item>
+        <item>prod</item>
+        <item>stg</item>
+        <item>www</item>
+        <item>blog</item>
+        <item>notify</item>
+        <item>parse</item>
+        <item>appbackend</item>
+        <item>appboost</item>
+        <item>demo</item>
+        <item>marketing</item>
+        <item>sales</item>
+        <item>servers</item>
+        <item>fw</item>
+        <item>do</item>
+        <item>srv</item>
+        <item>kong</item>
+        <item>dashboard</item>
+        <item>reports</item>
+        <item>appboost</item>
+        <item>m</item>
+        <item>hack</item>
+    </array>
+    <string name="app_name">sdk</string>
+</resources>
