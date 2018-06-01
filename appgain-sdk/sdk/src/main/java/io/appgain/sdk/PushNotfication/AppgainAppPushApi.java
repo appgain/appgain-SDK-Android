@@ -32,12 +32,12 @@ import static com.parse.ParsePushBroadcastReceiver.KEY_PUSH_DATA;
  * call to access to AppGAin app-push  record status API
  */
 
-class AppgainAppPushApi implements Serializable{
+public class AppgainAppPushApi implements Serializable{
 
 
     /**
      *
-     * @param Action  received from AppGainPushReceiver (open m dismiss )or from AppGainPushConversion  ( conversion )
+     * @param Action  received from AppGainPushReceiver (open , dismiss )or from AppGainPushConversion  ( conversion )
      * @param data  intent from push receive method
      * recordPushStatus()  deliver request body to recoded status API
      *   call getCredentials
