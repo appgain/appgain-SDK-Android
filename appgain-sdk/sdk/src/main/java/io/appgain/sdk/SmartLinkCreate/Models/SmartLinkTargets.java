@@ -1,28 +1,35 @@
 package io.appgain.sdk.SmartLinkCreate.Models;
 
+import android.support.annotation.NonNull;
+
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
 /**
- * Created by Sotra on 2/12/2018.
+ * Created by developers@appgain.io on 2/12/2018.
  */
 
 public class SmartLinkTargets implements Serializable{
     //Required
+    @NonNull
     @SerializedName("web")
     private String web ;
+
     //Required
+    @NonNull
     @SerializedName("ios")
     private  MobileTarget ios ;
+
     //Required
+    @NonNull
     @SerializedName("android")
     private  MobileTarget android ;
 
     public SmartLinkTargets() {
     }
 
-    public SmartLinkTargets(String web, MobileTarget ios, MobileTarget android) {
+    public SmartLinkTargets(@NonNull String web, @NonNull MobileTarget ios, @NonNull MobileTarget android) {
         this.web = web;
         this.ios = ios;
         this.android = android;

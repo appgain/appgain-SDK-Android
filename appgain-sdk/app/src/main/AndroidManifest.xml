@@ -1,8 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.appgain.sdk">
+    package="io.appgain.demo">
 
-    <application />
 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
+    <uses-permission android:name="io.appgain.demo.permission.C2D_MESSAGE" />
+
+    <permission
+        android:name="io.appgain.demo.permission.C2D_MESSAGE"
+        android:protectionLevel="signature" />
+
+
+    <application
+        android:name="io.appgain.demo.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+
+        <activity android:name="io.appgain.demo.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+
+            </intent-filter>
+
+
+            <intent-filter>
+                <!-- Sets the intent action to view the activity -->
+                <action android:name="android.intent.action.VIEW" />
+                <!-- Allows the link to be opened from a web browser -->
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Allows the deep link to be used without specifying the app name -->
+                <category android:name="android.intent.category.DEFAULT" />
+                <!-- URI tutsplus://deeplink -->
+                <!-- URI http://www.mydeeplink.com -->
+                <data android:scheme="firstflight" />
+            </intent-filter>
+        </activity>
+
+
+
+        <service android:name="com.parse.PushService" />
+
+        <receiver
+            android:name="io.appgain.demo.pushReciver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.parse.push.intent.RECEIVE" />
+                <action android:name="com.parse.push.intent.DELETE" />
+                <action android:name="com.parse.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.parse.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+                <category android:name="io.appgain.demo" />
+
+            </intent-filter>
+        </receiver>
+
+
+        <meta-data
+            android:name="com.parse.push.gcm_sender_id"
+            android:value="id:132005342842" />
+
+        <meta-data
+            android:name="com.parse.push.notification_icon"
+            android:resource="@mipmap/ic_launcher"/>
+
+
+
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="fa3d9f0c51d491db3f1921c6bb250a443a346810" />
+
+    </application>
 
 </manifest>

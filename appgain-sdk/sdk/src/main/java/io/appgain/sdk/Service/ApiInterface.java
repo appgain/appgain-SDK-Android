@@ -2,14 +2,14 @@ package io.appgain.sdk.Service;
 
 
 import io.appgain.sdk.Automator.AutomatorResponse;
-import io.appgain.sdk.LandingPageCreate.LandingPage;
-import io.appgain.sdk.LandingPageCreate.LandingPageResponse;
+import io.appgain.sdk.DeepPages.DeepPage;
+import io.appgain.sdk.DeepPages.DeepPageResponse;
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.Model.SDKKeys;
 import io.appgain.sdk.PushNotfication.RecordStatusRequestBody;
-import io.appgain.sdk.SmartLinkCreate.Models.SmartLinkResponse;
-import io.appgain.sdk.SmartLinkCreate.SmartLinkCreator;
-import io.appgain.sdk.SmartLinkMatch.ResponseModels.SmartLinkMatchResponse;
+import io.appgain.sdk.SmartLinkCreate.Models.SmartDeepLinkResponse;
+import io.appgain.sdk.SmartLinkCreate.SmartDeepLinkCreator;
+import io.appgain.sdk.DeferredDeepLinking.ResponseModels.DeferredDeepLinkingResponse;
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.GET;
@@ -36,14 +36,14 @@ public interface ApiInterface {
 
 
     @POST
-    Call<SmartLinkResponse> createSmartLink(
+    Call<SmartDeepLinkResponse> createSmartLink(
             @Url String url ,
-            @Body SmartLinkCreator.Builder smartLinkBuilder
+            @Body SmartDeepLinkCreator.Builder smartLinkBuilder
     );
 
 
     @GET
-    Call<SmartLinkMatchResponse> smartLinkMatch(
+    Call<DeferredDeepLinkingResponse> smartLinkMatch(
             @Url String url  ,
             @Query("userId") String userID,
             @Query("isfirstRun") boolean firsRun
@@ -51,7 +51,7 @@ public interface ApiInterface {
 
 
     @GET
-    Call<SmartLinkMatchResponse> smartLinkMatch(
+    Call<DeferredDeepLinkingResponse> smartLinkMatch(
             @Url String url  ,
             @Query("isfirstRun") boolean firsRun
     );
@@ -59,9 +59,9 @@ public interface ApiInterface {
 
 
     @POST
-    Call<LandingPageResponse> createLandingPage(
+    Call<DeepPageResponse> createLandingPage(
             @Url String url ,
-            @Body LandingPage.Builder builder
+            @Body DeepPage.Builder builder
     );
 
 

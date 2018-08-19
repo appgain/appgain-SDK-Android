@@ -20,11 +20,11 @@ public class AppGainPushConversion {
      *  recordConvertion() recordPushStatus  access recordPushStatus()  with CONVERSION case
      *
      */
-    public  static  void recordConvertion(Intent intent , RecordPushStatusCallback recordPushStatusCallback){
+    public  static  void recordConvertion(Intent intent , RecordPushStatusCallback recordPushStatusCallback) throws Exception {
         AppgainAppPushApi.recordPushStatus(AppGainPushReceiver.CONVERSION, intent , recordPushStatusCallback ) ;
     }
 
-    public  static  void recordConvertion(Intent intent , String userId,  RecordPushStatusCallback recordPushStatusCallback){
-        AppgainAppPushApi.recordPushStatus(AppGainPushReceiver.CONVERSION ,  intent , userId, recordPushStatusCallback ) ;
+    public  static  void recordConvertion(Intent intent , String internalUserId,  RecordPushStatusCallback recordPushStatusCallback) throws Exception {
+        AppgainAppPushApi.recordPushStatus(AppGainPushReceiver.CONVERSION ,  intent , internalUserId, recordPushStatusCallback ) ;
     }
 }

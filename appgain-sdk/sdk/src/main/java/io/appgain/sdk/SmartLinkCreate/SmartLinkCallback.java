@@ -3,7 +3,7 @@ package io.appgain.sdk.SmartLinkCreate;
 import android.support.annotation.Nullable;
 
 import io.appgain.sdk.Model.BaseResponse;
-import io.appgain.sdk.SmartLinkCreate.Models.SmartLinkResponse;
+import io.appgain.sdk.SmartLinkCreate.Models.SmartDeepLinkResponse;
 
 /**
  * Created by developers@appgain.io on 2/12/2018.
@@ -11,10 +11,10 @@ import io.appgain.sdk.SmartLinkCreate.Models.SmartLinkResponse;
 
 
 /**
- *  {@link SmartLinkCreator} success response callback
+ *  {@link SmartDeepLinkCreator} success response callback
  */
 
 public  interface SmartLinkCallback {
-    void onSmartLinkCreated(@Nullable SmartLinkResponse response);
-    void onSmartLinkFail(@Nullable BaseResponse failure);
+    void onSmartDeepLinkCreated(@Nullable SmartDeepLinkResponse response);
+    void onSmartDeepLinkFail(@Nullable BaseResponse failure);
 }

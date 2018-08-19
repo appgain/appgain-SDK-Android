@@ -1,7 +1,6 @@
 package io.appgain.sdk.Controller;
 
 import android.content.Context;
-import android.support.annotation.Nullable;
 import android.text.TextUtils;
 import android.util.Log;
 
@@ -20,15 +19,14 @@ import com.parse.SignUpCallback;
 import java.util.ArrayList;
 import java.util.List;
 
+import io.appgain.sdk.Config.Errors;
 import io.appgain.sdk.Model.SDKKeys;
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.Model.User;
 import io.appgain.sdk.Service.CallbackWithRetry;
 import io.appgain.sdk.Service.Injector;
-import io.appgain.sdk.SmartLinkMatch.SmartLinkMatch;
-import io.appgain.sdk.SmartLinkMatch.SmartLinkMatchCallBack;
-import io.appgain.sdk.SmartLinkMatch.ResponseModels.SmartLinkMatchResponse;
 import io.appgain.sdk.Utils.Utils;
+import io.appgain.sdk.Utils.Validator;
 import io.appgain.sdk.interfaces.ParseInitCallBack;
 import io.appgain.sdk.interfaces.ParsePushSetupCallBack;
 import io.appgain.sdk.interfaces.SDKInitCallBack;
@@ -69,7 +67,7 @@ public class Appgain {
      *  call parse anonymous login if user have backend support
      *  save parse user id
      */
-    public  static void initialize(final Context context , String appID , final String appApiKey){
+    public  static void initialize(final Context context , String appID , final String appApiKey) throws Exception {
         initialize(context , appID , appApiKey , (AppgainSDKInitCallBack) null);
     }
 
@@ -77,7 +75,7 @@ public class Appgain {
     /**
      *  initialize base case with callback
      */
-    public  static void initialize(final Context context , String appID , final String appApiKey , final AppgainSDKInitCallBack appgainSDKInitCallBack){
+    public  static void initialize(final Context context , String appID , final String appApiKey , final AppgainSDKInitCallBack appgainSDKInitCallBack) throws Exception {
         initialize(context , appID , appApiKey , (User) null , appgainSDKInitCallBack) ;
     }
 
@@ -90,7 +88,7 @@ public class Appgain {
      * call parse  login with username  , email and password  if user have backend support  and generate its id
      * *  save parse user  generated id
      */
-    public  static void initialize(final Context context , String appID , String appApiKey , User user){
+    public  static void initialize(final Context context , String appID , String appApiKey , User user) throws Exception {
         initialize(context,appID,appApiKey,user,(AppgainSDKInitCallBack)null);
     }
 
@@ -104,14 +102,18 @@ public class Appgain {
      //     >update userId
      *
      */
-    public  static void initialize(final Context context , String appID , String appApiKey , final User user , final AppgainSDKInitCallBack appgainSDKInitCallBack){
+    public  static void initialize(final Context context , String appID , String appApiKey , final User user , final AppgainSDKInitCallBack appgainSDKInitCallBack) throws Exception{
+
+
+        validateAppData(context,appID,appApiKey);
         getInstance().setContext(context);
         getInstance().setAppID(appID);
         getInstance().setAppApiKey(appApiKey);
-        if (user !=null)
+
+        if (isUserValid(user))
         getInstance().getPreferencesManager().saveUserProvidedData(user);
 
-        // get cred
+        // get Credentials
         getCredentials(new ParseInitCallBack() {
             @Override
             public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
@@ -134,6 +136,24 @@ public class Appgain {
         });
 
 
+    }
+
+    private static boolean isUserValid(User user) throws Exception {
+        if (user == null){
+            return false;
+        }
+        else {
+            Validator.isNull(user.getUsername() , "Initialize user name ");
+            Validator.isNull(user.getEmail() , "Initialize user email ");
+            Validator.isNull(user.getPassword() , "Initialize user password ");
+            return true;
+        }
+    }
+
+    private static void validateAppData(Context context, String appID, String appApiKey ) throws Exception {
+        Validator.isNull(context , " context ");
+        Validator.isNull(appID , " App id ");
+        Validator.isNull(appApiKey , " App Api Key ");
     }
 
 
@@ -254,7 +274,6 @@ public class Appgain {
             server = server+"/" ;
         }
         if (context == null){
-
             parseLoginCallBack.onFail(new ParseException(404 , "Application context cannot be null "));
             return;
         }

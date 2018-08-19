@@ -16,6 +16,7 @@ import io.appgain.sdk.Service.CallbackWithRetry;
 import io.appgain.sdk.Service.Injector;
 import io.appgain.sdk.Service.onRequestFailure;
 import io.appgain.sdk.Utils.Utils;
+import io.appgain.sdk.Utils.Validator;
 import io.appgain.sdk.interfaces.ParseInitCallBack;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -44,24 +45,26 @@ public class AppgainAppPushApi implements Serializable{
      *   create request bod
      *   call AppgainAppPushApi.enqueue
      */
-    public  static void recordPushStatus(final String Action , final Intent data , final RecordPushStatusCallback recordPushStatusListener){
+    public  static void recordPushStatus(final String Action , final Intent data , final RecordPushStatusCallback recordPushStatusListener) throws Exception {
         recordPushStatus(Action , data , null , recordPushStatusListener);
 
     }
-    public  static void recordPushStatus(final String Action , final Intent data , final  String Id , final RecordPushStatusCallback recordPushStatusListener){
+    public  static void recordPushStatus(final String Action , final Intent data , final  String internalUSerId , final RecordPushStatusCallback recordPushStatusListener) throws Exception {
+        Validator.isNull(Action , "recordPushStatus() action ") ;
+        Validator.isNull(data , "recordPushStatus() data ") ;
         Appgain.getCredentials(new ParseInitCallBack() {
             @Override
-            public void onSuccess(SDKKeys sdkKeys, String userId) {
+            public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
 
-                if (sdkKeys ==null || userId ==null){
-                    Timber.e("SDKKeys" + sdkKeys +" userId" + userId);
+                if (sdkKeys ==null || parseUserId ==null){
+                    Timber.e("SDKKeys" + sdkKeys +" userId" + parseUserId);
                     recordPushStatusListener.onFail(new BaseResponse("404" , Config.NO_BACKEND));
                     return;
                 }
                 PushDataReceiveModel pushDataReciveModel = new Gson().fromJson(data.getStringExtra(KEY_PUSH_DATA) , PushDataReceiveModel.class);
 
                 RecordStatusRequestBody pushModel = new RecordStatusRequestBody(
-                        Id== null ? userId  : Id,
+                        internalUSerId== null ? parseUserId : internalUSerId,
                         pushDataReciveModel.getCampaignName() ,
                         pushDataReciveModel.getCampaignId() ,
                         new RecordStatusRequestBody.Action(Action , Config.NA)

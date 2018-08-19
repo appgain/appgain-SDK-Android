@@ -5,7 +5,7 @@ android {
 
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 26
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
 
@@ -42,6 +42,7 @@ buildscript {
     }
 }
 
+
 ext {
     bintrayRepo = 'Appgain' // your repo name
     bintrayName = 'appgain-anroid-sdk' // has to be same as your library module name
@@ -51,7 +52,7 @@ ext {
     libraryDescription = 'appgain sdk desc'
     siteUrl = 'https://github.com/appgain/appgain-SDK-Android'
     gitUrl = 'https://github.com/appgain/appgain-SDK-Android'
-    libraryVersion = '1.0.5'
+    libraryVersion = '1.0.6'
     developerId = '52143c8aa6d74f2'
     developerName = 'sotra'
     developerEmail = 'developers@appgain.io'
@@ -59,6 +60,7 @@ ext {
     licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
     allLicenses = ["Apache-2.0"]
 }
+
 
 
 dependencies {
@@ -73,7 +75,7 @@ dependencies {
     // log lib
     implementation 'com.jakewharton.timber:timber:3.1.0'
     // parse
-    implementation 'com.parse:parse-android:1.15.8'
+    compile 'com.parse:parse-android:1.15.8'
     implementation 'com.android.support:support-v4:26.1.0'
 
 

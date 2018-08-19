@@ -46,20 +46,24 @@ public abstract class AppGainPushReceiver extends ParsePushBroadcastReceiver {
     protected void onPushReceive(Context context, final Intent intent) {
         super.onPushReceive(context, intent);
         onReceive(context , receive , intent);
-        AppgainAppPushApi.recordPushStatus(RECEIVED, intent, new RecordPushStatusCallback() {
-            @Override
-            public void onSuccess(@Nullable BaseResponse response) {
-                Timber.e(response.toString());
+        try {
+            AppgainAppPushApi.recordPushStatus(RECEIVED, intent, new RecordPushStatusCallback() {
+                @Override
+                public void onSuccess(@Nullable BaseResponse response) {
+                    Timber.e(response.toString());
 
-            }
+                }
 
-            @Override
-            public void onFail(@Nullable BaseResponse failure) {
-                Timber.e(failure.toString());
+                @Override
+                public void onFail(@Nullable BaseResponse failure) {
+                    Timber.e(failure.toString());
 
-            }
-        });
-        Timber.e("onPushReceive" + intent.getExtras());
+                }
+            });
+            Timber.e("onPushReceive" + intent.getExtras());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -69,20 +73,24 @@ public abstract class AppGainPushReceiver extends ParsePushBroadcastReceiver {
     protected void onPushDismiss(Context context, final Intent intent) {
         super.onPushDismiss(context, intent);
         onReceive(context , dismiss , intent);
-        AppgainAppPushApi.recordPushStatus(DISMISSED, intent, new RecordPushStatusCallback() {
-            @Override
-            public void onSuccess(@Nullable BaseResponse response) {
-                Timber.e(response.toString());
+        try {
+            AppgainAppPushApi.recordPushStatus(DISMISSED, intent, new RecordPushStatusCallback() {
+                @Override
+                public void onSuccess(@Nullable BaseResponse response) {
+                    Timber.e(response.toString());
 
-            }
+                }
 
-            @Override
-            public void onFail(@Nullable BaseResponse failure) {
-                Timber.e(failure.toString());
+                @Override
+                public void onFail(@Nullable BaseResponse failure) {
+                    Timber.e(failure.toString());
 
-            }
-        });
-        Timber.e("onPushReceive" + intent.getExtras());        Timber.e("onPushDismiss" + intent.getExtras());
+                }
+            });
+            Timber.e("onPushReceive" + intent.getExtras());        Timber.e("onPushDismiss" + intent.getExtras());
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -92,18 +100,22 @@ public abstract class AppGainPushReceiver extends ParsePushBroadcastReceiver {
     protected void onPushOpen(Context context, final Intent intent) {
         super.onPushOpen(context, intent);
         onReceive(context , open , intent);
-        AppgainAppPushApi.recordPushStatus(OPEN, intent, new RecordPushStatusCallback() {
-            @Override
-            public void onSuccess(@Nullable BaseResponse response) {
-                Timber.e(response.toString());
+        try {
+            AppgainAppPushApi.recordPushStatus(OPEN, intent, new RecordPushStatusCallback() {
+                @Override
+                public void onSuccess(@Nullable BaseResponse response) {
+                    Timber.e(response.toString());
 
-            }
+                }
 
-            @Override
-            public void onFail(@Nullable BaseResponse failure) {
-                Timber.e(failure.toString());
-            }
-        });
+                @Override
+                public void onFail(@Nullable BaseResponse failure) {
+                    Timber.e(failure.toString());
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 

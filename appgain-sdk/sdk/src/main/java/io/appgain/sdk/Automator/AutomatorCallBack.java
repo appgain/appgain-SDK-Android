@@ -13,6 +13,6 @@ import io.appgain.sdk.Model.BaseResponse;
  */
 
 public  interface AutomatorCallBack {
-    void onAutomatorCreated(@Nullable AutomatorResponse response);
+    void onAutomatorFired(@Nullable AutomatorResponse response);
     void onFail(@Nullable BaseResponse failure);
 }

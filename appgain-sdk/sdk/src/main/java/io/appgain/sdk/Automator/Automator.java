@@ -14,6 +14,7 @@ import io.appgain.sdk.Service.CallbackWithRetry;
 import io.appgain.sdk.Service.Injector;
 import io.appgain.sdk.Service.onRequestFailure;
 import io.appgain.sdk.Utils.Utils;
+import io.appgain.sdk.Utils.Validator;
 import io.appgain.sdk.interfaces.ParseInitCallBack;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -38,15 +39,15 @@ public class Automator {
      *      log error
      */
 
-    static public void enqueue(final String triggerPoint , final AutomatorCallBack automatorCallBack){
-
+    static public void enqueue(final String triggerPointName , final AutomatorCallBack automatorCallBack)throws Exception{
+        Validator.isNull(triggerPointName , "trigger point name");
         Appgain.getCredentials(new ParseInitCallBack() {
             @Override
-            public void onSuccess(SDKKeys sdkKeys, String userId) {
-                if (sdkKeys !=null && userId !=null){
-                    automatorApi(userId , triggerPoint , automatorCallBack);
+            public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
+                if (sdkKeys !=null && parseUserId !=null){
+                    automatorApi(parseUserId, triggerPointName , automatorCallBack);
                 }else {
-                    Timber.e("SDKKeys" + sdkKeys +" userId" + userId);
+                    Timber.e("SDKKeys" + sdkKeys +" userId" + parseUserId);
                     if (automatorCallBack !=null)
                     automatorCallBack.onFail(new BaseResponse("404",  Config.NO_BACKEND));
                 }
@@ -60,16 +61,14 @@ public class Automator {
             }
         });
     }
-    static public void enqueue(final String triggerPoint , @Nullable final String userId  , final AutomatorCallBack automatorCallBack){
-
-        if (userId ==null){
-            throw  new IllegalStateException("user id can't be null") ;
-        }
+    static public void enqueue(final String triggerPointName , @Nullable final String userId  , final AutomatorCallBack automatorCallBack) throws Exception {
+        Validator.isNull(userId , "user id ");
+        Validator.isNull(triggerPointName , "trigger point name");
         Appgain.getCredentials(new ParseInitCallBack() {
             @Override
             public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
                 if (sdkKeys !=null && userId !=null){
-                    automatorApi(userId , triggerPoint , automatorCallBack);
+                    automatorApi(userId , triggerPointName , automatorCallBack);
                 }else {
                     Timber.e("SDKKeys" + sdkKeys +" userId" + userId);
                     if (automatorCallBack !=null)
@@ -107,7 +106,7 @@ public class Automator {
             public void onResponse(Call<AutomatorResponse> call, Response<AutomatorResponse> response) {
                 if (response.isSuccessful() && response.body() !=null){
                     if (automatorCallBack!=null)
-                    automatorCallBack.onAutomatorCreated(response.body());
+                    automatorCallBack.onAutomatorFired(response.body());
                 }else {
                     if (automatorCallBack!=null)
                         try {

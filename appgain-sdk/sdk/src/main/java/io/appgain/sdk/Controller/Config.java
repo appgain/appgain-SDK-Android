@@ -7,13 +7,14 @@ package io.appgain.sdk.Controller; /**
  */
 public final class Config {
 
-    public  final static String API_URL ="https://api.appgain.io/" ;
-    public  final static String APPS_URL =API_URL+"apps/" ;
-    public  final static String APPGAIN_IO =".appgain.io/" ;
+
+    public   static String API_URL ="https://api.appgain.io/" ;
+    public   static String APPS_URL =API_URL+"apps/" ;
+    public   static String APPGAIN_IO =".appgain.io/" ;
     public static final String NA = "NA";
     public static final String NO_BACKEND = "no backend for this suit id ";
     public static String NETWORK_FAILED = "network failed";
-
+    public static boolean io =true;
 
 
     public static String CREDENTIALS_URL(String appID) {
