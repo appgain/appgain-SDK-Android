@@ -63,8 +63,8 @@ public final class SmartDeepLinkCreator implements Serializable{
             }
 
             Call<SmartDeepLinkResponse> call = Injector.Api().createSmartLink(
-                    Config.SMART_LINK_CREATE(Appgain.getAppID()) ,
-                    smartLinkBuilder) ;
+                    Config.SMART_LINK_CREATE(Appgain.getAppID()) , smartLinkBuilder
+            ) ;
             call.enqueue(new CallbackWithRetry<SmartDeepLinkResponse>(call, new onRequestFailure() {
                 @Override
                 public void onFailure(Throwable t) {
@@ -250,14 +250,14 @@ public final class SmartDeepLinkCreator implements Serializable{
             // url validation
             Validator.isMatch(mobileTarget.getPrimary() , REGEX.URL , target+Errors.MOBILE_TARGET_PRIMARY +  Errors.NOT_VALID_URL );
             // length validation
-            Validator.isMatch(mobileTarget.getPrimary() , REGEX.LINK_LENGTH_REGX , target+Errors.MOBILE_TARGET_PRIMARY + Errors.SMART_LINK_SM_TITLE_REGX_ERROR ) ;
+            Validator.isMatch(mobileTarget.getPrimary() , REGEX.LINK_LENGTH_REGX , target+Errors.MOBILE_TARGET_PRIMARY + Errors.LINK_LENGHT ) ;
 
             // nonNull validation
             Validator.isNull(mobileTarget.getFallback(), target+ Errors.MOBILE_TARGET_FALLBACK) ;
             // url validation
             Validator.isMatch(mobileTarget.getFallback() , REGEX.URL , target+ Errors.MOBILE_TARGET_FALLBACK + Errors.NOT_VALID_URL );
             // length validation
-            Validator.isMatch(mobileTarget.getFallback() , REGEX.LINK_LENGTH_REGX , target+ Errors.MOBILE_TARGET_FALLBACK + Errors.SMART_LINK_SM_TITLE_REGX_ERROR ) ;
+            Validator.isMatch(mobileTarget.getFallback() , REGEX.LINK_LENGTH_REGX , target+ Errors.MOBILE_TARGET_FALLBACK + Errors.LINK_LENGHT ) ;
 
         }
 

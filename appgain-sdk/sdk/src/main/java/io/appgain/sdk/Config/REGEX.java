@@ -5,7 +5,7 @@ package io.appgain.sdk.Config;
  */
 public class REGEX {
 
-        public static final String ALL_CHAR= "^[A-Z,a-z,0-9,_,.,-,\\\\,/,///,:,\\s]";
+        public static final String ALL_CHAR= "^[A-Z,a-z,0-9,_,.,-,\\\\,/,///,:,\\s,-]";
     public static final String NAME_LENGTH_REGX = ALL_CHAR+"{4,100}";
     public static final String DEEP_PAGE_TOPIC_LENGTH_REGX = ALL_CHAR+"{5,50}";
     public static final String SM_TITLE_LENGTH_REGX = ALL_CHAR+"{5,15}";

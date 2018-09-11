@@ -34,7 +34,7 @@ public class Errors {
     public static final String WHITE_SPACE = "white space";
     public static final String NO_SMART_LINK_MOBILE_TARGETS = "Please add smart link web , android , IOS  targets to create smart link ";
     public static final String NOT_VALID_URL =  " is not valid url";
-    public static final String MOBILE_TARGET_FALLBACK = " Mobile Target Fallback";
+    public static final String MOBILE_TARGET_FALLBACK = " Mobile Target Fallback ";
     public static final String MOBILE_TARGET_PRIMARY = " Mobile Target Primary";
     public static String SMART_LINK_SM_TITLE = SNART_DEEP_LINK+" social Media Title ";
     public static String DEEP_PAGE_SM_TITLE = DEEP_PAGE+" social Media Title ";

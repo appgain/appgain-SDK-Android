@@ -1,7 +1,5 @@
 package io.appgain.sdk.PushNotfication;
 
-import android.app.Notification;
-import android.app.NotificationChannel;
 import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.Nullable;
@@ -9,7 +7,6 @@ import android.support.annotation.Nullable;
 import com.parse.ParsePushBroadcastReceiver;
 
 import io.appgain.sdk.Model.BaseResponse;
-import io.appgain.sdk.Utils.Utils;
 import timber.log.Timber;
 
 import static io.appgain.sdk.PushNotfication.ReceiveStatus.dismiss;
@@ -121,8 +118,5 @@ public abstract class AppGainPushReceiver extends ParsePushBroadcastReceiver {
 
 
 
- @Override
-    protected Notification getNotification(Context context, Intent intent) {
-        return Utils.getParseNotification(context, intent);
-    }
+
 }

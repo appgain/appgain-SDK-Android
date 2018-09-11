@@ -1,4 +1,4 @@
-package io.appgain.demo.CheckoutDialog;
+package io.appgain.demo.Dialogs;
 
 
 import android.app.Dialog;

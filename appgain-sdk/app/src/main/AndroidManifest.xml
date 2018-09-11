@@ -18,7 +18,7 @@
 
 
     <application
-        android:name="io.appgain.demo.AppController"
+        android:name="io.appgain.demo.app.AppController"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -51,10 +51,10 @@
 
 
 
-        <service android:name="com.parse.PushService" />
+
 
         <receiver
-            android:name="io.appgain.demo.pushReciver"
+            android:name="io.appgain.demo.app.PushReceiver"
             android:exported="false">
             <intent-filter>
                 <action android:name="com.parse.push.intent.RECEIVE" />
@@ -63,30 +63,23 @@
             </intent-filter>
         </receiver>
 
-        <receiver android:name="com.parse.GcmBroadcastReceiver"
-            android:permission="com.google.android.c2dm.permission.SEND">
+
+
+        <service
+            android:name="com.parse.fcm.ParseFirebaseInstanceIdService"
+            android:exported="true">
             <intent-filter>
-                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
-                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
-                <category android:name="io.appgain.demo" />
-
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
-        </receiver>
+        </service>
 
+        <service
+            android:name="com.parse.fcm.ParseFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT"/>
+            </intent-filter>
+        </service>
 
-        <meta-data
-            android:name="com.parse.push.gcm_sender_id"
-            android:value="id:132005342842" />
-
-        <meta-data
-            android:name="com.parse.push.notification_icon"
-            android:resource="@mipmap/ic_launcher"/>
-
-
-
-        <meta-data
-            android:name="io.fabric.ApiKey"
-            android:value="fa3d9f0c51d491db3f1921c6bb250a443a346810" />
 
     </application>
 

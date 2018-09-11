@@ -11,10 +11,17 @@ import android.util.Log;
 import android.view.View;
 
 
+
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.appgain.demo.CheckoutDialog.ConfigDialog;
+import io.appgain.demo.DUMMY;
+import io.appgain.demo.Dialogs.AutomatorDialog;
+import io.appgain.demo.Dialogs.ConfigDialog;
+import io.appgain.demo.Dialogs.SmartDeepLinkDialog;
+import io.appgain.demo.Dialogs.UsernameDialog;
+import io.appgain.demo.R;
+import io.appgain.demo.app.AppController;
 import io.appgain.sdk.Automator.Automator;
 import io.appgain.sdk.Automator.AutomatorCallBack;
 import io.appgain.sdk.Automator.AutomatorResponse;
@@ -42,12 +49,13 @@ public class MainActivity extends AppCompatActivity {
     @BindView(R.id.container_view)
     View container_view ;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        // configuration dialog
+        LoadingBar = loading_bar ;
         ConfigDialog.getInstance().show(getSupportFragmentManager() , "ConfigDialog");
     }
 
@@ -62,28 +70,37 @@ public class MainActivity extends AppCompatActivity {
             return;
         }
 
-        try {
-            Automator.enqueue("dummy", "userId", new AutomatorCallBack() {
+        AutomatorDialog.getInstance(new AutomatorDialog.AutomatorDialogCallback() {
             @Override
-            public void onAutomatorFired(@Nullable AutomatorResponse response) {
-                showLoading(false);
-                  showDialog(response.getMessage());
-                Timber.e(response.toString());
+            public void valueCallback(String trigger_point) {
+                fireAutomatorTrigger(trigger_point);
             }
+        }).show(getSupportFragmentManager(),"AutomatorDialog");
 
-            @Override
-            public void onFail(@Nullable BaseResponse failure) {
-                showLoading(false);
-                showDialog(failure.getMessage());
-                Timber.e(failure.toString());
-            }
-        });
+    }
+
+    private void fireAutomatorTrigger(String trigger_point) {
+        try {
+            Automator.enqueue(trigger_point, new AutomatorCallBack() {
+                @Override
+                public void onAutomatorFired(@Nullable AutomatorResponse response) {
+                    showLoading(false);
+                    showDialog(response.getMessage());
+                    Timber.e(response.toString());
+                }
+
+                @Override
+                public void onFail(@Nullable BaseResponse failure) {
+                    showLoading(false);
+                    showDialog(failure.getMessage());
+                    Timber.e(failure.toString());
+                }
+            });
         } catch (Exception e) {
             e.printStackTrace();
             showLoading(false);
             showDialog(e.getMessage());
         }
-
     }
 
 
@@ -102,7 +119,8 @@ public class MainActivity extends AppCompatActivity {
                     .withWebPushSubscription(true)
                     .withHeader("https://i.imgur.com/HwieXuR.jpg", "test create deep page")
                     .withContent("this is a test for creating deep page par")
-                    .withButton("test first button", "https://api.appgain.io/",  "tel:01125840548" , "sms:01125840548&body=test%20creating")
+                    .withButton("test first button", "https://appgain.io/",  "tel:01125840548" , "sms:01125840548&body=test%20creating")
+                    .withButton("test first button 2 ", "https://appgain.io/",  "tel:01125840548" , "sms:01125840548&body=test%20creating")
                     .withInfo("https://i.imgur.com/HwieXuR.jpg")
                     .withLabel("testcreate")
                     .withSocialMedia("test create", "test create deep page", "https://i.imgur.com/HwieXuR.jpg")
@@ -134,7 +152,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-     boolean sdk_inti = false;
+    public static boolean sdk_inti = false;
 
     @OnClick(R.id.smart_deep_link_create_button)
     void smartDeepLinkCreate(){
@@ -142,43 +160,32 @@ public class MainActivity extends AppCompatActivity {
             showDialog( "please inti first");
             return;
         }
-        showLoading(true);
-        // inti values
-        SmartDeepLinkCreator smartDeepLinkCreator = null;
-
-        try {
-            smartDeepLinkCreator = new SmartDeepLinkCreator.Builder()
-                    .withName("smart deep link test ")
-                    .withAndroid(DUMMY.ANDROID_PRIMARY , DUMMY.ANDROID_FALLBACK)
-                    .withIos( DUMMY.IOS_PRIMARY,DUMMY.IOS_FALLBACK )
-                    .withWeb("https://www.appgain.io/")
-                    .withSocialMediaTitle("Test Smart Deep Link")
-                    .withSocialMediaDescription("Please Wait...")
-                    .withSocialMediaImage("https://i.imgur.com/HwieXuR.jpg")
-                    .build();
 
 
+        SmartDeepLinkDialog.getInstance(new SmartDeepLinkDialog.SmartDeepLinkCallback() {
+            @Override
+            public void valueCallback(SmartDeepLinkCreator smartDeepLinkCreator) {
+                showLoading(true);
+                // get the link from api
+                smartDeepLinkCreator.enqueue(new SmartLinkCallback() {
+                    @Override
+                    public void onSmartDeepLinkCreated(@Nullable SmartDeepLinkResponse response) {
+                        showLoading(false);
+                        showLinkDialog( "woohoo its worked" , response.getSmartDeepLink());
+                        Timber.tag("MainActivity").e( response.toString());
+                    }
 
-        // get the link from api
-         smartDeepLinkCreator.enqueue(new SmartLinkCallback() {
-             @Override
-             public void onSmartDeepLinkCreated(@Nullable SmartDeepLinkResponse response) {
-                 showLoading(false);
-                 showLinkDialog( "woohoo its worked" , response.getSmartDeepLink());
-                 Timber.tag("MainActivity").e( response.toString());
-             }
+                    @Override
+                    public void onSmartDeepLinkFail(@Nullable BaseResponse failure) {
+                        showLoading(false);
+                        showDialog("oops smartDeepLinkCreator has failed \n" + failure.toString());
+                        Timber.e(failure.toString());
+                    }
+                });
+            }
+        }).show(getSupportFragmentManager() , "SmartDeepLinkDialog");
 
-             @Override
-             public void onSmartDeepLinkFail(@Nullable BaseResponse failure) {
-                 showLoading(false);
-                 showDialog("oops smartDeepLinkCreator has failed");
-                 Timber.e(failure.toString());
-             }
-         });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-     }
+    }
 
     @OnClick(R.id.deferred_deep_linking_button)
     void deferredDeepLinking(){
@@ -211,21 +218,19 @@ public class MainActivity extends AppCompatActivity {
         Appgain.setContext(this);
         Appgain.clear();
         try {
-            Appgain.initialize(
-                     getApplicationContext(), DUMMY.APP_ID, DUMMY.APP_API_KEY,
-                     new AppgainSDKInitCallBack() {
-                             @Override
-                             public void onSuccess() {
-                                 showLoading(false);
-                                 sdk_inti= true ;
-                                 showUserID();
-                             }
-                             @Override
-                             public void onFail(BaseResponse failure) {
-                                 showLoading(false);
-                             }
-                     }
-             );
+            Appgain.initialize(getApplicationContext(), DUMMY.APP_ID, DUMMY.APP_API_KEY, new AppgainSDKInitCallBack() {
+                @Override
+                public void onSuccess() {
+                    showLoading(false);
+                    sdk_inti= true ;
+                    showUserID();
+                }
+                @Override
+                public void onFail(BaseResponse failure)
+                {
+                    showLoading(false);
+                }
+            });
         } catch (Exception e) {
             e.printStackTrace();
             showLoading(false);
@@ -233,17 +238,27 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
     @OnClick(R.id.inti_with_username)
     void inti_with_username(){
+        UsernameDialog.getInstance(new UsernameDialog.UserinfoCallback() {
+            @Override
+            public void valueCallback(String username, String email, String password) {
+                userNameInit(new User(username, password, email));
+            }
+        }).show(getSupportFragmentManager(),"UsernameDialog");
+    }
+
+    private void userNameInit(User user) {
         showLoading(true);
         Appgain.setContext(this);
         Appgain.clear();
         try {
             Appgain.initialize(
                     getApplicationContext(),
-                    DUMMY.APP_ID,
-                    DUMMY.APP_API_KEY,
-                    new User("AppgainUser", "1234", "appgainUser@gmail.com\""),
+                    AppController.getKeys().getApp_id(),
+                    AppController.getKeys().getApi_key(),
+                    user,
                     new AppgainSDKInitCallBack() {
                         @Override
                         public void onSuccess() {
@@ -255,6 +270,7 @@ public class MainActivity extends AppCompatActivity {
                         @Override
                         public void onFail(BaseResponse failure) {
                             showLoading(false);
+                            showDialog(failure.getMessage());
                         }
                     }
             );
@@ -263,7 +279,7 @@ public class MainActivity extends AppCompatActivity {
             showLoading(false);
             showDialog(e.getMessage());
         }
-     }
+    }
 
     private void showUserID() {
         Appgain.getCredentials(new ParseInitCallBack() {
@@ -281,11 +297,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     protected void showDialog(String string) {
-            new AlertDialog
-                    .Builder(this).setMessage(string)
-                    .setPositiveButton("Ok" , null)
-                    .create()
-                    .show();
+        new AlertDialog
+                .Builder(this).setMessage(string)
+                .setPositiveButton("Ok" , null)
+                .create()
+                .show();
     }
 
 
@@ -306,9 +322,18 @@ public class MainActivity extends AppCompatActivity {
 
 
     @BindView(R.id.loading_bar)
-    View loading_bar ;
-    void showLoading(boolean show){
-        loading_bar.setVisibility(show? View.VISIBLE : View.INVISIBLE);
+    public  View loading_bar ;
+    public  static View LoadingBar ;
+
+    public static void showLoading(boolean show){
+        if (getLoadingBar()  !=null)
+            getLoadingBar().setVisibility(show? View.VISIBLE : View.INVISIBLE);
     }
+
+    public static View getLoadingBar() {
+        return LoadingBar;
+    }
+
+
 
 }

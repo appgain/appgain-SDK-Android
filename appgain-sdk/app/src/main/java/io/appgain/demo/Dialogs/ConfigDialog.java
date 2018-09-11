@@ -1,4 +1,4 @@
-package io.appgain.demo.CheckoutDialog;
+package io.appgain.demo.Dialogs;
 
 import android.support.design.widget.TextInputLayout;
 import android.text.TextUtils;
@@ -12,11 +12,8 @@ import android.widget.RadioButton;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.appgain.demo.CheckoutDialog.BaseDialog;
-import io.appgain.demo.DUMMY;
+import io.appgain.demo.app.AppController;
 import io.appgain.demo.R;
-import io.appgain.sdk.Controller.Config;
-import timber.log.Timber;
 
 /**
  * Created by developers@appgain.io on 7/4/2018.
@@ -48,8 +45,14 @@ public class ConfigDialog extends BaseDialog {
     @Override
     protected View createDialogView() {
         View v = LayoutInflater.from(getContext())
-                .inflate(R.layout.user_info_dialog, null);
+                .inflate(R.layout.config_dialog, null);
         ButterKnife.bind(this, v);
+        if (AppController.getKeys()!=null){
+            api_key_input.setText(AppController.getKeys().getApi_key()) ;
+            app_id_input.setText(AppController.getKeys().getApp_id());
+            radioButton.setChecked(AppController.getKeys().isIo());
+            stgRadioButton.setChecked(!AppController.getKeys().isIo());
+        }
         return v;
     }
 
@@ -77,29 +80,18 @@ static public boolean isEditTextEmpty(EditText editText , TextInputLayout textIn
     }
 
 
-
+    @BindView(R.id.stg)
+    RadioButton stgRadioButton ;
     @BindView(R.id.io)
     RadioButton radioButton ;
+
     @OnClick(R.id.dialog_confirm)
     void confirm(){
         if (validate_user_info()){
-            DUMMY.APP_ID = app_id_input.getText().toString();
-            DUMMY.APP_API_KEY = api_key_input.getText().toString();
-            Config.io = radioButton.isChecked() ;
-
-             Config.API_URL =!Config.io ? "https://api.appgain.it/" : "https://api.appgain.io/"  ;
-             Config.APPS_URL =Config.API_URL+"apps/" ;
-             Config.APPGAIN_IO =!Config.io ? ".appgain.it/"  : ".appgain.io/";
-
-            Timber.e(Config.io+" io ");
-            Timber.e(Config.API_URL);
+           AppController.saveConfiguration(api_key_input.getText().toString() , app_id_input.getText().toString() ,  radioButton.isChecked() );
             this.dismiss();
         }
     }
-
-
-
-
 
 
 }
