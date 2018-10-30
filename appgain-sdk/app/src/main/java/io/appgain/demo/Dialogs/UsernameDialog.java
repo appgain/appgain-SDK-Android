@@ -94,14 +94,14 @@ static public boolean isEditTextEmpty(EditText editText , TextInputLayout textIn
         if (validate_user_info()){
             AppController.saveUser(
                     new User(username_input.getText().toString() ,
-                            user_email_input.getText().toString() ,
-                            user_password_input.getText().toString()
-                    )
+                            user_password_input.getText().toString(),
+                            user_email_input.getText().toString()
+                            )
             );
             userInfoDialogCallback.valueCallback(
                     username_input.getText().toString() ,
-                    user_email_input.getText().toString() ,
-                    user_password_input.getText().toString()
+                    user_password_input.getText().toString(),
+                    user_email_input.getText().toString()
             );
             dismiss();
         }

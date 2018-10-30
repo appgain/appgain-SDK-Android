@@ -1,6 +1,9 @@
 package io.appgain.demo.app;
 
 import android.app.Application;
+import android.support.multidex.MultiDex;
+import android.support.multidex.MultiDexApplication;
+import android.util.Log;
 
 import io.appgain.demo.DUMMY;
 import io.appgain.demo.MainActivity;
@@ -9,7 +12,6 @@ import io.appgain.sdk.Controller.Config;
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.Model.User;
 import io.appgain.sdk.interfaces.AppgainSDKInitCallBack;
-import timber.log.Timber;
 
 
 /**
@@ -24,12 +26,11 @@ public class AppController extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
+        MultiDex.install(this);
         mInstance = this ;
         Appgain.enableLog();
-        if (AppController.getUser() !=null)
-        {
-            userNameInit(AppController.getUser());
-        }
+        if (AppController.getKeys()!=null)
+        userNameInit(AppController.getUser());
     }
 
     private void userNameInit(User user) {
@@ -101,8 +102,6 @@ public class AppController extends Application {
         Config.APPS_URL =Config.API_URL+"apps/" ;
         Config.APPGAIN_IO =!Config.io ? ".appgain.it/"  : ".appgain.io/";
 
-        Timber.e(Config.io+" io ");
-        Timber.e(Config.API_URL);
     }
 
 

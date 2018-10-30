@@ -1,13 +1,13 @@
 apply plugin: 'com.android.library'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 26
     defaultConfig {
         minSdkVersion 15
-        targetSdkVersion 27
+        targetSdkVersion 25
         versionCode 1
         versionName "1.0"
-
+        multiDexEnabled true
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
     }
@@ -35,29 +35,47 @@ android {
 buildscript {
     repositories {
         mavenCentral()
+        google()
+        jcenter()
+        maven { url "https://jitpack.io" }
+
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:1.1.0'
     }
 }
 
-
-
-
 ext {
-    parseVersion = "1.17.3"
+    bintrayRepo = 'Appgain' // your repo name
+    bintrayName = 'appgain-anroid-sdk' // has to be same as your library module name
+    artifact = 'sdk' // has to be same as your library module name
+    publishedGroupId = 'io.appgain' // your module package name
+    libraryName = 'Appgain'// your repo name
+    libraryDescription = 'appgain sdk desc'
+    siteUrl = 'https://github.com/appgain/appgain-SDK-Android'
+    gitUrl = 'https://github.com/appgain/appgain-SDK-Android'
+    libraryVersion = '1.1.0'
+    developerId = '52143c8aa6d74f2'
+    developerName = 'sotra'
+    developerEmail = 'developers@appgain.io'
+    licenseName = ' The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
 }
+
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    // networking lib
-    implementation 'com.squareup.retrofit2:retrofit:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.0'
-    // log lib
-    implementation 'com.jakewharton.timber:timber:3.1.0'
-    // parse
-    implementation "com.parse:parse-android:$parseVersion"
-    implementation "com.parse:parse-fcm-android:$parseVersion"
-
+    api 'com.github.parse-community:Parse-SDK-Android:1.18.5'
+    api 'com.github.parse-community.Parse-SDK-Android:fcm:1.18.5'
+        api 'com.squareup.retrofit2:retrofit:2.3.0'
+        api 'com.squareup.okhttp3:logging-interceptor:3.8.0'
+        api 'com.squareup.retrofit2:converter-gson:2.3.0'
+        api 'com.jakewharton.timber:timber:3.1.0'
 }
+
+apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/installv.gradle'
+apply from: 'https://raw.githubusercontent.com/numetriclabz/jcenter/master/bintrayv.gradle'
+// upload
+//gradlew clean build install bintrayUpload
 

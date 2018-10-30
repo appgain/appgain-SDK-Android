@@ -15,7 +15,6 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import io.appgain.sdk.SmartLinkCreate.SmartDeepLinkCreator;
-import timber.log.Timber;
 
 /**
  * Created by developers@appgain.io on 7/4/2018.
@@ -176,7 +175,6 @@ static public boolean isEditTextEmpty(EditText editText , TextInputLayout textIn
             } catch (Exception e) {
                 e.printStackTrace();
                 showDialog(e.getMessage());
-                Timber.e(e.toString());
             }
 
         }

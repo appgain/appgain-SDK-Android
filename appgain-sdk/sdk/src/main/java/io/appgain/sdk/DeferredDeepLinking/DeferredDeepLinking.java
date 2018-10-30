@@ -4,7 +4,17 @@ package io.appgain.sdk.DeferredDeepLinking;
 import android.util.Log;
 import android.webkit.WebView;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseObject;
+import com.parse.ParseQuery;
+import com.parse.ParseUser;
+
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 import io.appgain.sdk.Controller.Appgain;
 import io.appgain.sdk.Controller.Config;
@@ -129,8 +139,11 @@ public class DeferredDeepLinking {
             @Override
             public void onResponse(retrofit2.Call<DeferredDeepLinkingResponse> call, Response<DeferredDeepLinkingResponse> response) {
                 if (response.isSuccessful()&&response.body()!=null){
-                    if (smartLinkMatchListener!=null)
+                    if (smartLinkMatchListener!=null){
                         smartLinkMatchListener.onMatch(response.body());
+                        updateUserRecodedWithSmartDeepLinkParams(response.body()) ;
+                    }
+
                 }else {
                     if (smartLinkMatchListener!=null)
                         try {
@@ -143,6 +156,27 @@ public class DeferredDeepLinking {
 
             }
         });
+    }
+
+    private static void updateUserRecodedWithSmartDeepLinkParams(DeferredDeepLinkingResponse response) {
+        try {
+            for (final Map<String,String> map : response.getExtraData().getParams()){
+
+                ParseUser currentUser = ParseUser.getCurrentUser();
+
+                    if (map.entrySet().iterator().hasNext())
+                    {
+                        Map.Entry<String, String> entry = map.entrySet().iterator().next();
+                        currentUser.put(entry.getKey() , entry.getValue());
+                    }
+                    currentUser.saveInBackground();
+
+
+            }
+        }catch (Exception e){
+            Timber.e("updateUserRecodedWithSmartDeepLinkParams error  : " +e.toString() );
+            e.printStackTrace();
+        }
     }
 
 

@@ -4,8 +4,8 @@ import android.content.ComponentName;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-
 import com.google.gson.Gson;
+
 
 import io.appgain.demo.MainActivity;
 import io.appgain.sdk.Model.User;
@@ -53,6 +53,7 @@ public class MyPreferenceManager {
             return null;
         }else {
             return  new Gson().fromJson(user , User.class) ;
+            return null;
         }
     }
 
@@ -69,6 +70,7 @@ public class MyPreferenceManager {
         }else {
             return  new Gson().fromJson(user , Keys.class) ;
         }
+        return null;
     }
 
 

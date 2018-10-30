@@ -42,7 +42,6 @@ import io.appgain.sdk.DeferredDeepLinking.DeferredDeepLinking;
 import io.appgain.sdk.DeferredDeepLinking.DeferredDeepLinkingCallBack;
 import io.appgain.sdk.interfaces.AppgainSDKInitCallBack;
 import io.appgain.sdk.interfaces.ParseInitCallBack;
-import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -56,6 +55,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         LoadingBar = loading_bar ;
+//        Appgain.clear();
         ConfigDialog.getInstance().show(getSupportFragmentManager() , "ConfigDialog");
     }
 
@@ -86,14 +86,12 @@ public class MainActivity extends AppCompatActivity {
                 public void onAutomatorFired(@Nullable AutomatorResponse response) {
                     showLoading(false);
                     showDialog(response.getMessage());
-                    Timber.e(response.toString());
                 }
 
                 @Override
                 public void onFail(@Nullable BaseResponse failure) {
                     showLoading(false);
                     showDialog(failure.getMessage());
-                    Timber.e(failure.toString());
                 }
             });
         } catch (Exception e) {
@@ -138,7 +136,6 @@ public class MainActivity extends AppCompatActivity {
                 public void onDeepPageFail(@Nullable BaseResponse failure) {
                     showLoading(false);
                     showDialog(failure.getMessage());
-                    Timber.e(failure.toString());
                 }
             });
         } catch (Exception e) {
@@ -172,14 +169,12 @@ public class MainActivity extends AppCompatActivity {
                     public void onSmartDeepLinkCreated(@Nullable SmartDeepLinkResponse response) {
                         showLoading(false);
                         showLinkDialog( "woohoo its worked" , response.getSmartDeepLink());
-                        Timber.tag("MainActivity").e( response.toString());
                     }
 
                     @Override
                     public void onSmartDeepLinkFail(@Nullable BaseResponse failure) {
                         showLoading(false);
                         showDialog("oops smartDeepLinkCreator has failed \n" + failure.toString());
-                        Timber.e(failure.toString());
                     }
                 });
             }
@@ -207,7 +202,6 @@ public class MainActivity extends AppCompatActivity {
             public void onFail(@Nullable BaseResponse failure) {
                 showLoading(false);
                 showDialog(failure.getMessage());
-                Timber.e(failure.toString());
             }
         });
     }
