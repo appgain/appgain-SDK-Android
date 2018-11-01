@@ -11,29 +11,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08afde3b-9ed2-4184-b161-1a2419bb9f57" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/BaseDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/BaseDialog.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/SmartDeepLinkDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/SmartDeepLinkDialog.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/UsernameDialog.java" afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/UsernameDialog.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/MainActivity.java" afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/MainActivity.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/AppController.java" afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/AppController.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/MyPreferenceManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/MyPreferenceManager.java" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/PushReceiver.java" afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/PushReceiver.java" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" afterPath="$PROJECT_DIR$/gradle.properties" />
-      <change beforePath="$PROJECT_DIR$/sdk/build.gradle" afterPath="$PROJECT_DIR$/sdk/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/sdk/proguard-rules.pro" afterPath="$PROJECT_DIR$/sdk/proguard-rules.pro" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Appgain.java" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Appgain.java" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinking.java" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinking.java" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/ResponseModels/DeferredDeepLinkingResponse.java" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/ResponseModels/DeferredDeepLinkingResponse.java" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/ResponseModels/ExtraData.java" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/ResponseModels/ExtraData.java" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Service/CallbackWithRetry.java" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Service/CallbackWithRetry.java" />
-      <change beforePath="$PROJECT_DIR$/settings.gradle" afterPath="$PROJECT_DIR$/settings.gradle" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -90,8 +70,8 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            <state relative-caret-position="429">
+              <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="76" />
               <folding>
                 <element signature="e#861#892#0" expanded="false" />
                 <element signature="e#861#892#0" expanded="false" />
@@ -103,7 +83,7 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sdk/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="394">
+            <state relative-caret-position="1872">
               <caret line="72" column="45" lean-forward="false" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
               <folding />
             </state>
@@ -113,7 +93,7 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="223">
+            <state relative-caret-position="364">
               <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
               <folding>
                 <marker date="1540800642795" expanded="true" signature="352:629" ph="..." />
@@ -3312,15 +3292,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView">
         <subPane>
           <expand>
-            <path>
-              <item name="appgain-sdk" type="1abcf292:AndroidViewProjectNode" />
-              <item name="app" type="feadf853:AndroidModuleNode" />
-            </path>
             <path>
               <item name="appgain-sdk" type="1abcf292:AndroidViewProjectNode" />
               <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
@@ -3329,6 +3303,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -3360,6 +3335,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scratches" />
       <pane id="ProjectPane" />
     </panes>
   </component>
@@ -3368,7 +3344,7 @@
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="last_opened_file_path" value="G:/AppGain/TAKA/task/assem" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.0.1" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1540905302288" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1541088127913" />
     <property name="device.picker.selection" value="Nexus_5X_API_27" />
     <property name="android.project.structure.last.selected" value="sdk" />
     <property name="android.project.structure.proportion" value="0.15" />
@@ -3503,18 +3479,6 @@
       </ExternalSystemSettings>
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
     </configuration>
-    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
-      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-      <option name="VM_PARAMETERS" />
-      <option name="PROGRAM_PARAMETERS" />
-      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
-      <option name="ALTERNATIVE_JRE_PATH" />
-      <option name="PASS_PARENT_ENVS" value="true" />
-      <option name="MAIN_CLASS_NAME" />
-      <option name="WORKING_DIRECTORY" />
-      <module name="appgain-sdk" />
-      <envs />
-    </configuration>
     <configuration default="true" type="TestNG" factoryName="TestNG">
       <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
       <module name="" />
@@ -3575,6 +3539,18 @@
       <patterns />
       <method />
     </configuration>
+    <configuration default="true" type="JetRunConfigurationType" factoryName="Kotlin">
+      <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+      <option name="VM_PARAMETERS" />
+      <option name="PROGRAM_PARAMETERS" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="MAIN_CLASS_NAME" />
+      <option name="WORKING_DIRECTORY" />
+      <module name="appgain-sdk" />
+      <envs />
+    </configuration>
     <configuration name="&lt;template&gt;" type="#org.jetbrains.idea.devkit.run.PluginConfigurationType" default="true" selected="false">
       <option name="VM_PARAMETERS" value="-Xmx512m -Xms256m -XX:MaxPermSize=250m -ea" />
     </configuration>
@@ -3608,7 +3584,7 @@
     <frame x="-9" y="41" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -3889,7 +3865,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="10114">
           <caret line="439" column="20" lean-forward="false" selection-start-line="439" selection-start-column="20" selection-end-line="439" selection-end-column="20" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3920,7 +3895,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="494">
           <caret line="19" column="0" lean-forward="false" selection-start-line="19" selection-start-column="0" selection-end-line="19" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3928,7 +3902,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="177" column="0" lean-forward="false" selection-start-line="177" selection-start-column="0" selection-end-line="177" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3936,7 +3909,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2711">
           <caret line="204" column="0" lean-forward="false" selection-start-line="204" selection-start-column="0" selection-end-line="204" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3944,7 +3916,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
           <caret line="23" column="43" lean-forward="false" selection-start-line="23" selection-start-column="43" selection-end-line="23" selection-end-column="43" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3952,7 +3923,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="99">
           <caret line="14" column="36" lean-forward="false" selection-start-line="14" selection-start-column="36" selection-end-line="14" selection-end-column="36" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3979,7 +3949,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="182">
           <caret line="7" column="72" lean-forward="true" selection-start-line="7" selection-start-column="72" selection-end-line="7" selection-end-column="72" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3987,7 +3956,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -4019,13 +3987,12 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="155">
           <caret line="6" column="28" lean-forward="true" selection-start-line="6" selection-start-column="28" selection-end-line="6" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="223">
+        <state relative-caret-position="364">
           <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
           <folding>
             <marker date="1540800642795" expanded="true" signature="352:629" ph="..." />
@@ -4035,7 +4002,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sdk/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="394">
+        <state relative-caret-position="1872">
           <caret line="72" column="45" lean-forward="false" selection-start-line="72" selection-start-column="45" selection-end-line="72" selection-end-column="45" />
           <folding />
         </state>
@@ -4043,8 +4010,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="9" column="25" lean-forward="true" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        <state relative-caret-position="429">
+          <caret line="52" column="0" lean-forward="false" selection-start-line="52" selection-start-column="0" selection-end-line="53" selection-end-column="76" />
           <folding>
             <element signature="e#861#892#0" expanded="false" />
             <element signature="e#861#892#0" expanded="false" />
