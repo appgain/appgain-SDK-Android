@@ -27,4 +27,12 @@ public class AppGainPushConversion {
     public  static  void recordConvertion(Intent intent , String internalUserId,  RecordPushStatusCallback recordPushStatusCallback) throws Exception {
         AppgainAppPushApi.recordPushStatus(AppGainPushReceiver.CONVERSION ,  intent , internalUserId, recordPushStatusCallback ) ;
     }
+
+    public  static  void recordConvertion( final String campaignName , final String campaignId,  RecordPushStatusCallback recordPushStatusCallback) throws Exception {
+        AppgainAppPushApi.recordPushStatus(AppGainPushReceiver.CONVERSION ,  campaignName , campaignId, recordPushStatusCallback ) ;
+    }
+    public  static  void recordConvertion( final String campaignName , final String campaignId, String internalUserId,  RecordPushStatusCallback recordPushStatusCallback) throws Exception {
+        AppgainAppPushApi.recordPushStatus(AppGainPushReceiver.CONVERSION ,  campaignName , campaignId , internalUserId, recordPushStatusCallback ) ;
+    }
+
 }

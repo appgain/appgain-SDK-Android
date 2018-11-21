@@ -1,7 +1,10 @@
 package io.appgain.sdk.Service;
 
 import android.os.Handler;
+import android.util.Log;
+
 import java.net.SocketTimeoutException;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import timber.log.Timber;

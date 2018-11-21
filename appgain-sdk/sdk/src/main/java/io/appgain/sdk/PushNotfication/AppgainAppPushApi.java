@@ -47,11 +47,20 @@ public class AppgainAppPushApi implements Serializable{
      */
     public  static void recordPushStatus(final String Action , final Intent data , final RecordPushStatusCallback recordPushStatusListener) throws Exception {
         recordPushStatus(Action , data , null , recordPushStatusListener);
-
     }
     public  static void recordPushStatus(final String Action , final Intent data , final  String internalUSerId , final RecordPushStatusCallback recordPushStatusListener) throws Exception {
         Validator.isNull(Action , "recordPushStatus() action ") ;
         Validator.isNull(data , "recordPushStatus() data ") ;
+        PushDataReceiveModel pushDataReciveModel = new Gson().fromJson(data.getStringExtra(KEY_PUSH_DATA) , PushDataReceiveModel.class);
+        recordPushStatus(Action , pushDataReciveModel.getCampaignName() , pushDataReciveModel.getCampaignId() , internalUSerId , recordPushStatusListener);
+    }
+    public  static void recordPushStatus(final String Action  , final String campaignName , final String campaignId , final RecordPushStatusCallback recordPushStatusListener) throws Exception {
+        recordPushStatus(Action,campaignName,campaignId , null);
+    }
+    public  static void recordPushStatus(final String Action  , final String campaignName , final String campaignId, final  String internalUSerId , final RecordPushStatusCallback recordPushStatusListener) throws Exception {
+        Validator.isNull(Action , "recordPushStatus() action ") ;
+        Validator.isNull(campaignName , "recordPushStatus() action ") ;
+        Validator.isNull(campaignId , "recordPushStatus() action ") ;
         Appgain.getCredentials(new ParseInitCallBack() {
             @Override
             public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
@@ -61,12 +70,11 @@ public class AppgainAppPushApi implements Serializable{
                     recordPushStatusListener.onFail(new BaseResponse("404" , Config.NO_BACKEND));
                     return;
                 }
-                PushDataReceiveModel pushDataReciveModel = new Gson().fromJson(data.getStringExtra(KEY_PUSH_DATA) , PushDataReceiveModel.class);
 
                 RecordStatusRequestBody pushModel = new RecordStatusRequestBody(
                         internalUSerId== null ? parseUserId : internalUSerId,
-                        pushDataReciveModel.getCampaignName() ,
-                        pushDataReciveModel.getCampaignId() ,
+                        campaignName ,
+                        campaignId ,
                         new RecordStatusRequestBody.Action(Action , Config.NA)
                 );
                 AppgainAppPushApi.enqueue(pushModel , recordPushStatusListener);
@@ -81,11 +89,12 @@ public class AppgainAppPushApi implements Serializable{
     }
 
 
+
     /**
      * @param pushModel >  request body  for recordPushStatus API
      *enqueue() method to access to Appgain recordPushStatus API
      */
-    public static void enqueue(RecordStatusRequestBody pushModel , final RecordPushStatusCallback callback){
+    private static void enqueue(RecordStatusRequestBody pushModel , final RecordPushStatusCallback callback){
         if( Appgain.getApiKey()==null){
             callback.onFail(new BaseResponse("404" , " Api key  not found  , make sure u initiate the sdk "));
             return;

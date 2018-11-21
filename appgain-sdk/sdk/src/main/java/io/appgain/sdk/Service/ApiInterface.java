@@ -1,6 +1,8 @@
 package io.appgain.sdk.Service;
 
 
+import com.google.gson.JsonObject;
+
 import io.appgain.sdk.Automator.AutomatorResponse;
 import io.appgain.sdk.DeepPages.DeepPage;
 import io.appgain.sdk.DeepPages.DeepPageResponse;
@@ -27,6 +29,11 @@ import retrofit2.http.Url;
 
 public interface ApiInterface {
 
+
+    @GET
+    Call<JsonObject> excuteUrl(
+            @Url String url
+    );
 
     @GET
     Call<SDKKeys> getCredentials(

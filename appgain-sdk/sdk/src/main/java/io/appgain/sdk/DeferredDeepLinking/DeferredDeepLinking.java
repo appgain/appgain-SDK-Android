@@ -114,11 +114,11 @@ public class DeferredDeepLinking {
      */
     private static void matchApi(String subDomain, String internalUserId, boolean firstRun, final DeferredDeepLinkingCallBack smartLinkMatchListener){
 
-
         retrofit2.Call<DeferredDeepLinkingResponse> call ;
         if (internalUserId!=null){
-            call = Injector.Api(new WebView(Appgain.getInstance().getContext()).getSettings().getUserAgentString()).smartLinkMatch(
-                   Config.SMART_LINK_MATCH(subDomain) ,
+            call = Injector.Api(
+                    new WebView(Appgain.getInstance().getContext()).getSettings().getUserAgentString()
+            ).smartLinkMatch(Config.SMART_LINK_MATCH(subDomain) ,
                    internalUserId ,
                    firstRun
            ) ;
@@ -157,6 +157,7 @@ public class DeferredDeepLinking {
             }
         });
     }
+
 
     private static void updateUserRecodedWithSmartDeepLinkParams(DeferredDeepLinkingResponse response) {
         try {

@@ -164,7 +164,7 @@ public class Appgain {
         return new User(randChars , randChars , randChars+"@user.temp");
     }
 
-    private static String createRandomString(int length) {
+    public static String createRandomString(int length) {
         String alphabet= "abcdefghijklmnopqrstuvwxyz";
         StringBuilder s = new StringBuilder();
         Random random = new Random();

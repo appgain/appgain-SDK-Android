@@ -53,7 +53,6 @@ public class MyPreferenceManager {
             return null;
         }else {
             return  new Gson().fromJson(user , User.class) ;
-            return null;
         }
     }
 
@@ -70,7 +69,6 @@ public class MyPreferenceManager {
         }else {
             return  new Gson().fromJson(user , Keys.class) ;
         }
-        return null;
     }
 
 
