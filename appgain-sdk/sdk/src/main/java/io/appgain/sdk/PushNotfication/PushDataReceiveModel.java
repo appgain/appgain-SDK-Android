@@ -16,6 +16,7 @@ import java.io.Serializable;
 
 
 public class PushDataReceiveModel implements Serializable {
+
     @SerializedName("alert")
     @Expose
     private String alert;
@@ -32,6 +33,19 @@ public class PushDataReceiveModel implements Serializable {
     @SerializedName("url")
     @Expose
     private String url;
+
+    @SerializedName("type")
+    @Expose
+    private String type;
+
+    @SerializedName("videoId")
+    @Expose
+    private String videoId;
+
+    public  static  final  String WEB_VIEW_TYPE = "webview" ;
+    public  static  final  String VIDEO_TYPE = "video" ;
+    public  static  final  String GIF_TYPE = "GIF" ;
+
 
     public String getAlert() {
         return alert;
@@ -81,5 +95,17 @@ public class PushDataReceiveModel implements Serializable {
                 ", campaignName='" + campaignName + '\'' +
                 ", campaignId='" + campaignId + '\'' +
                 '}';
+    }
+
+    public String getType() {
+        return type;
+    }
+
+    public String getVideoId() {
+        return videoId;
+    }
+
+    public void setVideoId(String videoId) {
+        this.videoId = videoId;
     }
 }

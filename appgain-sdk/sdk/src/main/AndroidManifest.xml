@@ -1,6 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="io.appgain.sdk" >
+    package="io.appgain.sdk">
 
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <activity
+            android:theme="@style/FullScreen"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:windowSoftInputMode="adjustPan"
+        android:name=".PushNotfication.OverKeyGuardActivities.WebViewActivity"/>
+
+        <activity
+            android:theme="@style/FullScreen"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:name=".PushNotfication.OverKeyGuardActivities.GIFActivity"/>
+
+        <activity
+            android:theme="@style/FullScreen"
+            android:configChanges="orientation"
+            android:name=".PushNotfication.OverKeyGuardActivities.YoutubeVideoActivity"/>
+    </application>
 
 </manifest>

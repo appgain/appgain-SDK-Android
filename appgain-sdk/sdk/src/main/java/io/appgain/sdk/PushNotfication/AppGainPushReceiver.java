@@ -4,9 +4,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.annotation.Nullable;
 
+import com.google.gson.Gson;
 import com.parse.ParsePushBroadcastReceiver;
 
+import io.appgain.sdk.Controller.Appgain;
 import io.appgain.sdk.Model.BaseResponse;
+import io.appgain.sdk.PushNotfication.OverKeyGuardActivities.GIFActivity;
+import io.appgain.sdk.PushNotfication.OverKeyGuardActivities.WebViewActivity;
+import io.appgain.sdk.PushNotfication.OverKeyGuardActivities.YoutubeVideoActivity;
 import timber.log.Timber;
 
 import static io.appgain.sdk.PushNotfication.ReceiveStatus.dismiss;
@@ -41,8 +46,12 @@ public abstract class AppGainPushReceiver extends ParsePushBroadcastReceiver {
      */
     @Override
     protected void onPushReceive(Context context, final Intent intent) {
-        super.onPushReceive(context, intent);
-        onReceive(context , receive , intent);
+        if(isReleaseNotificationType(intent)){
+            super.onPushReceive(context, intent);
+            onReceive(context , receive , intent);
+        }else {
+            startPushActivity(context, intent);
+        }
         try {
             AppgainAppPushApi.recordPushStatus(RECEIVED, intent, new RecordPushStatusCallback() {
                 @Override
@@ -60,6 +69,32 @@ public abstract class AppGainPushReceiver extends ParsePushBroadcastReceiver {
             Timber.e("onPushReceive" + intent.getExtras());
         } catch (Exception e) {
             e.printStackTrace();
+        }
+    }
+
+    private boolean isReleaseNotificationType(Intent intent) {
+        PushDataReceiveModel pushDataReciveModel = new Gson().fromJson(intent.getStringExtra(KEY_PUSH_DATA) , PushDataReceiveModel.class);
+        if (pushDataReciveModel.getType()==null){
+            return  true ;
+        }
+        return false;
+    }
+
+    private void startPushActivity(Context context, Intent intent) {
+        PushDataReceiveModel pushDataReciveModel = new Gson().fromJson(intent.getStringExtra(KEY_PUSH_DATA) , PushDataReceiveModel.class);
+        switch (pushDataReciveModel.getType()){
+            case PushDataReceiveModel.WEB_VIEW_TYPE :
+                if (pushDataReciveModel.getUrl() != null)
+                WebViewActivity.start(context,pushDataReciveModel.getUrl());
+                break;
+            case PushDataReceiveModel.GIF_TYPE :
+                if (pushDataReciveModel.getUrl() != null)
+                    GIFActivity.start(context,pushDataReciveModel.getUrl());
+                break;
+            case PushDataReceiveModel.VIDEO_TYPE :
+                if (pushDataReciveModel.getVideoId() != null)
+                    YoutubeVideoActivity.start(context,pushDataReciveModel.getVideoId() , Appgain.getYoutubeDeveloperKey());
+                break;
         }
     }
 

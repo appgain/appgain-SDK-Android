@@ -51,6 +51,7 @@ public class Appgain {
     private static Appgain appGain ;
     private static Context context ;
     private static PreferencesManager preferencesManager ;
+    private static String youtubeDeveloperKey;
 
     public static  Appgain getInstance() {
         if (appGain == null) {
@@ -731,6 +732,14 @@ public class Appgain {
      */
     public  static  void clear (){
         getPreferencesManager().clear();
+    }
+
+    public static String getYoutubeDeveloperKey() {
+        return youtubeDeveloperKey;
+    }
+
+    public static void setYoutubeDeveloperKey(String youtubeDeveloperKey) {
+        Appgain.youtubeDeveloperKey = youtubeDeveloperKey;
     }
 
     /**
