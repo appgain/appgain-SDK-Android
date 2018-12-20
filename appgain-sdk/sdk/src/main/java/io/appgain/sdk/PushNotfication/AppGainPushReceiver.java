@@ -85,7 +85,11 @@ public abstract class AppGainPushReceiver extends ParsePushBroadcastReceiver {
         switch (pushDataReciveModel.getType()){
             case PushDataReceiveModel.WEB_VIEW_TYPE :
                 if (pushDataReciveModel.getUrl() != null)
-                WebViewActivity.start(context,pushDataReciveModel.getUrl());
+                WebViewActivity.start(context,pushDataReciveModel.getUrl(),true);
+                break;
+            case PushDataReceiveModel.WEB_VIEW_HTML_TYPE :
+                if (pushDataReciveModel.getHtml() != null)
+                    WebViewActivity.start(context,pushDataReciveModel.getHtml(),false);
                 break;
             case PushDataReceiveModel.GIF_TYPE :
                 if (pushDataReciveModel.getUrl() != null)

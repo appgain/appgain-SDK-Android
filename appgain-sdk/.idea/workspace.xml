@@ -11,39 +11,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08afde3b-9ed2-4184-b161-1a2419bb9f57" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/bintray.script.gradle" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/libs/YouTubeAndroidPlayerApi.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/GIFActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/PowerMangerUtils.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/SampleAppGlideModule.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/WebViewActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/YoutubeVideoActivity.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/res/drawable-hdpi/baseline_close_white_18.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/res/drawable-mdpi/baseline_close_white_18.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/res/drawable-xhdpi/baseline_close_white_18.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/res/drawable-xxhdpi/baseline_close_white_18.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/res/drawable-xxxhdpi/baseline_close_white_18.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/res/drawable-xxxhdpi/brlink.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/res/drawable-xxxhdpi/gif.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/res/drawable/black_circle.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/res/drawable/white_rect_corner_2p.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/res/layout/activity_base_lock.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/res/layout/activity_lock_gif.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/res/layout/activity_lock_web_view.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/res/layout/activity_lock_youtube.xml" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/sdk/src/main/res/values/styles.xml" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.bin" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" afterPath="$PROJECT_DIR$/.gradle/4.1/fileHashes/fileHashes.lock" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" afterPath="$PROJECT_DIR$/app/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/MyPreferenceManager.java" afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/MyPreferenceManager.java" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" afterPath="$PROJECT_DIR$/build.gradle" />
+      <change beforePath="$PROJECT_DIR$/sdk/bintray.script.gradle" afterPath="$PROJECT_DIR$/sdk/bintray.script.gradle" />
       <change beforePath="$PROJECT_DIR$/sdk/build.gradle" afterPath="$PROJECT_DIR$/sdk/build.gradle" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/sdk/src/main/AndroidManifest.xml" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Appgain.java" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Appgain.java" />
       <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/AppGainPushReceiver.java" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/AppGainPushReceiver.java" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/GIFActivity.java" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/GIFActivity.java" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/WebViewActivity.java" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/WebViewActivity.java" />
       <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/PushDataReceiveModel.java" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/PushDataReceiveModel.java" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -119,11 +96,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="bintray.script.gradle" pinned="false" current-in-tab="false">
+      <file leaf-file-name="bintray.script.gradle" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sdk/bintray.script.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+            <state relative-caret-position="312">
+              <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -132,9 +109,47 @@
       <file leaf-file-name="AppGainPushReceiver.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/AppGainPushReceiver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="173">
-              <caret line="49" column="49" lean-forward="false" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
+            <state relative-caret-position="1924">
+              <caret line="90" column="49" lean-forward="false" selection-start-line="90" selection-start-column="49" selection-end-line="90" selection-end-column="49" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="PushDataReceiveModel.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/PushDataReceiveModel.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1768">
+              <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+              <folding>
+                <element signature="e#2412#2413#0" expanded="true" />
+                <element signature="e#2439#2440#0" expanded="true" />
+                <element signature="e#2479#2480#0" expanded="true" />
+                <element signature="e#2511#2512#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GIFActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/GIFActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1378">
+              <caret line="71" column="8" lean-forward="false" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="48" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WebViewActivity.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/WebViewActivity.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1560">
+              <caret line="75" column="26" lean-forward="false" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+              <folding>
+                <element signature="e#2364#2365#0" expanded="true" />
+                <element signature="e#2401#2402#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -142,18 +157,18 @@
       <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1534">
-              <caret line="59" column="18" lean-forward="false" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+            <state relative-caret-position="1144">
+              <caret line="44" column="41" lean-forward="false" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="true">
+      <file leaf-file-name="build.gradle" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sdk/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="274">
-              <caret line="72" column="2" lean-forward="false" selection-start-line="72" selection-start-column="2" selection-end-line="72" selection-end-column="43" />
+            <state relative-caret-position="160">
+              <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -186,7 +201,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>use</find>
       <find>uuid</find>
       <find>username</find>
       <find>user</find>
@@ -216,6 +230,7 @@
       <find>javadoc</find>
       <find>bintray</find>
       <find>con</find>
+      <find>1.1</find>
     </findStrings>
     <replaceStrings>
       <replace>io.appgain.demo</replace>
@@ -3222,9 +3237,12 @@
         <option value="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/MyPreferenceManager.java" />
         <option value="$PROJECT_DIR$/sdk/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/sdk/build.gradle" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/GIFActivity.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/WebViewActivity.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/PushDataReceiveModel.java" />
         <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/AppGainPushReceiver.java" />
         <option value="$PROJECT_DIR$/sdk/bintray.script.gradle" />
+        <option value="$PROJECT_DIR$/sdk/build.gradle" />
       </list>
     </option>
   </component>
@@ -3254,13 +3272,12 @@
           <expand>
             <path>
               <item name="appgain-sdk" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+              <item name="app" type="feadf853:AndroidModuleNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane" />
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -3292,8 +3309,9 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
+      <pane id="ProjectPane" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -3301,8 +3319,8 @@
     <property name="settings.editor.selected.configurable" value="android.sdk-updates" />
     <property name="last_opened_file_path" value="G:/AppGain/TAKA/task/assem" />
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.0.1" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544605512031" />
-    <property name="device.picker.selection" value="Nexus_5X_API_27" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545324661354" />
+    <property name="device.picker.selection" value="10cf3e8" />
     <property name="android.project.structure.last.selected" value="sdk" />
     <property name="android.project.structure.proportion" value="0.15" />
   </component>
@@ -3539,6 +3557,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="41" width="1938" height="1048" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info id="Android Profiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -3549,13 +3568,13 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32876712" sideWeight="0.5021482" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3831243" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.37899545" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Logcat" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.6107306" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Captures" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.08807734" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30136988" sideWeight="0.49785176" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21160042" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Build" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29646522" sideWeight="0.49785176" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Gradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Fabric" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -3570,7 +3589,7 @@
       <window_info id="Assistant" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32975295" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3295325" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
@@ -3581,28 +3600,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1978">
-          <caret line="152" column="5" lean-forward="false" selection-start-line="152" selection-start-column="5" selection-end-line="152" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="24" lean-forward="true" selection-start-line="3" selection-start-column="24" selection-end-line="3" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/Keys.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="130">
-          <caret line="5" column="13" lean-forward="false" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -3845,7 +3842,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="468">
           <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -3895,32 +3891,64 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1534">
-          <caret line="59" column="18" lean-forward="false" selection-start-line="59" selection-start-column="18" selection-end-line="59" selection-end-column="18" />
+        <state relative-caret-position="1144">
+          <caret line="44" column="41" lean-forward="false" selection-start-line="44" selection-start-column="41" selection-end-line="44" selection-end-column="41" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/GIFActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1378">
+          <caret line="71" column="8" lean-forward="false" selection-start-line="71" selection-start-column="8" selection-end-line="71" selection-end-column="48" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/WebViewActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1560">
+          <caret line="75" column="26" lean-forward="false" selection-start-line="75" selection-start-column="26" selection-end-line="75" selection-end-column="26" />
+          <folding>
+            <element signature="e#2364#2365#0" expanded="true" />
+            <element signature="e#2401#2402#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/PushDataReceiveModel.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="91" column="0" lean-forward="false" selection-start-line="91" selection-start-column="0" selection-end-line="91" selection-end-column="0" />
+          <folding>
+            <element signature="e#2412#2413#0" expanded="true" />
+            <element signature="e#2439#2440#0" expanded="true" />
+            <element signature="e#2479#2480#0" expanded="true" />
+            <element signature="e#2511#2512#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/AppGainPushReceiver.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="173">
-          <caret line="49" column="49" lean-forward="false" selection-start-line="49" selection-start-column="49" selection-end-line="49" selection-end-column="49" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/bintray.script.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="11" column="45" lean-forward="false" selection-start-line="11" selection-start-column="45" selection-end-line="11" selection-end-column="45" />
+        <state relative-caret-position="1924">
+          <caret line="90" column="49" lean-forward="false" selection-start-line="90" selection-start-column="49" selection-end-line="90" selection-end-column="49" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sdk/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="274">
-          <caret line="72" column="2" lean-forward="false" selection-start-line="72" selection-start-column="2" selection-end-line="72" selection-end-column="43" />
+        <state relative-caret-position="160">
+          <caret line="51" column="0" lean-forward="false" selection-start-line="51" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/bintray.script.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="312">
+          <caret line="12" column="44" lean-forward="false" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
           <folding />
         </state>
       </provider>

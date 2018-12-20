@@ -14,6 +14,8 @@ import com.bumptech.glide.request.RequestOptions;
 
 import io.appgain.sdk.R;
 
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
+
 public class GIFActivity extends AppCompatActivity {
 
     private final  PowerMangerUtils  powerMangerUtils =  PowerMangerUtils.getInstance(this);
@@ -67,6 +69,7 @@ public class GIFActivity extends AppCompatActivity {
     public static void start(Context context , String url ){
         Intent intent = new Intent(context , GIFActivity.class) ;
         intent.putExtra(URL_KEY, url) ;
+        intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }
 
