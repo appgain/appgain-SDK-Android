@@ -42,12 +42,18 @@ public class PushDataReceiveModel implements Serializable {
     @SerializedName("videoId")
     @Expose
     private String videoId;
+    @SerializedName("html")
+    @Expose
+    private String html;
+    @SerializedName("orientation")
+    @Expose
+    private String orientation;
 
     public  static  final  String WEB_VIEW_TYPE = "webview" ;
     public  static  final  String VIDEO_TYPE = "video" ;
     public  static  final  String GIF_TYPE = "GIF" ;
     public static final String WEB_VIEW_HTML_TYPE = "HtmlWebView";
-    private String html;
+
 
 
     public String getAlert() {
@@ -118,5 +124,13 @@ public class PushDataReceiveModel implements Serializable {
 
     public void setHtml(String html) {
         this.html = html;
+    }
+
+    public String getOrientation() {
+        return orientation;
+    }
+
+    public void setOrientation(String orientation) {
+        this.orientation = orientation;
     }
 }

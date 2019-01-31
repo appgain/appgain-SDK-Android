@@ -17,7 +17,7 @@ import io.appgain.sdk.Service.Injector;
 import io.appgain.sdk.Service.onRequestFailure;
 import io.appgain.sdk.Utils.Utils;
 import io.appgain.sdk.Utils.Validator;
-import io.appgain.sdk.interfaces.ParseInitCallBack;
+import io.appgain.sdk.interfaces.ParseAuthCallBack;
 import retrofit2.Call;
 import retrofit2.Response;
 import timber.log.Timber;
@@ -41,7 +41,7 @@ public class AppgainAppPushApi implements Serializable{
      * @param Action  received from AppGainPushReceiver (open , dismiss )or from AppGainPushConversion  ( conversion )
      * @param data  intent from push receive method
      * recordPushStatus()  deliver request body to recoded status API
-     *   call getCredentials
+     *   call AppgainParseAuth
      *   create request bod
      *   call AppgainAppPushApi.enqueue
      */
@@ -61,7 +61,7 @@ public class AppgainAppPushApi implements Serializable{
         Validator.isNull(Action , "recordPushStatus() action ") ;
         Validator.isNull(campaignName , "recordPushStatus() action ") ;
         Validator.isNull(campaignId , "recordPushStatus() action ") ;
-        Appgain.getCredentials(new ParseInitCallBack() {
+        Appgain.AppgainParseAuth(new ParseAuthCallBack() {
             @Override
             public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
 

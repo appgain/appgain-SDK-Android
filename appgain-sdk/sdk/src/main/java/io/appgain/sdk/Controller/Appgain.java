@@ -20,7 +20,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-import io.appgain.sdk.Config.Errors;
 import io.appgain.sdk.Model.SDKKeys;
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.Model.User;
@@ -28,7 +27,7 @@ import io.appgain.sdk.Service.CallbackWithRetry;
 import io.appgain.sdk.Service.Injector;
 import io.appgain.sdk.Utils.Utils;
 import io.appgain.sdk.Utils.Validator;
-import io.appgain.sdk.interfaces.ParseInitCallBack;
+import io.appgain.sdk.interfaces.ParseAuthCallBack;
 import io.appgain.sdk.interfaces.ParsePushSetupCallBack;
 import io.appgain.sdk.interfaces.SDKInitCallBack;
 import io.appgain.sdk.interfaces.AppgainSDKInitCallBack;
@@ -51,7 +50,6 @@ public class Appgain {
     private static Appgain appGain ;
     private static Context context ;
     private static PreferencesManager preferencesManager ;
-    private static String youtubeDeveloperKey;
 
     public static  Appgain getInstance() {
         if (appGain == null) {
@@ -70,30 +68,9 @@ public class Appgain {
      *  save parse user id
      */
     public  static void initialize(final Context context , String appID , final String appApiKey) throws Exception {
-        initialize(context , appID , appApiKey , (AppgainSDKInitCallBack) null);
+        initialize(context , appID , appApiKey , null);
     }
 
-
-    /**
-     *  initialize base case with callback
-     */
-    public  static void initialize(final Context context , String appID , final String appApiKey , final AppgainSDKInitCallBack appgainSDKInitCallBack) throws Exception {
-        initialize(context , appID , appApiKey , (User) getTempUser() , appgainSDKInitCallBack) ;
-    }
-
-
-
-    /**
-     *  initialize  case with  given  user data
-     *  save appID , appApiKey
-     *  init SDK keys
-     *  save sdk keys
-     * call parse  login with username  , email and password  if user have backend support  and generate its id
-     * *  save parse user  generated id
-     */
-    public  static void initialize(final Context context , String appID , String appApiKey , User user) throws Exception {
-        initialize(context,appID,appApiKey,user,(AppgainSDKInitCallBack)null);
-    }
 
     /**
      *  initialize  case with  given  user data with callback
@@ -105,7 +82,7 @@ public class Appgain {
      //     >update userId
      *
      */
-    public  static void initialize(final Context context , String appID , String appApiKey , final User user , final AppgainSDKInitCallBack appgainSDKInitCallBack) throws Exception{
+    public    static void initialize(final Context context , String appID , String appApiKey , final AppgainSDKInitCallBack appgainSDKInitCallBack) throws Exception{
 
 
         validateAppData(context,appID,appApiKey);
@@ -113,21 +90,14 @@ public class Appgain {
         getInstance().setAppID(appID);
         getInstance().setAppApiKey(appApiKey);
 
-        if (isUserValid(user))
-            getInstance().getPreferencesManager().saveUserProvidedData(user);
-
         // get Credentials
-        getCredentials(new ParseInitCallBack() {
+        setupServerKeys(new SDKInitCallBack() {
             @Override
-            public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
-
-
+            public void onSuccess(SDKKeys sdkKeys) {
                 if(appgainSDKInitCallBack !=null){
                     appgainSDKInitCallBack.onSuccess();
                 }
-
                 Log.e("AppGaInitialize" , "success") ;
-
             }
 
             @Override
@@ -135,6 +105,75 @@ public class Appgain {
                 Log.e("AppGaInitialize" , "Code " + failure.getStatus()+"Message: " +failure.getMessage()) ;
                 if (appgainSDKInitCallBack !=null)
                     appgainSDKInitCallBack.onFail(failure);
+            }
+        });
+
+
+    }
+
+
+
+    /**
+     *  initialize  case with  given  user data
+     *  save appID , appApiKey
+     *  call parse  login with anonymous data if user have backend support  and generate its id
+     *  save parse user  generated id
+     *  init SDK keys
+     *  save sdk keys
+     */
+    public  static void initializeWithParseAnonymous( Context context , String appID , final String appApiKey, String parseApplicationId , String serverName ,  AppgainSDKInitCallBack appgainSDKInitCallBack) throws Exception {
+        initializeWithParse(context , appID , appApiKey  , parseApplicationId , serverName, (User) getTempUser() , appgainSDKInitCallBack) ;
+    }
+
+
+
+    /**
+     *  initialize  case with  given  user data
+     *  save appID , appApiKey
+     * call parse  login with username  , email and password  if user have backend support  and generate its id
+     *  save parse user  generated id
+     *  init SDK keys
+     *  save sdk keys
+     */
+    public  static void initializeWithParse(Context context , String appID , String appApiKey , String parseApplicationId , String serverName , final User user , final AppgainSDKInitCallBack appgainSDKInitCallBack) throws Exception{
+        validateAppData(context,appID,appApiKey , parseApplicationId , serverName);
+        setContext(context);
+        setAppID(appID);
+        setAppApiKey(appApiKey);
+
+        if (isUserValid(user))
+            getInstance().getPreferencesManager().saveUserProvidedData(user);
+
+        parseSetup(parseApplicationId, serverName, new ParseLoginCallBack() {
+            @Override
+            public void onSuccess(String userId) {
+                setupServerKeys(new SDKInitCallBack() {
+                    @Override
+                    public void onSuccess(SDKKeys sdkKeys) {
+                        if(appgainSDKInitCallBack !=null){
+                            appgainSDKInitCallBack.onSuccess();
+                        }
+
+                        Log.d("initializeWithParse" , "success") ;
+
+                    }
+
+                    @Override
+                    public void onFailure(BaseResponse failure) {
+                        Log.e("initializeWithParse" , "Code " + failure.getStatus()+"Message: " +failure.getMessage()) ;
+                        if (appgainSDKInitCallBack !=null)
+                            appgainSDKInitCallBack.onFail(failure);
+                    }
+                });
+            }
+
+            @Override
+            public void onFail(ParseException e) {
+                if (e!=null){
+                    Log.e("Appgain" , "NotificationChannels update " + e.toString());
+                    if (appgainSDKInitCallBack !=null)
+                        appgainSDKInitCallBack.onFail(new BaseResponse(e.getCode()+"" , e.getMessage()));
+                }
             }
         });
 
@@ -155,8 +194,16 @@ public class Appgain {
 
     private static void validateAppData(Context context, String appID, String appApiKey ) throws Exception {
         Validator.isNull(context , " context ");
-        Validator.isNull(appID , " App id ");
-        Validator.isNull(appApiKey , " App Api Key ");
+        Validator.isNull(appID , " appgain app id ");
+        Validator.isNull(appApiKey , " appgain app api Key ");
+    }
+
+    private static void validateAppData(Context context, String appID, String appApiKey , String server , String applicationId) throws Exception {
+        Validator.isNull(context , " context ");
+        Validator.isNull(appID , " appgain app id ");
+        Validator.isNull(appApiKey , " appgain app api Key ");
+        Validator.isNull(server , " parse server name ");
+        Validator.isNull(applicationId , " parse application id ");
     }
 
 
@@ -428,10 +475,10 @@ public class Appgain {
      *
      * get sdk keys
      * if SDKKeys exist call SDKInitCallBack onSuccess
-     * else call getCredentials API
+     * else call AppgainParseAuth API
      *  save data
      */
-    public static void getSdkKeys(final SDKInitCallBack sdkInitCallBack){
+    public static void setupServerKeys(final SDKInitCallBack sdkInitCallBack){
         SDKKeys appGainCredentials = getPreferencesManager().getAppGainCredentials();
         if (appGainCredentials !=null){
             sdkInitCallBack.onSuccess(appGainCredentials);
@@ -453,7 +500,7 @@ public class Appgain {
                             } catch (Exception e) {
                                 e.printStackTrace();
                             }
-                        Timber.tag("getSdkKeys").e(response.toString());
+                        Timber.tag("setupServerKeys").e(response.toString());
                     }
                 }
             });
@@ -461,11 +508,39 @@ public class Appgain {
     }
 
     /** get credentials() :
-     * call getSdkKeys()
+     * call setupServerKeys()
      * call parseSetup()
      */
-    public static void getCredentials(final ParseInitCallBack authListener){
-        getSdkKeys(new SDKInitCallBack() {
+
+    public static void setupParse(String parseAppId , String serverName , final ParseLoginCallBack authListener){
+        parseSetup(parseAppId , serverName, new ParseLoginCallBack() {
+            @Override
+            public void onSuccess(final String userId) {
+                parsePushSetup(userId , new ParsePushSetupCallBack(){
+                    @Override
+                    public void onSucess() {
+                        if (authListener!=null)
+                            authListener.onSuccess(userId);
+                    }
+
+                    @Override
+                    public void onFailure(ParseException e) {
+                        authListener.onFail(e);
+                    }
+                });
+            }
+
+            @Override
+            public void onFail(ParseException e){
+                authListener.onFail(e);
+            }
+        });
+
+    }
+
+
+    public static void AppgainParseAuth(final ParseAuthCallBack authListener){
+        setupServerKeys(new SDKInitCallBack() {
             @Override
             public void onSuccess(final SDKKeys sdkKeys) {
                 // parse setup
@@ -480,8 +555,11 @@ public class Appgain {
                             }
 
                             @Override
-                            public void onFailure(BaseResponse baseResponse) {
-                                authListener.onFailure(baseResponse);
+                            public void onFailure(ParseException e) {
+                                if (authListener!=null)
+                                    authListener.onFailure(new BaseResponse(e.getCode()+"", "Parse setup " +e.getMessage()));
+                                Timber.tag("AppGainParseSetup").e(  "getAppGainCredentials " + e.toString())  ;
+
                             }
                         });
                     }
@@ -531,10 +609,10 @@ public class Appgain {
                     if (e!=null){
                         Log.e("Appgain" , "ParseInstallation : " +e.toString()) ;
                         if (callBack!=null)
-                            callBack.onFailure(new BaseResponse( e.getCode()+"" , e.toString()));
+                            callBack.onFailure(e);
                     }else {
                         // ParseInstallation succeed
-                        Timber.e("ParseInstallation succeed" );
+                        Timber.d("ParseInstallation succeed" );
                         saveNotificationChannel(installation.getString("userId") , callBack);
 
                     }
@@ -587,7 +665,7 @@ public class Appgain {
                     parseLoginListener.onSuccess(parseUser.getObjectId());
                 } else {
                     e.printStackTrace();
-                    Timber.e( "Anonymous login failed. "+e.toString());
+                    Timber.e( "user login failed. "+e.toString());
                     if (parseLoginListener!=null)
                         parseLoginListener.onFail(e);
                 }
@@ -600,12 +678,34 @@ public class Appgain {
      * create parse  user
      */
     private static void createParseUser(final  User user, final ParseSignUpCallBack parseSignUpListener){
-        Timber.e("create parse  user entered");
+        ParseQuery.getQuery("User").whereEqualTo("userEmail" , user.getEmail()).whereEqualTo("username" , user.getUsername()).findInBackground(new FindCallback<ParseObject>() {
+            @Override
+            public void done(List<ParseObject> objects, ParseException e) {
+                if (e!=null){
+                    if (e.getCode() == 119 && e.getMessage().contains("This user is not allowed to access non-existent class: User")){
+                        signUpNewUser(user,parseSignUpListener);
+                    }
+                    else if (parseSignUpListener!=null)
+                        parseSignUpListener.onFail(e);
+                    Timber.e(e.toString());
+                }else {
+                    if (objects!=null && objects.size()!=0){
+                        Timber.e("createParseUser : " + e.getCode() +e.toString() );
+                        parseSignUpListener.onSuccess(user);
+                    }else {
+                       signUpNewUser(user,parseSignUpListener);
+                    }
+                }
+            }
+        });
+
+    }
+
+    private static void signUpNewUser(final User user, final ParseSignUpCallBack parseSignUpListener) {
         final ParseUser parseUser = new ParseUser();
         parseUser.setUsername(user.getUsername());
         parseUser.setPassword(user.getPassword());
         parseUser.setEmail(user.getEmail());
-
         parseUser.signUpInBackground(new SignUpCallback() {
             public void done(ParseException e) {
                 if (e == null) {
@@ -663,7 +763,7 @@ public class Appgain {
             public void done(List<ParseObject> objects, ParseException e) {
                 if (e!=null){
                     if (callBack!=null)
-                        callBack.onFailure(new BaseResponse(e.getCode()+"" , e.getMessage()));
+                        callBack.onFailure(e);
                     Timber.e(e.toString());
                 }else {
                     if (objects!=null && objects.size()!=0){
@@ -680,7 +780,7 @@ public class Appgain {
                             public void done(ParseException e) {
                                 if (e!=null){
                                     Timber.tag("saveNotificationChannel").e(e.toString());
-                                    callBack.onFailure(new BaseResponse(e.getCode()+"" , e.toString()));
+                                    callBack.onFailure(e);
                                 }else {
                                     // ParseInstallation succeed
                                     Timber.tag("saveNotificationChannel").e("ParseInstallation succeed" );
@@ -702,8 +802,6 @@ public class Appgain {
         return getPreferencesManager().getNotificationStatus();
     }
     public static void changeNotification(final boolean apppush , final UpdateNotificationCallBack callBack){
-        getPreferencesManager().saveNotificationStatus(apppush);
-
         ParseQuery.getQuery("NotificationChannels").whereEqualTo("userId" , Appgain.getPreferencesManager().getUserId()).findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
@@ -720,6 +818,7 @@ public class Appgain {
                     }
                     if (callBack!=null)
                         callBack.onSuccess();
+                    getPreferencesManager().saveNotificationStatus(apppush);
                 }
             }
         });
@@ -734,13 +833,6 @@ public class Appgain {
         getPreferencesManager().clear();
     }
 
-    public static String getYoutubeDeveloperKey() {
-        return youtubeDeveloperKey;
-    }
-
-    public static void setYoutubeDeveloperKey(String youtubeDeveloperKey) {
-        Appgain.youtubeDeveloperKey = youtubeDeveloperKey;
-    }
 
     /**
      * class methods  end

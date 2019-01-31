@@ -4,17 +4,10 @@ package io.appgain.sdk.DeferredDeepLinking;
 import android.util.Log;
 import android.webkit.WebView;
 
-import com.parse.FindCallback;
-import com.parse.ParseException;
-import com.parse.ParseObject;
-import com.parse.ParseQuery;
 import com.parse.ParseUser;
 
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import io.appgain.sdk.Controller.Appgain;
 import io.appgain.sdk.Controller.Config;
@@ -26,7 +19,7 @@ import io.appgain.sdk.Service.onRequestFailure;
 import io.appgain.sdk.DeferredDeepLinking.ResponseModels.DeferredDeepLinkingResponse;
 import io.appgain.sdk.Utils.Utils;
 import io.appgain.sdk.Utils.Validator;
-import io.appgain.sdk.interfaces.ParseInitCallBack;
+import io.appgain.sdk.interfaces.ParseAuthCallBack;
 import io.appgain.sdk.interfaces.SDKInitCallBack;
 import retrofit2.Response;
 import timber.log.Timber;
@@ -45,15 +38,15 @@ public class DeferredDeepLinking {
 
     /**
      * enqueue()
-     * call > getCredentials()
-     *   getCredentials() > onSuccess()
+     * call > AppgainParseAuth()
+     *   AppgainParseAuth() > onSuccess()
      *      check sdkKeys
      *      call matchApi()
-     *   getCredentials() > onFailure()
+     *   AppgainParseAuth() > onFailure()
      *      log error
      */
     static public void enqueue(final DeferredDeepLinkingCallBack smartLinkMatchListener){
-       Appgain.getCredentials(new ParseInitCallBack() {
+       Appgain.AppgainParseAuth(new ParseAuthCallBack() {
            @Override
            public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
                if (sdkKeys !=null ){
@@ -75,11 +68,11 @@ public class DeferredDeepLinking {
      * @param internalUserId in normal case enqueue() pass user id created by Parse
      *               but in this case  enqueue() pass user id givin by user
      * enqueue()
-     * call > getCredentials()
-     *   getCredentials() > onSuccess()
+     * call > AppgainParseAuth()
+     *   AppgainParseAuth() > onSuccess()
      *      check sdkKeys
      *      call matchApi()
-     *   getCredentials() > onFailure()
+     *   AppgainParseAuth() > onFailure()
      *      log error
      *
      */
@@ -89,7 +82,7 @@ public class DeferredDeepLinking {
             enqueue(smartLinkMatchListener);
             return;
         }
-        Appgain.getSdkKeys(new SDKInitCallBack() {
+        Appgain.setupServerKeys(new SDKInitCallBack() {
             @Override
             public void onSuccess(SDKKeys sdkKeys) {
                 if (sdkKeys !=null ){

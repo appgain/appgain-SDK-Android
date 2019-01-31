@@ -2,6 +2,9 @@ package io.appgain.sdk.PushNotfication.OverKeyGuardActivities;
 
 import android.content.Context;
 import android.content.Intent;
+import android.media.Ringtone;
+import android.media.RingtoneManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -26,40 +29,68 @@ public class GIFActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         powerMangerUtils.prepareWindow();
         super.onCreate(savedInstanceState);
+        setupExtras(savedInstanceState);
+        // set content view
+        setContentView(R.layout.activity_lock_gif);
+        playNotificationSound();
+        wakeLook();
+        bindViews();
+        setupGIF();
+        setupFinish();
+
+    }
+
+    private void playNotificationSound() {
+        try {
+            Uri notification = RingtoneManager.getDefaultUri(RingtoneManager.TYPE_NOTIFICATION);
+            Ringtone r = RingtoneManager.getRingtone(getApplicationContext(), notification);
+            r.play();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+    private void bindViews() {
+        // bind imageview
+        overLockImageView = findViewById(R.id.overLockImageView) ;
+    }
+
+    private void wakeLook() {
+        powerMangerUtils.wakeLock();
+        powerMangerUtils.release();
+    }
+
+    private void setupExtras(Bundle savedInstanceState) {
         // check webview url
         if (getIntent()!=null && getIntent().getExtras()!=null && getIntent().getExtras().getString(URL_KEY) != null)
             url = getIntent().getExtras().getString(URL_KEY);
         else if (savedInstanceState==null)
             finish();
-        // set content view
-        setContentView(R.layout.activity_lock_gif);
-        powerMangerUtils.wakeLock();
-        powerMangerUtils.release();
-        // bind imageview
-        overLockImageView = findViewById(R.id.overLockImageView) ;
-        // init imageview
+    }
 
-       Glide
+    private void setupGIF() {
+        // init imageview
+        Glide
                 .with(overLockImageView.getContext())
                 .asGif()
                 .load(url)
                 .apply(new RequestOptions()
-                                .priority(Priority.HIGH)
-                                .diskCacheStrategy(DiskCacheStrategy.ALL)
-                                .placeholder(R.drawable.gif)
-                                .error(R.drawable.brlink)
+                        .priority(Priority.HIGH)
+                        .diskCacheStrategy(DiskCacheStrategy.ALL)
+                        .placeholder(R.drawable.gif)
+                        .error(R.drawable.brlink)
                 )
                 .into(overLockImageView);
+    }
 
+    private void setupFinish() {
         findViewById(R.id.close).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
-
     }
-
 
 
     @Override

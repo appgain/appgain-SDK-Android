@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import com.google.gson.Gson;
 
 import io.appgain.demo.MainActivity;
 import io.appgain.sdk.Model.User;
@@ -51,15 +52,13 @@ public class MyPreferenceManager {
         if (user == null){
             return null;
         }else {
-//            return  new Gson().fromJson(user , User.class) ;
-            return  null ;
+            return  new Gson().fromJson(user , User.class) ;
         }
     }
 
 
     public void setUser( User user) {
-//        editor.putString(KEY_USER , new Gson().toJson(user)) ;
-        editor.putString(KEY_USER , null) ;
+        editor.putString(KEY_USER , new Gson().toJson(user)) ;
         editor.commit();
     }
 
@@ -68,14 +67,13 @@ public class MyPreferenceManager {
         if (user == null){
             return null;
         }else {
-//            return  new Gson().fromJson(user , Keys.class) ;
-            return null;
+            return  new Gson().fromJson(user , Keys.class) ;
         }
     }
 
 
     public void setKeys( Keys keys) {
-        editor.putString(KEY_CONF_KEYS,null) ;
+        editor.putString(KEY_CONF_KEYS, new Gson().toJson(keys)) ;
         editor.commit();
     }
 

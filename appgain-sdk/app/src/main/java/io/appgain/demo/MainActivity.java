@@ -1,5 +1,8 @@
 package io.appgain.demo;
 
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
@@ -7,15 +10,18 @@ import android.support.annotation.Nullable;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
+import android.webkit.WebView;
+import android.widget.Toast;
+import com.google.gson.JsonObject;
+import com.parse.Parse;
+import com.parse.ParseInstallation;
 
-
+import java.io.IOException;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.appgain.demo.DUMMY;
 import io.appgain.demo.Dialogs.AutomatorDialog;
 import io.appgain.demo.Dialogs.ConfigDialog;
 import io.appgain.demo.Dialogs.SmartDeepLinkDialog;
@@ -30,18 +36,25 @@ import io.appgain.sdk.Controller.Config;
 import io.appgain.sdk.DeepPages.DeepPage;
 import io.appgain.sdk.DeepPages.DeepPageCallBack;
 import io.appgain.sdk.DeepPages.DeepPageResponse;
-import io.appgain.sdk.DeepPages.RequestModels.Targets;
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.Model.SDKKeys;
 import io.appgain.sdk.Model.User;
+import io.appgain.sdk.Service.CallbackWithRetry;
+import io.appgain.sdk.Service.Injector;
+import io.appgain.sdk.Service.onRequestFailure;
 import io.appgain.sdk.SmartLinkCreate.Models.SmartDeepLinkResponse;
 import io.appgain.sdk.SmartLinkCreate.SmartLinkCallback;
 import io.appgain.sdk.SmartLinkCreate.SmartDeepLinkCreator;
 import io.appgain.sdk.DeferredDeepLinking.ResponseModels.DeferredDeepLinkingResponse;
 import io.appgain.sdk.DeferredDeepLinking.DeferredDeepLinking;
 import io.appgain.sdk.DeferredDeepLinking.DeferredDeepLinkingCallBack;
+import io.appgain.sdk.Utils.Utils;
 import io.appgain.sdk.interfaces.AppgainSDKInitCallBack;
-import io.appgain.sdk.interfaces.ParseInitCallBack;
+
+import io.appgain.sdk.interfaces.ParseAuthCallBack;
+import retrofit2.Call;
+import retrofit2.Response;
+import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,11 +66,15 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Timber.tag("ua").i(new WebView(getApplicationContext()).getSettings().getUserAgentString());
         ButterKnife.bind(this);
         LoadingBar = loading_bar ;
-//        Appgain.clear();
         ConfigDialog.getInstance().show(getSupportFragmentManager() , "ConfigDialog");
+
     }
+
+
+
 
 
 
@@ -86,12 +103,14 @@ public class MainActivity extends AppCompatActivity {
                 public void onAutomatorFired(@Nullable AutomatorResponse response) {
                     showLoading(false);
                     showDialog(response.getMessage());
+                    Timber.e(response.toString());
                 }
 
                 @Override
                 public void onFail(@Nullable BaseResponse failure) {
                     showLoading(false);
                     showDialog(failure.getMessage());
+                    Timber.e(failure.toString());
                 }
             });
         } catch (Exception e) {
@@ -113,6 +132,7 @@ public class MainActivity extends AppCompatActivity {
 
 
         try {
+
             DeepPage deepPage = new DeepPage.Builder()
                     .withWebPushSubscription(true)
                     .withHeader("https://i.imgur.com/HwieXuR.jpg", "test create deep page")
@@ -128,14 +148,15 @@ public class MainActivity extends AppCompatActivity {
                 @Override
                 public void onDeepPageCreated(@Nullable DeepPageResponse response) {
                     showLoading(false);
-
-                    showLinkDialog("deep page has worked " , response.getLink());
+                    showLinkDialog("deep page created" , response.getLink());
                 }
+
 
                 @Override
                 public void onDeepPageFail(@Nullable BaseResponse failure) {
                     showLoading(false);
                     showDialog(failure.getMessage());
+                    Timber.e(failure.toString());
                 }
             });
         } catch (Exception e) {
@@ -153,11 +174,11 @@ public class MainActivity extends AppCompatActivity {
 
     @OnClick(R.id.smart_deep_link_create_button)
     void smartDeepLinkCreate(){
+
         if (!sdk_inti){
             showDialog( "please inti first");
             return;
         }
-
 
         SmartDeepLinkDialog.getInstance(new SmartDeepLinkDialog.SmartDeepLinkCallback() {
             @Override
@@ -168,18 +189,22 @@ public class MainActivity extends AppCompatActivity {
                     @Override
                     public void onSmartDeepLinkCreated(@Nullable SmartDeepLinkResponse response) {
                         showLoading(false);
-                        showLinkDialog( "woohoo its worked" , response.getSmartDeepLink());
+                        String link =  response.getSmartDeepLink() ;
+                        String slug  =  link.substring(link.indexOf("s/")+2);
+                        String final_link = response.getSmartDeepLink() + "?" + slug + "="+ Appgain.createRandomString(4);
+                        showLinkDialog( "smart deep link created" , final_link);
+                        Timber.tag("MainActivity").e( response.toString());
                     }
 
                     @Override
                     public void onSmartDeepLinkFail(@Nullable BaseResponse failure) {
                         showLoading(false);
                         showDialog("oops smartDeepLinkCreator has failed \n" + failure.toString());
+                        Timber.e(failure.toString());
                     }
                 });
             }
         }).show(getSupportFragmentManager() , "SmartDeepLinkDialog");
-
     }
 
     @OnClick(R.id.deferred_deep_linking_button)
@@ -195,13 +220,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onMatch(@Nullable DeferredDeepLinkingResponse response) {
                 showLoading(false);
-                showLinkDialog("worked" , response.getDeferredDeepLink() );
+                showLinkDialog("matched" , response.getDeferredDeepLink() );
             }
 
             @Override
             public void onFail(@Nullable BaseResponse failure) {
                 showLoading(false);
                 showDialog(failure.getMessage());
+                Timber.e(failure.toString());
             }
         });
     }
@@ -212,7 +238,11 @@ public class MainActivity extends AppCompatActivity {
         Appgain.setContext(this);
         Appgain.clear();
         try {
-            Appgain.initialize(getApplicationContext(), DUMMY.APP_ID, DUMMY.APP_API_KEY, new AppgainSDKInitCallBack() {
+            Appgain.initializeWithParseAnonymous(getApplicationContext(),  AppController.getKeys().getApp_id(),
+                    AppController.getKeys().getApi_key(),
+                    AppController.getKeys().getParseAppId(),
+                    AppController.getKeys().getParseServerName(),
+                    new AppgainSDKInitCallBack() {
                 @Override
                 public void onSuccess() {
                     showLoading(false);
@@ -223,6 +253,7 @@ public class MainActivity extends AppCompatActivity {
                 public void onFail(BaseResponse failure)
                 {
                     showLoading(false);
+                    showDialog(failure.getMessage());
                 }
             });
         } catch (Exception e) {
@@ -248,10 +279,12 @@ public class MainActivity extends AppCompatActivity {
         Appgain.setContext(this);
         Appgain.clear();
         try {
-            Appgain.initialize(
+            Appgain.initializeWithParse(
                     getApplicationContext(),
                     AppController.getKeys().getApp_id(),
                     AppController.getKeys().getApi_key(),
+                    AppController.getKeys().getParseAppId(),
+                    AppController.getKeys().getParseServerName(),
                     user,
                     new AppgainSDKInitCallBack() {
                         @Override
@@ -276,11 +309,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void showUserID() {
-        Appgain.getCredentials(new ParseInitCallBack() {
+        Appgain.AppgainParseAuth(new ParseAuthCallBack() {
             @Override
             public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
                 showDialog( "SDK initiated successfully"+"\n"+"user id = "+ parseUserId);
-
             }
 
             @Override
@@ -290,10 +322,19 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    protected void showDialog(String string) {
+    protected void showDialog(final String string) {
         new AlertDialog
                 .Builder(this).setMessage(string)
                 .setPositiveButton("Ok" , null)
+                .setNeutralButton("Copy", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                        ClipData clip = ClipData.newPlainText("appgain dummy app dialog data", string);
+                        clipboard.setPrimaryClip(clip);
+                        Toast.makeText(getApplicationContext(),"Coppied !!" , Toast.LENGTH_LONG).show();
+                    }
+                })
                 .create()
                 .show();
     }
@@ -310,16 +351,25 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(browserIntent);
                     }
                 })
+                .setNeutralButton("Copy", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        ClipboardManager clipboard = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+                        ClipData clip = ClipData.newPlainText("appgain dummy app dialog data", link);
+                        clipboard.setPrimaryClip(clip);
+                        Toast.makeText(getApplicationContext(),"Coppied !!" , Toast.LENGTH_LONG).show();
+                    }
+                })
                 .create()
                 .show();
     }
 
 
     @BindView(R.id.loading_bar)
-    public  View loading_bar ;
-    public  static View LoadingBar ;
+     public  View loading_bar ;
+     public  static View LoadingBar ;
 
-    public static void showLoading(boolean show){
+     public static void showLoading(boolean show){
         if (getLoadingBar()  !=null)
             getLoadingBar().setVisibility(show? View.VISIBLE : View.INVISIBLE);
     }

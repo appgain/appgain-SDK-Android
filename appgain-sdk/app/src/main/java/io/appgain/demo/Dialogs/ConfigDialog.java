@@ -8,12 +8,11 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 
 
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
-import io.appgain.demo.app.AppController;
 import io.appgain.demo.R;
+import io.appgain.demo.app.AppController;
 
 /**
  * Created by developers@appgain.io on 7/4/2018.
@@ -29,6 +28,18 @@ public class ConfigDialog extends BaseDialog {
     TextInputLayout api_key_input_layout ;
     @BindView(R.id.api_key_input)
     EditText api_key_input ;
+
+
+    @BindView(R.id.parse_app_id_key_input_layout)
+    TextInputLayout parse_app_id_key_input_layout ;
+    @BindView(R.id.parse_app_id_key_input)
+    EditText parse_app_id_key_input ;
+
+
+    @BindView(R.id.parse_server_name_input_layout)
+    TextInputLayout parse_server_name_input_layout ;
+    @BindView(R.id.parse_server_name_key_input)
+    EditText parse_server_name_input ;
 
 
     @BindView(R.id.dialog_action_layout)
@@ -50,6 +61,8 @@ public class ConfigDialog extends BaseDialog {
         if (AppController.getKeys()!=null){
             api_key_input.setText(AppController.getKeys().getApi_key()) ;
             app_id_input.setText(AppController.getKeys().getApp_id());
+            parse_app_id_key_input.setText(AppController.getKeys().getParseAppId());
+            parse_server_name_input.setText(AppController.getKeys().getParseServerName());
             radioButton.setChecked(AppController.getKeys().isIo());
             stgRadioButton.setChecked(!AppController.getKeys().isIo());
         }
@@ -61,7 +74,9 @@ public class ConfigDialog extends BaseDialog {
 
  boolean validate_user_info(){
         return !isEditTextEmpty(app_id_input , app_id_input_layout)
-                &&!isEditTextEmpty(api_key_input , api_key_input_layout);
+                &&!isEditTextEmpty(api_key_input , api_key_input_layout)
+                &&!isEditTextEmpty(app_id_input , app_id_input_layout)
+                &&!isEditTextEmpty(parse_server_name_input , parse_server_name_input_layout);
     }
 
 static public boolean isEditTextEmpty(EditText editText , TextInputLayout textInputLayout){
@@ -88,7 +103,13 @@ static public boolean isEditTextEmpty(EditText editText , TextInputLayout textIn
     @OnClick(R.id.dialog_confirm)
     void confirm(){
         if (validate_user_info()){
-           AppController.saveConfiguration(api_key_input.getText().toString() , app_id_input.getText().toString() ,  radioButton.isChecked() );
+           AppController.saveConfiguration(
+                   api_key_input.getText().toString() ,
+                   app_id_input.getText().toString()  ,
+                   parse_app_id_key_input.getText().toString() ,
+                   parse_server_name_input.getText().toString(),
+                   radioButton.isChecked()
+           );
             this.dismiss();
         }
     }

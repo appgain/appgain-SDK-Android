@@ -6,12 +6,9 @@ import android.support.annotation.Nullable;
 
 import com.google.gson.Gson;
 import com.parse.ParsePushBroadcastReceiver;
-
-import io.appgain.sdk.Controller.Appgain;
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.PushNotfication.OverKeyGuardActivities.GIFActivity;
 import io.appgain.sdk.PushNotfication.OverKeyGuardActivities.WebViewActivity;
-import io.appgain.sdk.PushNotfication.OverKeyGuardActivities.YoutubeVideoActivity;
 import timber.log.Timber;
 
 import static io.appgain.sdk.PushNotfication.ReceiveStatus.dismiss;
@@ -85,19 +82,15 @@ public abstract class AppGainPushReceiver extends ParsePushBroadcastReceiver {
         switch (pushDataReciveModel.getType()){
             case PushDataReceiveModel.WEB_VIEW_TYPE :
                 if (pushDataReciveModel.getUrl() != null)
-                WebViewActivity.start(context,pushDataReciveModel.getUrl(),true);
+                WebViewActivity.start(context,pushDataReciveModel.getUrl(),true ,  pushDataReciveModel.getOrientation());
                 break;
             case PushDataReceiveModel.WEB_VIEW_HTML_TYPE :
                 if (pushDataReciveModel.getHtml() != null)
-                    WebViewActivity.start(context,pushDataReciveModel.getHtml(),false);
+                    WebViewActivity.start(context,pushDataReciveModel.getHtml(),false , pushDataReciveModel.getOrientation());
                 break;
             case PushDataReceiveModel.GIF_TYPE :
                 if (pushDataReciveModel.getUrl() != null)
                     GIFActivity.start(context,pushDataReciveModel.getUrl());
-                break;
-            case PushDataReceiveModel.VIDEO_TYPE :
-                if (pushDataReciveModel.getVideoId() != null)
-                    YoutubeVideoActivity.start(context,pushDataReciveModel.getVideoId() , Appgain.getYoutubeDeveloperKey());
                 break;
         }
     }

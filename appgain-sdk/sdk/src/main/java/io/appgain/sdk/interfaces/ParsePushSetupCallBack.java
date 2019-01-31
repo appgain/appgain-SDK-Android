@@ -1,6 +1,7 @@
 package io.appgain.sdk.interfaces;
 
-import io.appgain.sdk.Model.BaseResponse;
+
+import com.parse.ParseException;
 
 /**
  * Created by developers@appgain.io on 5/16/2018.
@@ -8,5 +9,5 @@ import io.appgain.sdk.Model.BaseResponse;
 
 public interface ParsePushSetupCallBack {
     void onSucess();
-    void onFailure(BaseResponse baseResponse);
+    void onFailure(ParseException e);
 }

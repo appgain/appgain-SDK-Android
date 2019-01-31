@@ -7,14 +7,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
 
-import io.appgain.demo.DUMMY;
-import io.appgain.demo.R;
-import io.appgain.demo.app.AppController;
+
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.appgain.demo.DUMMY;
+import io.appgain.demo.R;
+import io.appgain.demo.app.AppController;
 import io.appgain.sdk.SmartLinkCreate.SmartDeepLinkCreator;
+import timber.log.Timber;
 
 /**
  * Created by developers@appgain.io on 7/4/2018.
@@ -155,7 +157,7 @@ static public boolean isEditTextEmpty(EditText editText , TextInputLayout textIn
 
             try {
                 // inti values
-                SmartDeepLinkCreator smartDeepLinkCreator = new SmartDeepLinkCreator.Builder()
+                SmartDeepLinkCreator  smartDeepLinkCreator = new SmartDeepLinkCreator.Builder()
                         .withName(link_name_input.getText().toString())
                         .withAndroid(android_primary_link_input.getText().toString() , android_fallback_link_input.getText().toString())
                         .withIos(ios_primary_link_input.getText().toString() , ios_fallback_link_input.getText().toString())
@@ -175,6 +177,7 @@ static public boolean isEditTextEmpty(EditText editText , TextInputLayout textIn
             } catch (Exception e) {
                 e.printStackTrace();
                 showDialog(e.getMessage());
+                Timber.e(e.toString());
             }
 
         }

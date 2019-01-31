@@ -1,6 +1,5 @@
 package io.appgain.demo.Dialogs;
 
-
 import android.app.Dialog;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -14,9 +13,9 @@ import android.view.WindowManager;
 import android.widget.TextView;
 
 
-
 import butterknife.BindView;
 import io.appgain.demo.R;
+import timber.log.Timber;
 
 
 public abstract class BaseDialog extends DialogFragment {

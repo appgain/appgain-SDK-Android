@@ -12,7 +12,5 @@ public class DUMMY {
     public static final String IOS_FALLBACK = "https://github.com/appgain/appgain-SDK-iOs";
 
 
-    public static  String APP_ID ;
-    public static String APP_API_KEY;
 }
 

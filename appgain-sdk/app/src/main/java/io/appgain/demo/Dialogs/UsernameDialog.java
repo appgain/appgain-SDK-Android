@@ -5,15 +5,14 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.EditText;
-
-import io.appgain.demo.DUMMY;
-import io.appgain.demo.R;
-import io.appgain.demo.app.AppController;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
+import io.appgain.demo.R;
+import io.appgain.demo.app.AppController;
 import io.appgain.sdk.Model.User;
+
+import static io.appgain.sdk.Controller.Appgain.getContext;
 
 /**
  * Created by developers@appgain.io on 7/4/2018.
@@ -96,7 +95,7 @@ static public boolean isEditTextEmpty(EditText editText , TextInputLayout textIn
                     new User(username_input.getText().toString() ,
                             user_password_input.getText().toString(),
                             user_email_input.getText().toString()
-                            )
+                    )
             );
             userInfoDialogCallback.valueCallback(
                     username_input.getText().toString() ,
@@ -110,7 +109,7 @@ static public boolean isEditTextEmpty(EditText editText , TextInputLayout textIn
 
 
     public static interface UserinfoCallback {
-        void valueCallback(String username, String email, String password);
+        void valueCallback(String username , String email , String password);
     }
 
 

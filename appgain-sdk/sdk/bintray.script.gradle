@@ -7,7 +7,7 @@ ext {
     libraryDescription = 'appgain sdk desc'
     siteUrl = 'https://github.com/appgain/appgain-SDK-Android'
     gitUrl = 'https://github.com/appgain/appgain-SDK-Android'
-    libraryVersion = '1.1.7'
+    libraryVersion = '1.2.5'
     developerId = '52143c8aa6d74f2'
     developerName = 'Abdelsattar Nour-Aldeen'
     developerEmail = 'developers@appgain.io'

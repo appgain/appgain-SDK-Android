@@ -7,11 +7,15 @@ public class Keys {
     String api_key ;
     String app_id ;
     boolean io  ;
+    private String parseAppId;
+    private String parseServerName;
 
-    public Keys(String api_key, String app_id, boolean io ) {
-        this.io  = io;
-        this.app_id  = app_id;
-        this.api_key  = api_key;
+    public Keys(String api_key, String app_id, String parseAppId, String parseServerName  , boolean io) {
+        this.api_key = api_key;
+        this.app_id = app_id;
+        this.io = io;
+        this.parseAppId = parseAppId;
+        this.parseServerName = parseServerName;
     }
 
     public String getApi_key() {
@@ -36,5 +40,21 @@ public class Keys {
 
     public void setIo(boolean io) {
         this.io = io;
+    }
+
+    public String getParseAppId() {
+        return parseAppId;
+    }
+
+    public void setParseAppId(String parseAppId) {
+        this.parseAppId = parseAppId;
+    }
+
+    public String getParseServerName() {
+        return parseServerName;
+    }
+
+    public void setParseServerName(String parseServerName) {
+        this.parseServerName = parseServerName;
     }
 }
