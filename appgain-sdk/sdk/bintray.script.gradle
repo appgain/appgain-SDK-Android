@@ -1,0 +1,88 @@
+ext {
+    bintrayRepo = 'Appgain' // your repo name
+    bintrayName = 'appgain-anroid-sdk' // has to be same as your library module name
+    artifact = 'sdk' // has to be same as your library module name
+    publishedGroupId = 'io.appgain' // your module package name
+    libraryName = 'Appgain'// your repo name
+    libraryDescription = 'appgain sdk desc'
+    siteUrl = 'https://github.com/appgain/appgain-SDK-Android'
+    gitUrl = 'https://github.com/appgain/appgain-SDK-Android'
+    libraryVersion = '1.2.5'
+    developerId = '52143c8aa6d74f2'
+    developerName = 'Abdelsattar Nour-Aldeen'
+    developerEmail = 'developers@appgain.io'
+    licenseName = ' The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+group = publishedGroupId
+version = libraryVersion
+
+install {
+    repositories.mavenInstaller {
+        pom.project {
+            packaging 'aar'
+            groupId publishedGroupId
+            artifactId artifact
+
+            name libraryName
+            description libraryDescription
+            url siteUrl
+
+            licenses {
+                license {
+                    name licenseName
+                    url licenseUrl
+                }
+            }
+            developers {
+                developer {
+                    id developerId
+                    name developerName
+                    email developerEmail
+                }
+            }
+            scm {
+                connection gitUrl
+                developerConnection gitUrl
+                url siteUrl
+            }
+        }
+    }
+}
+
+task generateSourcesJar(type: Jar) {
+    from android.sourceSets.main.java.srcDirs
+    classifier 'sources'
+}
+
+
+artifacts {
+    archives generateSourcesJar
+}
+
+Properties properties = new Properties()
+properties.load(project.rootProject.file('local.properties').newDataInputStream())
+
+bintray {
+    user = properties.getProperty("bintray.user")
+    key = properties.getProperty("bintray.apikey")
+
+    configurations = ['archives']
+    pkg {
+        repo = bintrayRepo
+        name = bintrayName
+        desc = libraryDescription
+        websiteUrl = siteUrl
+        vcsUrl = gitUrl
+        licenses = allLicenses
+        dryRun = false
+        publish = true
+        override = false
+        publicDownloadNumbers = true
+        version {
+            desc = libraryDescription
+        }
+    }
+}

@@ -1,0 +1,12 @@
+<component name="libraryTable">
+  <library name="libs">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/appgain-sdk-v.01/libs/volley.jar!/" />
+      <root url="jar://$PROJECT_DIR$/appgain-sdk-v.01/libs/mail.jar!/" />
+      <root url="jar://$PROJECT_DIR$/appgain-sdk-v.01/libs/universal-image-loader-1.9.4.jar!/" />
+      <root url="jar://$PROJECT_DIR$/appgain-sdk-v.01/libs/activation.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
