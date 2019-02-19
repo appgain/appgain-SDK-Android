@@ -38,13 +38,21 @@ public class WebViewActivity extends AppCompatActivity {
         powerMangerUtils.prepareWindow();
         super.onCreate(savedInstanceState);
         setupExtras(savedInstanceState);
-        // set content view
-        setContentView(R.layout.activity_lock_web_view);
-        playNotificationSound();
-        wakeLook();
-        binViews();
-        setupWebView(savedInstanceState);
-        setupCloseButton();
+
+        if (isUrl && !webViewData.startsWith("http")){
+            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(webViewData.trim()));
+            if (canResolveIntent(i))
+                startActivity(i);
+            finish();
+        }else {
+            // set content view
+            setContentView(R.layout.activity_lock_web_view);
+            playNotificationSound();
+            wakeLook();
+            binViews();
+            setupWebView(savedInstanceState);
+            setupCloseButton();
+        }
     }
 
 
@@ -72,18 +80,6 @@ public class WebViewActivity extends AppCompatActivity {
         webView.setWebChromeClient(new WebChromeClient(){
 
         });
-        webView.setWebViewClient(new WebViewClient(){
-            @Override
-            public boolean shouldOverrideUrlLoading(WebView view, String url) {
-                if (url.contains("sms")) {
-                    startActivity(new Intent(Intent.ACTION_VIEW,Uri.parse(url)));
-                    finish();
-                    return true;
-                }else {
-                    return super.shouldOverrideUrlLoading(view, url);
-                }
-            }
-        });
         webView.setWebChromeClient(new WebChromeClient() {
             @Override
             public boolean onConsoleMessage(ConsoleMessage consoleMessage) {
@@ -110,6 +106,12 @@ public class WebViewActivity extends AppCompatActivity {
         }
 
     }
+    boolean canResolveIntent(Intent intent){
+        if (intent.resolveActivity(getPackageManager()) != null) {
+            return true;
+        }
+        return  false;
+    }
 
     private void binViews() {
         // bind webview
@@ -130,10 +132,10 @@ public class WebViewActivity extends AppCompatActivity {
             oriantaion = getIntent().getExtras().getString(ORIENTATION_KEY);
             isUrl = getIntent().getExtras().getBoolean(isUrlViewKEY);
             if (oriantaion!=null)
-            switch (oriantaion){
-                case "portrait": setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); break;
-                case "landscape": setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); break;
-            }
+                switch (oriantaion){
+                    case "portrait": setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT); break;
+                    case "landscape": setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_LANDSCAPE); break;
+                }
         }
         else if (savedInstanceState==null)
             finish();

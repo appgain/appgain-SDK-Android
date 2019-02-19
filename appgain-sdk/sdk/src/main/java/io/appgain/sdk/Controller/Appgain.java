@@ -4,6 +4,9 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
 import com.parse.FindCallback;
 import com.parse.LogInCallback;
 import com.parse.Parse;
@@ -15,6 +18,7 @@ import com.parse.ParseQuery;
 import com.parse.ParseUser;
 import com.parse.SaveCallback;
 import com.parse.SignUpCallback;
+import com.parse.fcm.ParseFCM;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -50,6 +54,7 @@ public class Appgain {
     private static Appgain appGain ;
     private static Context context ;
     private static PreferencesManager preferencesManager ;
+    private static String youtubeDeveloperKey;
 
     public static  Appgain getInstance() {
         if (appGain == null) {
@@ -397,7 +402,7 @@ public class Appgain {
         getInstance().userId = userId ;
         updateParseUserId(userId , callBack);
     }
-
+    // update parse installation , users , notification channel
     private static void updateParseUserId(final String userId , final UpdateUserIdCallBack callBack) {
 
         // update instalition
@@ -406,12 +411,9 @@ public class Appgain {
         final String old_userID = (String) installation.get("userId");
         Timber.e("updateParseUserId" +" old "+ old_userID + "  new  " + userId );
         // case Appgain sdk  initialized
-        if (old_userID.equals(userId)){
+        if (userId == null || (old_userID !=null&& old_userID.equals(userId)) ){
             return;
         }
-
-
-
         installation.put("userId" , userId);
         ArrayList arrayList = new ArrayList() ;
         arrayList.add("AE");
@@ -423,51 +425,80 @@ public class Appgain {
                     Log.e("Appgain" , "ParseInstallation update : " +e.toString()) ;
                     // remove sttatic user id
                     getInstance().userId = null ;
+                    if (callBack !=null)
+                        callBack.onFailure(new BaseResponse(e.getCode()+"" , e.getMessage()));
                 }else {
                     // ParseInstallation succeed
                     Timber.e("ParseInstallation update succeed" );
                     // update preference manger usr id
                     getInstance().getPreferencesManager().saveId(userId);
-                    // update notification chancels
-                    ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("NotificationChannels") ;
-                    parseQuery.whereEqualTo("userId" , old_userID )
-                            .findInBackground(new FindCallback<ParseObject>() {
-                                @Override
-                                public void done(List<ParseObject> objects, ParseException e) {
-                                    if (e == null){
-                                        Timber.e("parse objects size" + objects.size() );
-                                        if (!objects.isEmpty())
-                                        {
-                                            for (ParseObject parseObject: objects) {
-                                                parseObject.put("userId" , userId);
-                                                parseObject.saveInBackground(new SaveCallback() {
-                                                    @Override
-                                                    public void done(ParseException e) {
-                                                        if (e!=null){
-                                                            Log.e("Appgain" , "NotificationChannels update " + e.toString());
-                                                            if (callBack !=null)
-                                                                callBack.onFailure(new BaseResponse(e.getCode()+"" , e.getMessage()));
-                                                        }else {
-                                                            getInstance().getPreferencesManager().saveId(userId);
-                                                            if (callBack !=null)
-                                                                callBack.onSuccess();
-
-                                                        }
-                                                    }
-                                                });
-                                            }
-                                        }
-                                    }else {
-                                        Log.e("Appgain" , "NotificationChannels update " + e.toString());
-                                        if (callBack !=null)
-                                            callBack.onFailure(new BaseResponse(e.getCode()+"" , e.getMessage()));
-                                    }
-                                }
-                            });
+                    // update userId key on users object
+                    updateUserIdInParseUserObject(userId , callBack);
 
                 }
             }
         });
+    }
+
+    private static void updateUserIdInParseUserObject(final String userId, final UpdateUserIdCallBack callBack) {
+        final ParseUser parseUser = ParseUser.getCurrentUser() ;
+        parseUser.put("userId" , userId);
+        parseUser.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e!=null){
+                    Log.e("Appgain" , "updateUserIdInParseUserObject update : " +e.toString()) ;
+                    // remove sttatic user id
+                    getInstance().userId = null ;
+                    if (callBack !=null)
+                        callBack.onFailure(new BaseResponse(e.getCode()+"" , e.getMessage()));
+
+                }else {
+                    // update notification chancels
+                    updateNotificationsChannelUserID(userId,parseUser.getObjectId() , callBack);
+                }
+            }
+        });
+    }
+
+
+    private static void updateNotificationsChannelUserID(final String userId, String old_userID, final UpdateUserIdCallBack callBack) {
+        ParseQuery<ParseObject> parseQuery = ParseQuery.getQuery("NotificationChannels") ;
+        parseQuery.whereEqualTo("userId" , old_userID )
+                .findInBackground(new FindCallback<ParseObject>() {
+                    @Override
+                    public void done(List<ParseObject> objects, ParseException e) {
+                        if (e == null){
+                            Timber.e("parse objects size" + objects.size() );
+                            if (!objects.isEmpty())
+                            {
+                                for (ParseObject parseObject: objects) {
+                                    parseObject.put("userId" , userId);
+                                    parseObject.saveInBackground(new SaveCallback() {
+                                        @Override
+                                        public void done(ParseException e) {
+                                            if (e!=null){
+                                                Log.e("Appgain" , "NotificationChannels update " + e.toString());
+                                                if (callBack !=null)
+                                                    callBack.onFailure(new BaseResponse(e.getCode()+"" , e.getMessage()));
+                                            }else {
+                                                getInstance().getPreferencesManager().saveId(userId);
+                                                if (callBack !=null)
+                                                    callBack.onSuccess();
+
+                                            }
+                                        }
+                                    });
+                                }
+                            }
+                        }else {
+                            Log.e("Appgain" , "NotificationChannels update " + e.toString());
+                            if (callBack !=null)
+                                callBack.onFailure(new BaseResponse(e.getCode()+"" , e.getMessage()));
+                        }
+                    }
+                });
+
     }
 
 
@@ -599,7 +630,6 @@ public class Appgain {
         if (TextUtils.isEmpty(installation.getString("userId")) ||  !TextUtils.equals(installation.getString("userId") , Appgain.getPreferencesManager().getUserId()) ){
             installation.put("user",ParseUser.getCurrentUser());
             installation.put("userId" ,userId);
-
             ArrayList arrayList = new ArrayList() ;
             arrayList.add("AE");
             installation.put("channels" , arrayList);
@@ -613,16 +643,73 @@ public class Appgain {
                     }else {
                         // ParseInstallation succeed
                         Timber.d("ParseInstallation succeed" );
-                        saveNotificationChannel(installation.getString("userId") , callBack);
+                        ParseFCM.register(getContext());
 
+//                        saveFCMToken();
+                        insertUserIdInParseUserObject(installation.getString("userId") , callBack);
                     }
                 }
             });
         }else {
             callBack.onSucess();
         }
+    }
 
 
+
+    private static void insertUserIdInParseUserObject(final String userId, final ParsePushSetupCallBack callBack) {
+        final ParseUser parseUser = ParseUser.getCurrentUser() ;
+        parseUser.put("userId" , userId);
+        parseUser.saveInBackground(new SaveCallback() {
+            @Override
+            public void done(ParseException e) {
+                if (e!=null){
+                    Log.e("Appgain" , "insertUserIdInParseUserObject: " +e.toString()) ;
+                    // remove sttatic user id
+                    getInstance().userId = null ;
+                    if (callBack !=null)
+                        callBack.onFailure(e);
+                }else {
+                    // save notification chancels
+                    saveNotificationChannel(userId, callBack);
+                }
+            }
+        });
+    }
+
+
+    private static void saveFCMToken() {
+       try {
+           FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(new OnSuccessListener<InstanceIdResult>() {
+               @Override
+               public void onSuccess(InstanceIdResult instanceIdResult) {
+                   final String newToken = instanceIdResult.getToken();
+                   final ParseInstallation installation = ParseInstallation.getCurrentInstallation();
+                   String curruntDeviceToken = installation.getDeviceToken() ;
+                   if (newToken!=null && !newToken.equals(curruntDeviceToken)){
+                       ParseQuery.getQuery("Installation").whereEqualTo("objectId" , installation.getObjectId()).findInBackground(new FindCallback<ParseObject>() {
+                           @Override
+                           public void done(List<ParseObject> objects, ParseException e) {
+                               if (e!=null){
+                                   Timber.e(e.toString());
+                               }else {
+                                   if (objects!=null && objects.size()!=0){
+                                       ParseObject object = objects.get(0);
+                                       object.put("deviceToken" , newToken);
+                                       object.saveEventually();
+                                       Timber.e("saveFCMToken : succeeded " );
+                                   }else {
+                                       Timber.e("saveFCMToken : no Installation object found  " );
+                                   }
+                               }
+                           }
+                       });
+                   }
+               }
+           });
+       }catch (Exception e){
+           e.printStackTrace();
+       }
     }
 
 
@@ -833,6 +920,13 @@ public class Appgain {
         getPreferencesManager().clear();
     }
 
+    public static String getYoutubeDeveloperKey() {
+        return youtubeDeveloperKey;
+    }
+
+    public static void setYoutubeDeveloperKey(String youtubeDeveloperKey) {
+        Appgain.youtubeDeveloperKey = youtubeDeveloperKey;
+    }
 
     /**
      * class methods  end
