@@ -5,6 +5,7 @@ import android.support.annotation.Nullable;
 import android.util.Log;
 
 import java.io.IOException;
+import java.util.Map;
 
 import io.appgain.sdk.Controller.Appgain;
 import io.appgain.sdk.Controller.Config;
@@ -28,7 +29,6 @@ import timber.log.Timber;
  * Automator class made to access to Appgain Automator API
  */
 public class Automator {
-
     /**
      * enqueue()
      * call > AppgainParseAuth()
@@ -38,14 +38,13 @@ public class Automator {
      *   AppgainParseAuth() > onFailure()
      *      log error
      */
-
-    static public void enqueue(final String triggerPointName , final AutomatorCallBack automatorCallBack)throws Exception{
+    static public void enqueue(final String triggerPointName ,  final Map<String,String> personalizationFiled , final AutomatorCallBack automatorCallBack)throws Exception{
         Validator.isNull(triggerPointName , "trigger point name");
         Appgain.AppgainParseAuth(new ParseAuthCallBack() {
             @Override
             public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
                 if (sdkKeys !=null && parseUserId !=null){
-                    automatorApi(parseUserId, triggerPointName , automatorCallBack);
+                    automatorApi(parseUserId, triggerPointName , personalizationFiled ,automatorCallBack );
                 }else {
                     Timber.e("SDKKeys" + sdkKeys +" userId" + parseUserId);
                     if (automatorCallBack !=null)
@@ -61,14 +60,15 @@ public class Automator {
             }
         });
     }
-    static public void enqueue(final String triggerPointName , @Nullable final String userId  , final AutomatorCallBack automatorCallBack) throws Exception {
+    static public void enqueue(final String triggerPointName , @Nullable final String userId , final Map<String,String> personalizationFiled , final AutomatorCallBack automatorCallBack) throws Exception {
+
         Validator.isNull(userId , "user id ");
         Validator.isNull(triggerPointName , "trigger point name");
         Appgain.AppgainParseAuth(new ParseAuthCallBack() {
             @Override
             public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
                 if (sdkKeys !=null && userId !=null){
-                    automatorApi(userId , triggerPointName , automatorCallBack);
+                    automatorApi(userId , triggerPointName , personalizationFiled , automatorCallBack);
                 }else {
                     Timber.e("SDKKeys" + sdkKeys +" userId" + userId);
                     if (automatorCallBack !=null)
@@ -83,16 +83,16 @@ public class Automator {
                 automatorCallBack.onFail(failure);
             }
         });
-    }
 
+    }
     /**
      * automatorApi() calling fireAutomator API
      * @param userId >  from parse auth automatorCallBack  (mandatory)
      */
-    private static void automatorApi(String userId , String triggerPoint  , final AutomatorCallBack automatorCallBack ){
+    private static void automatorApi(String userId , String triggerPoint  , Map<String,String> personalizationFileds, final AutomatorCallBack automatorCallBack ){
 
         Call<AutomatorResponse> call = Injector.Api().fireAutomator(
-                Config.AUTOMATOR(Appgain.getAppID(),triggerPoint , userId)
+                Config.AUTOMATOR(Appgain.getAppID(),triggerPoint , userId) ,personalizationFileds
         );
 
         call.enqueue(new CallbackWithRetry<AutomatorResponse>(call, new onRequestFailure() {

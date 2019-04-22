@@ -5,6 +5,7 @@ import android.text.TextUtils;
 import android.util.Log;
 
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.FirebaseApp;
 import com.google.firebase.iid.FirebaseInstanceId;
 import com.google.firebase.iid.InstanceIdResult;
 import com.parse.FindCallback;
@@ -54,7 +55,6 @@ public class Appgain {
     private static Appgain appGain ;
     private static Context context ;
     private static PreferencesManager preferencesManager ;
-    private static String youtubeDeveloperKey;
 
     public static  Appgain getInstance() {
         if (appGain == null) {
@@ -152,22 +152,33 @@ public class Appgain {
         parseSetup(parseApplicationId, serverName, new ParseLoginCallBack() {
             @Override
             public void onSuccess(String userId) {
-                setupServerKeys(new SDKInitCallBack() {
+                parsePushSetup(userId, new ParsePushSetupCallBack() {
                     @Override
-                    public void onSuccess(SDKKeys sdkKeys) {
-                        if(appgainSDKInitCallBack !=null){
-                            appgainSDKInitCallBack.onSuccess();
-                        }
+                    public void onSucess() {
+                        setupServerKeys(new SDKInitCallBack() {
+                            @Override
+                            public void onSuccess(SDKKeys sdkKeys) {
+                                if(appgainSDKInitCallBack !=null){
+                                    appgainSDKInitCallBack.onSuccess();
+                                }
+                                Log.d("initializeWithParse" , "success") ;
+                            }
 
-                        Log.d("initializeWithParse" , "success") ;
-
+                            @Override
+                            public void onFailure(BaseResponse failure) {
+                                Log.e("initializeWithParse" , "Code " + failure.getStatus()+"Message: " +failure.getMessage()) ;
+                                if (appgainSDKInitCallBack !=null)
+                                    appgainSDKInitCallBack.onFail(failure);
+                            }
+                        });
                     }
 
                     @Override
-                    public void onFailure(BaseResponse failure) {
-                        Log.e("initializeWithParse" , "Code " + failure.getStatus()+"Message: " +failure.getMessage()) ;
-                        if (appgainSDKInitCallBack !=null)
+                    public void onFailure(ParseException e) {
+                        BaseResponse failure = new BaseResponse(e.getCode() + "", "Parse setup " + e.getMessage());
+                        if (appgainSDKInitCallBack!=null)
                             appgainSDKInitCallBack.onFail(failure);
+                        Log.e("initializeWithParse" , "Code " + failure.getStatus()+"Message: " +failure.getMessage()) ;
                     }
                 });
             }
@@ -643,7 +654,14 @@ public class Appgain {
                     }else {
                         // ParseInstallation succeed
                         Timber.d("ParseInstallation succeed" );
-                        ParseFCM.register(getContext());
+                        FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(new OnSuccessListener<InstanceIdResult>() {
+                            @Override
+                            public void onSuccess(InstanceIdResult instanceIdResult) {
+//                                FirebaseApp.initializeApp(context);
+                                ParseFCM.register(getContext());
+                            }
+                        });
+
 
 //                        saveFCMToken();
                         insertUserIdInParseUserObject(installation.getString("userId") , callBack);
@@ -678,39 +696,6 @@ public class Appgain {
     }
 
 
-    private static void saveFCMToken() {
-       try {
-           FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(new OnSuccessListener<InstanceIdResult>() {
-               @Override
-               public void onSuccess(InstanceIdResult instanceIdResult) {
-                   final String newToken = instanceIdResult.getToken();
-                   final ParseInstallation installation = ParseInstallation.getCurrentInstallation();
-                   String curruntDeviceToken = installation.getDeviceToken() ;
-                   if (newToken!=null && !newToken.equals(curruntDeviceToken)){
-                       ParseQuery.getQuery("Installation").whereEqualTo("objectId" , installation.getObjectId()).findInBackground(new FindCallback<ParseObject>() {
-                           @Override
-                           public void done(List<ParseObject> objects, ParseException e) {
-                               if (e!=null){
-                                   Timber.e(e.toString());
-                               }else {
-                                   if (objects!=null && objects.size()!=0){
-                                       ParseObject object = objects.get(0);
-                                       object.put("deviceToken" , newToken);
-                                       object.saveEventually();
-                                       Timber.e("saveFCMToken : succeeded " );
-                                   }else {
-                                       Timber.e("saveFCMToken : no Installation object found  " );
-                                   }
-                               }
-                           }
-                       });
-                   }
-               }
-           });
-       }catch (Exception e){
-           e.printStackTrace();
-       }
-    }
 
 
     /**
@@ -780,7 +765,7 @@ public class Appgain {
                         Timber.e("createParseUser : " + e.getCode() +e.toString() );
                         parseSignUpListener.onSuccess(user);
                     }else {
-                       signUpNewUser(user,parseSignUpListener);
+                        signUpNewUser(user,parseSignUpListener);
                     }
                 }
             }
@@ -881,10 +866,6 @@ public class Appgain {
         });
 
     }
-
-
-
-
     public static  boolean getNotificationStatus(){
         return getPreferencesManager().getNotificationStatus();
     }
@@ -918,14 +899,6 @@ public class Appgain {
      */
     public  static  void clear (){
         getPreferencesManager().clear();
-    }
-
-    public static String getYoutubeDeveloperKey() {
-        return youtubeDeveloperKey;
-    }
-
-    public static void setYoutubeDeveloperKey(String youtubeDeveloperKey) {
-        Appgain.youtubeDeveloperKey = youtubeDeveloperKey;
     }
 
     /**

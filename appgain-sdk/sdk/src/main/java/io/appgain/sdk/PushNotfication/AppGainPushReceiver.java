@@ -2,7 +2,10 @@ package io.appgain.sdk.PushNotfication;
 
 import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
+import android.util.Log;
 
 import com.google.gson.Gson;
 import com.parse.ParsePushBroadcastReceiver;
@@ -11,9 +14,9 @@ import io.appgain.sdk.Controller.Appgain;
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.PushNotfication.OverKeyGuardActivities.GIFActivity;
 import io.appgain.sdk.PushNotfication.OverKeyGuardActivities.WebViewActivity;
-import io.appgain.sdk.PushNotfication.OverKeyGuardActivities.YoutubeVideoActivity;
 import timber.log.Timber;
 
+import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 import static io.appgain.sdk.PushNotfication.ReceiveStatus.dismiss;
 import static io.appgain.sdk.PushNotfication.ReceiveStatus.open;
 import static io.appgain.sdk.PushNotfication.ReceiveStatus.receive;
@@ -72,6 +75,13 @@ public abstract class AppGainPushReceiver extends ParsePushBroadcastReceiver {
         }
     }
 
+    private boolean isUrlNotificationType(Intent intent) {
+        PushDataReceiveModel pushDataReciveModel = new Gson().fromJson(intent.getStringExtra(KEY_PUSH_DATA) , PushDataReceiveModel.class);
+        if (TextUtils.isEmpty(pushDataReciveModel.getUrl())){
+            return  false ;
+        }
+        return true;
+    }
     private boolean isReleaseNotificationType(Intent intent) {
         PushDataReceiveModel pushDataReciveModel = new Gson().fromJson(intent.getStringExtra(KEY_PUSH_DATA) , PushDataReceiveModel.class);
         if (pushDataReciveModel.getType()==null){
@@ -94,10 +104,6 @@ public abstract class AppGainPushReceiver extends ParsePushBroadcastReceiver {
             case PushDataReceiveModel.GIF_TYPE :
                 if (pushDataReciveModel.getUrl() != null)
                     GIFActivity.start(context,pushDataReciveModel.getUrl());
-                break;
-            case PushDataReceiveModel.VIDEO_TYPE :
-                if (pushDataReciveModel.getVideoId() != null)
-                    YoutubeVideoActivity.start(context,pushDataReciveModel.getVideoId() , Appgain.getYoutubeDeveloperKey());
                 break;
         }
     }
@@ -134,7 +140,11 @@ public abstract class AppGainPushReceiver extends ParsePushBroadcastReceiver {
      */
     @Override
     protected void onPushOpen(Context context, final Intent intent) {
-        super.onPushOpen(context, intent);
+        if (isUrlNotificationType(intent)){
+            openNotification(intent , context);
+        }else {
+            super.onPushOpen(context, intent);
+        }
         onReceive(context , open , intent);
         try {
             AppgainAppPushApi.recordPushStatus(OPEN, intent, new RecordPushStatusCallback() {
@@ -152,9 +162,24 @@ public abstract class AppGainPushReceiver extends ParsePushBroadcastReceiver {
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
 
-
+    private  void openNotification(Intent data , Context context){
+        PushDataReceiveModel notificationEntity = new Gson().fromJson(data.getStringExtra(KEY_PUSH_DATA) , PushDataReceiveModel.class);
+        if (notificationEntity!=null && !TextUtils.isEmpty(notificationEntity.getUrl())){
+            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(notificationEntity.getUrl().trim()));
+            i.setFlags(FLAG_ACTIVITY_NEW_TASK);
+            if (canResolveIntent(i,context))
+                context.startActivity(i);
+        }
+    }
+    boolean canResolveIntent(Intent intent,Context context){
+        if (intent.resolveActivity(context.getPackageManager()) != null) {
+            return true;
+        }
+        return  false;
+    }
 
 
 

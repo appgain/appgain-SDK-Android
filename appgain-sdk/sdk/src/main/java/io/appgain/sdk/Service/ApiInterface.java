@@ -3,6 +3,8 @@ package io.appgain.sdk.Service;
 
 import com.google.gson.JsonObject;
 
+import java.util.Map;
+
 import io.appgain.sdk.Automator.AutomatorResponse;
 import io.appgain.sdk.DeepPages.DeepPage;
 import io.appgain.sdk.DeepPages.DeepPageResponse;
@@ -14,9 +16,12 @@ import io.appgain.sdk.SmartLinkCreate.SmartDeepLinkCreator;
 import io.appgain.sdk.DeferredDeepLinking.ResponseModels.DeferredDeepLinkingResponse;
 import retrofit2.Call;
 import retrofit2.http.Body;
+import retrofit2.http.FieldMap;
+import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
+import retrofit2.http.QueryMap;
 import retrofit2.http.Url;
 
 /**
@@ -74,7 +79,8 @@ public interface ApiInterface {
 
     @GET
     Call<AutomatorResponse> fireAutomator(
-            @Url String url
+            @Url String url ,
+            @QueryMap Map<String, String> fields
     );
 
     @POST
