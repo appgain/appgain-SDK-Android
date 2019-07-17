@@ -17,8 +17,9 @@ import timber.log.Timber;
 /**
  * class for saving necessary data internal in preferences mange
  */
-   final class PreferencesManager {
-   private String TAG = PreferencesManager.class.getSimpleName();
+   public class PreferencesManager {
+
+    private String TAG = PreferencesManager.class.getSimpleName();
 
    // Shared Preferences
    SharedPreferences pref;
@@ -43,6 +44,7 @@ import timber.log.Timber;
    private  final String USER_KEY = "USER_KEY" ;
    private  final String FIRST_RUN = "FIRST_RUN" ;
    private  final String NOTIFICATION_STATUS = "NOTIFICATION_STATUS" ;
+    private static final String KEY_BATTERY = "KEY_BATTERY";
 
 
     public PreferencesManager(Context _context) {
@@ -168,5 +170,12 @@ import timber.log.Timber;
         return pref.getBoolean(NOTIFICATION_STATUS, true) ;
     }
 
+    public boolean getIsBatteryOptimized() {
+        return pref.getBoolean(KEY_BATTERY, false);
+    }
 
+    public void setIsBatteryOptimized(boolean b) {
+        editor.putBoolean(KEY_BATTERY, b ).commit();
+
+    }
 }

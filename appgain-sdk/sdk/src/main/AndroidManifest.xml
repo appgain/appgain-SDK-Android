@@ -16,6 +16,11 @@
             android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
             android:name=".PushNotfication.OverKeyGuardActivities.GIFActivity"/>
 
+        <activity
+            android:theme="@style/FullScreen"
+            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
+            android:name=".PushNotfication.OverKeyGuardActivities.VideoActivity"/>
+
     </application>
 
 </manifest>

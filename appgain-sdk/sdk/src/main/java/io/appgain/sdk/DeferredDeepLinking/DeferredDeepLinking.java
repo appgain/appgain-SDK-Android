@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.util.Map;
 
 import io.appgain.sdk.Controller.Appgain;
+import io.appgain.sdk.Controller.AppgainSuitUtil;
 import io.appgain.sdk.Controller.Config;
 import io.appgain.sdk.Model.SDKKeys;
 import io.appgain.sdk.Model.BaseResponse;
@@ -82,7 +83,7 @@ public class DeferredDeepLinking {
             enqueue(smartLinkMatchListener);
             return;
         }
-        Appgain.setupServerKeys(new SDKInitCallBack() {
+        AppgainSuitUtil.setupServerKeys(new SDKInitCallBack() {
             @Override
             public void onSuccess(SDKKeys sdkKeys) {
                 if (sdkKeys !=null ){
@@ -163,9 +164,9 @@ public class DeferredDeepLinking {
                         Map.Entry<String, String> entry = map.entrySet().iterator().next();
                         currentUser.put(entry.getKey() , entry.getValue());
                     }
+                if (response.getDeferredDeepLink()!=null)
+                    currentUser.add("SDL",response.getDeferredDeepLink());
                     currentUser.saveInBackground();
-
-
             }
         }catch (Exception e){
             Timber.e("updateUserRecodedWithSmartDeepLinkParams error  : " +e.toString() );

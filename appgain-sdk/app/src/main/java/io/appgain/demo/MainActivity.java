@@ -18,6 +18,8 @@ import com.parse.Parse;
 import com.parse.ParseInstallation;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -89,16 +91,16 @@ public class MainActivity extends AppCompatActivity {
 
         AutomatorDialog.getInstance(new AutomatorDialog.AutomatorDialogCallback() {
             @Override
-            public void valueCallback(String trigger_point) {
-                fireAutomatorTrigger(trigger_point);
+            public void valueCallback(String trigger_point , Map<String , String> personalizationMap) {
+                fireAutomatorTrigger(trigger_point,personalizationMap);
             }
         }).show(getSupportFragmentManager(),"AutomatorDialog");
 
     }
 
-    private void fireAutomatorTrigger(String trigger_point) {
+    private void fireAutomatorTrigger(String trigger_point, Map<String,String> personalizationMap) {
         try {
-            Automator.enqueue(trigger_point, new AutomatorCallBack() {
+            Automator.enqueue(trigger_point,personalizationMap, new AutomatorCallBack() {
                 @Override
                 public void onAutomatorFired(@Nullable AutomatorResponse response) {
                     showLoading(false);

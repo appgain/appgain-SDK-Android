@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">sdk</string>
+    <string name="confirm">Enable</string>
+    <string name="cancel">Cancel</string>
     <array name="slug_invalid_inputs">
         <item>app</item>
         <item>prod</item>

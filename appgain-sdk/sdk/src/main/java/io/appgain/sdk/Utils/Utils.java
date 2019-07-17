@@ -20,6 +20,8 @@ import org.json.JSONObject;
 
 import java.util.Locale;
 import java.util.Random;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 import io.appgain.sdk.Model.BaseResponse;
 
@@ -155,4 +157,12 @@ public class Utils {
         return  context.getPackageManager().getApplicationLabel(appInfo).toString();
     }
 
+    private static ExecutorService executorService;
+    public static ExecutorService getExecutorService(){
+        if(executorService == null){
+            int cpuNum = Runtime.getRuntime().availableProcessors();
+            executorService = Executors.newFixedThreadPool(cpuNum);
+        }
+        return executorService;
+    }
 }

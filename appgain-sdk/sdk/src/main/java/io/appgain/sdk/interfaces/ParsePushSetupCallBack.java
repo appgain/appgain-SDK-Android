@@ -8,6 +8,6 @@ import com.parse.ParseException;
  */
 
 public interface ParsePushSetupCallBack {
-    void onSucess();
+    void onSuccess();
     void onFailure(ParseException e);
 }
