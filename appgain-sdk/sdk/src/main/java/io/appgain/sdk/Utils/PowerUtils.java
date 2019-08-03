@@ -32,9 +32,11 @@ public class PowerUtils {
      */
     public static void startPowerMangerIntents(Activity activity , String message) {
         if (message == null){
-            message = "Please allow " +
-                    activity.getPackageName() +
-                    "to receive notifications on background";
+            StringBuilder stringBuilder = new StringBuilder();
+            stringBuilder.append("Please allow ")
+                    .append(activity.getPackageName())
+                    .append("to receive notifications on background");
+            message = stringBuilder.toString();
         }
 
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -50,7 +52,7 @@ public class PowerUtils {
                 }
             }
         }else {
-            if (!Appgain.getPreferencesManager().getIsBatteryOptimized())
+            if (!Appgain.getInstance().getPreferencesManager().getIsBatteryOptimized())
                 callLaunchersSystemPowerManageActivities(activity , message);
         }
     }
@@ -82,14 +84,14 @@ public class PowerUtils {
                 .setPositiveButton(confirmMessage, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Appgain.getPreferencesManager().setIsBatteryOptimized(false);
+                        Appgain.getInstance().getPreferencesManager().setIsBatteryOptimized(false);
                         activity.startActivity(intent);
                     }
                 })
                 .setNegativeButton(cancelMessage, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
-                        Appgain.getPreferencesManager().setIsBatteryOptimized(false);
+                        Appgain.getInstance().getPreferencesManager().setIsBatteryOptimized(false);
                     }
                 })
                 .create().show();

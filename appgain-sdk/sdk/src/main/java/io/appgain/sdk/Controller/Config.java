@@ -19,6 +19,8 @@ public final class Config {
     public static final String NO_BACKEND = "no backend for this suit id ";
     public static String NETWORK_FAILED = "network failed";
     public static boolean io =true;
+    public static String PurchaseTransactions = "PurchaseTransactions";
+    public static String AppSession = "AppSession";
 
 
     public static String CREDENTIALS_URL(String appID) {
@@ -59,6 +61,5 @@ public final class Config {
             new Intent().setComponent(new ComponentName("com.htc.pitroad", "com.htc.pitroad.landingpage.activity.LandingPageActivity")),
             new Intent().setComponent(new ComponentName("com.asus.mobilemanager", "com.asus.mobilemanager.MainActivity"))
     };
-
 
 }

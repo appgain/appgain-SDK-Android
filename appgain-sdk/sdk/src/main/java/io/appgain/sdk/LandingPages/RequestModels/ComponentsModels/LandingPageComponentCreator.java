@@ -1,47 +1,47 @@
-package io.appgain.sdk.DeepPages.RequestModels.ComponentsModels;
+package io.appgain.sdk.LandingPages.RequestModels.ComponentsModels;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 
 import io.appgain.sdk.Config.Errors;
 import io.appgain.sdk.Config.REGEX;
-import io.appgain.sdk.DeepPages.RequestModels.Image;
+import io.appgain.sdk.LandingPages.RequestModels.Image;
 import io.appgain.sdk.Utils.Validator;
 
 /**
  * Created by developers@appgain.io on 2/16/2018.
  */
 
-public  class DeepPageComponentCreator implements Serializable{
+public  class LandingPageComponentCreator implements Serializable{
 
-    static private DeepPageHeader header;
+    static private LandingPageHeader header;
     static private ArrayList<ButtonType> buttonTypes = new ArrayList<>();
-    static private DeepPageContent deepPageContent;
+    static private LandingPageContent deepPageContent;
     static  private InfoSLider sliderType ;
     static  private InfoImage infoImage;
 
-    public static void setHeader(DeepPageHeader logoType) {
-        DeepPageComponentCreator.header = logoType;
+    public static void setHeader(LandingPageHeader logoType) {
+        LandingPageComponentCreator.header = logoType;
     }
 
     public static void setButtonTypes(ButtonType buttonTypes) {
-        DeepPageComponentCreator.buttonTypes.add(buttonTypes);
+        LandingPageComponentCreator.buttonTypes.add(buttonTypes);
     }
 
-    public static void setDeepPageContent(DeepPageContent deepPageContent) {
-        DeepPageComponentCreator.deepPageContent = deepPageContent;
+    public static void setDeepPageContent(LandingPageContent deepPageContent) {
+        LandingPageComponentCreator.deepPageContent = deepPageContent;
     }
 
     public static void SliderTybe(InfoSLider sliderType) {
-        DeepPageComponentCreator.sliderType = sliderType;
+        LandingPageComponentCreator.sliderType = sliderType;
     }
 
     public static void ImageType(InfoImage imageType) {
-        DeepPageComponentCreator.infoImage = imageType;
+        LandingPageComponentCreator.infoImage = imageType;
     }
 
 
-    public static DeepPageHeader getHeader() {
+    public static LandingPageHeader getHeader() {
         return header;
     }
 
@@ -49,7 +49,7 @@ public  class DeepPageComponentCreator implements Serializable{
         return buttonTypes;
     }
 
-    public static DeepPageContent getDeepPageContent() {
+    public static LandingPageContent getDeepPageContent() {
         return deepPageContent;
     }
 

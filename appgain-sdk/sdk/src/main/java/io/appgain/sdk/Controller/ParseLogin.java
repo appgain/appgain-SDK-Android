@@ -71,10 +71,14 @@ public class ParseLogin {
 
 
     /**
+     *
      * create parse  user
+     *
      */
     static void createParseUser(final User user, final ParseSignUpCallBack parseSignUpListener){
-        ParseQuery.getQuery("User").whereEqualTo("userEmail" , user.getEmail()).whereEqualTo("username" , user.getUsername()).findInBackground(new FindCallback<ParseObject>() {
+        ParseQuery.getQuery("_User")
+                .whereEqualTo("email" , user.getEmail())
+                .findInBackground(new FindCallback<ParseObject>() {
             @Override
             public void done(List<ParseObject> objects, ParseException e) {
                 if (e!=null){
@@ -86,7 +90,7 @@ public class ParseLogin {
                     Timber.e(e.toString());
                 }else {
                     if (objects!=null && objects.size()!=0){
-                        Timber.e("createParseUser : " + e.getCode() +e.toString() );
+                        Timber.e("createParseUser : " + "user found" );
                         parseSignUpListener.onSuccess(user);
                     }else {
                         signUpNewUser(user,parseSignUpListener);
@@ -99,7 +103,7 @@ public class ParseLogin {
 
     private static void signUpNewUser(final User user, final ParseSignUpCallBack parseSignUpListener) {
         final ParseUser parseUser = new ParseUser();
-        parseUser.setUsername(user.getUsername());
+        parseUser.setUsername(user.getUsername()+"");
         parseUser.setPassword(user.getPassword());
         parseUser.setEmail(user.getEmail());
         parseUser.signUpInBackground(new SignUpCallback() {
@@ -112,15 +116,13 @@ public class ParseLogin {
                     if (e.getMessage().contains("already exists") || e.getCode()==202)
                     {
                         parseSignUpListener.onSuccess(user);
-                        return;
+                    }else {
+                        Timber.e("createParseUser : " + e.getCode() +e.toString() );
+                        if (parseSignUpListener!=null)
+                            parseSignUpListener.onFail(e);
                     }
-
-                    Timber.e("createParseUser : " + e.getCode() +e.toString() );
-                    if (parseSignUpListener!=null)
-                        parseSignUpListener.onFail(e);
                 }
             }
         });
     }
-
 }

@@ -1,4 +1,4 @@
-package io.appgain.sdk.DeepPages.RequestModels.ComponentsModels;
+package io.appgain.sdk.LandingPages.RequestModels.ComponentsModels;
 
 import com.google.gson.annotations.SerializedName;
 
@@ -6,13 +6,13 @@ import com.google.gson.annotations.SerializedName;
  * Created by developers@appgain.io on 2/16/2018.
  */
 
-final public class DeepPageContent extends Component{
+final public class LandingPageContent extends Component{
     @SerializedName("type")
     final private String type = "basic.p" ;
     @SerializedName("content")
     private String content ;
 
-    public DeepPageContent(String content) {
+    public LandingPageContent(String content) {
         this.content = content;
     }
 

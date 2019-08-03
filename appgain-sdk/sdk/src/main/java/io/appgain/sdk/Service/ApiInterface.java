@@ -6,8 +6,8 @@ import com.google.gson.JsonObject;
 import java.util.Map;
 
 import io.appgain.sdk.Automator.AutomatorResponse;
-import io.appgain.sdk.DeepPages.DeepPage;
-import io.appgain.sdk.DeepPages.DeepPageResponse;
+import io.appgain.sdk.LandingPages.LandingPage;
+import io.appgain.sdk.LandingPages.LandingPageResponse;
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.Model.SDKKeys;
 import io.appgain.sdk.PushNotfication.RecordStatusRequestBody;
@@ -16,8 +16,6 @@ import io.appgain.sdk.SmartLinkCreate.SmartDeepLinkCreator;
 import io.appgain.sdk.DeferredDeepLinking.ResponseModels.DeferredDeepLinkingResponse;
 import retrofit2.Call;
 import retrofit2.http.Body;
-import retrofit2.http.FieldMap;
-import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.POST;
 import retrofit2.http.Query;
@@ -71,9 +69,9 @@ public interface ApiInterface {
 
 
     @POST
-    Call<DeepPageResponse> createLandingPage(
+    Call<LandingPageResponse> createLandingPage(
             @Url String url ,
-            @Body DeepPage.Builder builder
+            @Body LandingPage.Builder builder
     );
 
 

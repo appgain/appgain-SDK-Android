@@ -13,12 +13,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
 import android.widget.Toast;
-import com.google.gson.JsonObject;
-import com.parse.Parse;
-import com.parse.ParseInstallation;
 
-import java.io.IOException;
-import java.util.HashMap;
 import java.util.Map;
 
 import butterknife.BindView;
@@ -28,34 +23,26 @@ import io.appgain.demo.Dialogs.AutomatorDialog;
 import io.appgain.demo.Dialogs.ConfigDialog;
 import io.appgain.demo.Dialogs.SmartDeepLinkDialog;
 import io.appgain.demo.Dialogs.UsernameDialog;
-import io.appgain.demo.R;
 import io.appgain.demo.app.AppController;
 import io.appgain.sdk.Automator.Automator;
 import io.appgain.sdk.Automator.AutomatorCallBack;
 import io.appgain.sdk.Automator.AutomatorResponse;
 import io.appgain.sdk.Controller.Appgain;
-import io.appgain.sdk.Controller.Config;
-import io.appgain.sdk.DeepPages.DeepPage;
-import io.appgain.sdk.DeepPages.DeepPageCallBack;
-import io.appgain.sdk.DeepPages.DeepPageResponse;
+import io.appgain.sdk.LandingPages.LandingPage;
+import io.appgain.sdk.LandingPages.LandingPageCallBack;
+import io.appgain.sdk.LandingPages.LandingPageResponse;
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.Model.SDKKeys;
 import io.appgain.sdk.Model.User;
-import io.appgain.sdk.Service.CallbackWithRetry;
-import io.appgain.sdk.Service.Injector;
-import io.appgain.sdk.Service.onRequestFailure;
 import io.appgain.sdk.SmartLinkCreate.Models.SmartDeepLinkResponse;
 import io.appgain.sdk.SmartLinkCreate.SmartLinkCallback;
 import io.appgain.sdk.SmartLinkCreate.SmartDeepLinkCreator;
 import io.appgain.sdk.DeferredDeepLinking.ResponseModels.DeferredDeepLinkingResponse;
 import io.appgain.sdk.DeferredDeepLinking.DeferredDeepLinking;
 import io.appgain.sdk.DeferredDeepLinking.DeferredDeepLinkingCallBack;
-import io.appgain.sdk.Utils.Utils;
 import io.appgain.sdk.interfaces.AppgainSDKInitCallBack;
 
 import io.appgain.sdk.interfaces.ParseAuthCallBack;
-import retrofit2.Call;
-import retrofit2.Response;
 import timber.log.Timber;
 
 public class MainActivity extends AppCompatActivity {
@@ -135,7 +122,7 @@ public class MainActivity extends AppCompatActivity {
 
         try {
 
-            DeepPage deepPage = new DeepPage.Builder()
+            LandingPage deepPage = new LandingPage.Builder()
                     .withWebPushSubscription(true)
                     .withHeader("https://i.imgur.com/HwieXuR.jpg", "test create deep page")
                     .withContent("this is a test for creating deep page par")
@@ -146,9 +133,9 @@ public class MainActivity extends AppCompatActivity {
                     .withSocialMedia("test create", "test create deep page", "https://i.imgur.com/HwieXuR.jpg")
                     .build();
 
-            deepPage.enqueue(new DeepPageCallBack() {
+            deepPage.enqueue(new LandingPageCallBack() {
                 @Override
-                public void onDeepPageCreated(@Nullable DeepPageResponse response) {
+                public void onDeepPageCreated(@Nullable LandingPageResponse response) {
                     showLoading(false);
                     showLinkDialog("deep page created" , response.getLink());
                 }

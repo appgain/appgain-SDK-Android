@@ -11,6 +11,7 @@ import java.util.Random;
 import io.appgain.sdk.Model.SDKKeys;
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.Model.User;
+import io.appgain.sdk.SessionUtills.AppSessions;
 import io.appgain.sdk.Utils.Validator;
 import io.appgain.sdk.interfaces.ParseAuthCallBack;
 import io.appgain.sdk.interfaces.ParsePushSetupCallBack;
@@ -117,9 +118,7 @@ public class Appgain {
         try {
             if (ParseUser.getCurrentUser() !=null)
                 ParseUser.logOut();
-        }catch (Exception e){
-            e.printStackTrace();
-        }
+        }catch (Exception ignore){}
 
         ParseUtil.setupParse(parseApplicationId, serverName , clientKey, new ParseLoginCallBack() {
             @Override
@@ -134,24 +133,12 @@ public class Appgain {
                             }
                             Log.d("initializeWithParse" , "success") ;
                         }else {
-                            NotificationChannelUtils.saveEmailNotificationChannel(userId,user.getEmail(), new ParsePushSetupCallBack() {
-                                @Override
-                                public void onSuccess() {
-                                    if(appgainSDKInitCallBack !=null){
-                                        appgainSDKInitCallBack.onSuccess();
-                                    }
-                                    Log.d("initializeWithParse" , "success") ;
-                                }
 
-                                @Override
-                                public void onFailure(ParseException e) {
-                                    if(appgainSDKInitCallBack !=null){
-                                        appgainSDKInitCallBack.onSuccess();
-                                    }
-                                    Log.d("initializeWithParse" , "success") ;
-                                }
-                            });
 
+                            // save appsession
+                                saveAppSession(userId , null);
+                            // save email channel
+                                saveEmailChannel(userId , user.getEmail() , appgainSDKInitCallBack);
                         }
                     }
 
@@ -175,6 +162,30 @@ public class Appgain {
             }
         });
 
+    }
+
+    private static void saveAppSession(String userId, AppSessions.AppSessionsCallback callback) {
+        AppSessions.logAppOpen(userId , callback);
+    }
+
+    private static void saveEmailChannel(String userId, String email, final AppgainSDKInitCallBack appgainSDKInitCallBack) {
+        NotificationChannelUtils.saveEmailNotificationChannel(userId,email, new ParsePushSetupCallBack() {
+            @Override
+            public void onSuccess() {
+                if(appgainSDKInitCallBack !=null){
+                    appgainSDKInitCallBack.onSuccess();
+                }
+                Log.d("initializeWithParse" , "success") ;
+            }
+
+            @Override
+            public void onFailure(ParseException e) {
+                if(appgainSDKInitCallBack !=null){
+                    appgainSDKInitCallBack.onSuccess();
+                }
+                Log.d("initializeWithParse" , "success") ;
+            }
+        });
     }
 
     private static boolean isUserValid(User user) throws Exception {

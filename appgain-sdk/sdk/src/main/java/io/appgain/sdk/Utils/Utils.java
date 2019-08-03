@@ -13,6 +13,7 @@ import android.util.Log;
 import com.google.gson.Gson;
 import android.support.v4.app.NotificationCompat;
 
+import com.parse.ParseException;
 import com.parse.ParsePushBroadcastReceiver;
 
 import org.json.JSONException;
@@ -43,6 +44,9 @@ public class Utils {
      */
     public static BaseResponse getAppGainFailure(String error){
         return  new Gson().fromJson(error, BaseResponse.class)    ;
+    }
+    public static BaseResponse getAppGainFailure(ParseException e){
+        return  new BaseResponse(e.getCode()+"" , e.getMessage());
     }
     public  static Notification  getParseNotification( Context context , Intent intent){
         JSONObject pushData = getPushData(intent);
