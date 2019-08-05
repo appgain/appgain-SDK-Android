@@ -47,14 +47,14 @@ public interface ApiInterface {
 
     @POST
     Call<SmartDeepLinkResponse> createSmartLink(
-            @Url String url ,
+            @Url String url,
             @Body SmartDeepLinkCreator.Builder smartLinkBuilder
     );
 
 
     @GET
     Call<DeferredDeepLinkingResponse> smartLinkMatch(
-            @Url String url  ,
+            @Url String url,
             @Query("userId") String userID,
             @Query("isfirstRun") boolean firsRun
     );
@@ -62,7 +62,7 @@ public interface ApiInterface {
 
     @GET
     Call<DeferredDeepLinkingResponse> smartLinkMatch(
-            @Url String url  ,
+            @Url String url,
             @Query("isfirstRun") boolean firsRun
     );
 
@@ -70,19 +70,19 @@ public interface ApiInterface {
 
     @POST
     Call<LandingPageResponse> createLandingPage(
-            @Url String url ,
+            @Url String url,
             @Body LandingPage.Builder builder
     );
 
 
     @GET
     Call<AutomatorResponse> fireAutomator(
-            @Url String url ,
+            @Url String url,
             @QueryMap Map<String, String> fields
     );
 
     @POST
-    Call<BaseResponse> recordPushStatus (
+    Call<BaseResponse> recordPushStatus(
             @Url String url,
             @Body RecordStatusRequestBody pushModel
     );

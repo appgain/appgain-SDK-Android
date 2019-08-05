@@ -12,9 +12,9 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-import io.appgain.sdk.Utils.Utils;
+import io.appgain.sdk.Controller.Utils;
 
-import static io.appgain.sdk.Utils.Utils.KEY_PUSH_DATA;
+import static io.appgain.sdk.Controller.Utils.KEY_PUSH_DATA;
 
 /**
  * Created by developers@appgain.io on 5/28/2019.

@@ -1,16 +1,12 @@
 package io.appgain.sdk.PushNotfication.OverKeyGuardActivities;
 
 import android.app.Activity;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Handler;
 import android.os.PowerManager;
-import android.support.v7.app.AppCompatActivity;
 import android.view.Window;
 import android.view.WindowManager;
 
 import io.appgain.sdk.Controller.Appgain;
-import io.appgain.sdk.R;
 
 import static android.content.Context.POWER_SERVICE;
 

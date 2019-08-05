@@ -246,7 +246,7 @@ public abstract class AppGainPushReceiver extends ParsePushBroadcastReceiver {
      * Creates a {@link Notification} with reasonable defaults. If "alert" and "title" are
      * both missing from data, then returns {@code null}. If the text in the notification is longer
      * than 38 characters long, the style of the notification will be set to
-     * {@link android.app.Notification.BigTextStyle}.
+     * {@link Notification.BigTextStyle}.
      * <p/>
      * As a security precaution, developers overriding this method should be sure to set the package
      * on notification {@code Intent}s to avoid leaking information to other apps.

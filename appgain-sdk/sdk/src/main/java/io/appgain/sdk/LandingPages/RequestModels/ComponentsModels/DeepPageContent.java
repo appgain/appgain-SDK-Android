@@ -6,13 +6,13 @@ import com.google.gson.annotations.SerializedName;
  * Created by developers@appgain.io on 2/16/2018.
  */
 
-final public class LandingPageContent extends Component{
+final public class DeepPageContent extends Component{
     @SerializedName("type")
     final private String type = "basic.p" ;
     @SerializedName("content")
     private String content ;
 
-    public LandingPageContent(String content) {
+    public DeepPageContent(String content) {
         this.content = content;
     }
 

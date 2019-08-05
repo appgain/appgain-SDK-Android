@@ -14,8 +14,8 @@ import io.appgain.sdk.Model.SDKKeys;
 import io.appgain.sdk.Service.CallbackWithRetry;
 import io.appgain.sdk.Service.Injector;
 import io.appgain.sdk.Service.onRequestFailure;
-import io.appgain.sdk.Utils.Utils;
-import io.appgain.sdk.Utils.Validator;
+import io.appgain.sdk.Controller.Utils;
+import io.appgain.sdk.Controller.Validator;
 import io.appgain.sdk.interfaces.ParseAuthCallBack;
 import retrofit2.Call;
 import retrofit2.Response;
@@ -40,50 +40,13 @@ public class Automator {
      */
     static public void enqueue(final String triggerPointName ,  final Map<String,String> personalizationFiled , final AutomatorCallBack automatorCallBack)throws Exception{
         Validator.isNull(triggerPointName , "trigger point name");
-        Appgain.AppgainParseAuth(new ParseAuthCallBack() {
-            @Override
-            public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
-                if (sdkKeys !=null && parseUserId !=null){
-                    automatorApi(parseUserId, triggerPointName , personalizationFiled ,automatorCallBack );
-                }else {
-                    Timber.e("SDKKeys" + sdkKeys +" userId" + parseUserId);
-                    if (automatorCallBack !=null)
-                    automatorCallBack.onFail(new BaseResponse("404",  Config.NO_BACKEND));
-                }
-            }
-
-            @Override
-            public void onFailure(BaseResponse failure) {
-                Log.e("SmartLinkMatch" , "Code " + failure.getStatus()+"Message: " +failure.getMessage()) ;
-                if (automatorCallBack !=null)
-                automatorCallBack.onFail(failure);
-            }
-        });
+        automatorApi(Appgain.getPreferencesManager().getUserId(), triggerPointName , personalizationFiled ,automatorCallBack );
     }
     static public void enqueue(final String triggerPointName , @Nullable final String userId , final Map<String,String> personalizationFiled , final AutomatorCallBack automatorCallBack) throws Exception {
 
         Validator.isNull(userId , "user id ");
         Validator.isNull(triggerPointName , "trigger point name");
-        Appgain.AppgainParseAuth(new ParseAuthCallBack() {
-            @Override
-            public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
-                if (sdkKeys !=null && userId !=null){
-                    automatorApi(userId , triggerPointName , personalizationFiled , automatorCallBack);
-                }else {
-                    Timber.e("SDKKeys" + sdkKeys +" userId" + userId);
-                    if (automatorCallBack !=null)
-                    automatorCallBack.onFail(new BaseResponse("404",  Config.NO_BACKEND));
-                }
-            }
-
-            @Override
-            public void onFailure(BaseResponse failure) {
-                Log.e("Automator" , "Code " + failure.getStatus()+"Message: " +failure.getMessage()) ;
-                if (automatorCallBack !=null)
-                automatorCallBack.onFail(failure);
-            }
-        });
-
+        automatorApi(userId , triggerPointName , personalizationFiled , automatorCallBack);
     }
     /**
      * automatorApi() calling fireAutomator API

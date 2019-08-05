@@ -11,7 +11,8 @@ import android.content.Intent;
 public final class Config {
 
 
-
+    public static final String USER_ID_KEY = "userId";
+    public static final String USERS_TABLE = "_User";
     public   static String API_URL ="https://api.appgain.io/" ;
     public   static String APPS_URL =API_URL+"apps/" ;
     public   static String APPGAIN_IO =".appgain.io/" ;
@@ -19,8 +20,9 @@ public final class Config {
     public static final String NO_BACKEND = "no backend for this suit id ";
     public static String NETWORK_FAILED = "network failed";
     public static boolean io =true;
-    public static String PurchaseTransactions = "PurchaseTransactions";
-    public static String AppSession = "AppSession";
+    public final static String PurchaseTransactions = "PurchaseTransactions";
+    public final static String AppSession = "AppSession";
+    public final static String NotificationChannels = "NotificationChannels";
 
 
     public static String CREDENTIALS_URL(String appID) {

@@ -25,10 +25,9 @@ public class ParseLogin {
     /**
      * parse login as anonymous user in case of no username , password , email provided before
      */
-    static   void login(final ParseLoginCallBack parseLoginListener){
+    public static void login(final ParseLoginCallBack parseLoginListener){
         Timber.e("login as anonymous entered");
         ParseAnonymousUtils.logIn(new LogInCallback() {
-
             @Override
             public void done(ParseUser parseUser, ParseException e) {
                 if (e != null) {
@@ -50,7 +49,7 @@ public class ParseLogin {
     /**
      * parse login with user provided data
      */
-    static void login(final User user, final ParseLoginCallBack parseLoginListener){
+    public static void login(final User user, final ParseLoginCallBack parseLoginListener){
         Timber.e("login with data entered");
         ParseUser.logInInBackground(user.getUsername() , user.getPassword(), new LogInCallback() {
             @Override
@@ -75,8 +74,8 @@ public class ParseLogin {
      * create parse  user
      *
      */
-    static void createParseUser(final User user, final ParseSignUpCallBack parseSignUpListener){
-        ParseQuery.getQuery("_User")
+    public static void createParseUser(final User user, final ParseSignUpCallBack parseSignUpListener){
+        ParseQuery.getQuery(Config.USERS_TABLE)
                 .whereEqualTo("email" , user.getEmail())
                 .findInBackground(new FindCallback<ParseObject>() {
             @Override

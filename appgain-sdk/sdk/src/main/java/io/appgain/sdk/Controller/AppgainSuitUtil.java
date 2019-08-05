@@ -3,7 +3,6 @@ package io.appgain.sdk.Controller;
 import io.appgain.sdk.Model.SDKKeys;
 import io.appgain.sdk.Service.CallbackWithRetry;
 import io.appgain.sdk.Service.Injector;
-import io.appgain.sdk.Utils.Utils;
 import io.appgain.sdk.interfaces.SDKInitCallBack;
 import retrofit2.Call;
 import retrofit2.Response;

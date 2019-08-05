@@ -1,5 +1,6 @@
 package io.appgain.sdk.interfaces;
 
+import io.appgain.sdk.Controller.Appgain;
 import io.appgain.sdk.Model.BaseResponse;
 
 /**
@@ -8,7 +9,7 @@ import io.appgain.sdk.Model.BaseResponse;
 
 
 /**
- * {@link io.appgain.sdk.Controller.Appgain} init response interface
+ * {@link Appgain} init response interface
  */
 public interface AppgainSDKInitCallBack {
     void onSuccess();

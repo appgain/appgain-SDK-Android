@@ -9,9 +9,7 @@ import io.appgain.sdk.Controller.Appgain;
 //
 
 import io.appgain.sdk.Controller.Config;
-import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.Model.User;
-import io.appgain.sdk.interfaces.AppgainSDKInitCallBack;
 import timber.log.Timber;
 
 

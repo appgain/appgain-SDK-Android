@@ -9,7 +9,7 @@ import io.appgain.sdk.LandingPages.RequestModels.Image;
  * Created by developers@appgain.io on 2/16/2018.
  */
 
-final public class LandingPageHeader extends Component{
+final public class DeepPageHeader extends Component{
     @SerializedName("type")
     final private String type = "basic.h+logo" ;
     @SerializedName("logo")
@@ -17,7 +17,7 @@ final public class LandingPageHeader extends Component{
     @SerializedName("header")
     private Header topic;
 
-    public LandingPageHeader(String image, String header) {
+    public DeepPageHeader(String image, String header) {
 
         this.logo = new Image(image);
         this.topic = new Header(header);

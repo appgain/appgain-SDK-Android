@@ -10,7 +10,7 @@ import io.appgain.sdk.Controller.Appgain;
 import io.appgain.sdk.Controller.Config;
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.Model.SDKKeys;
-import io.appgain.sdk.Utils.Utils;
+import io.appgain.sdk.Controller.Utils;
 import io.appgain.sdk.interfaces.ParseAuthCallBack;
 
 /**
@@ -22,25 +22,14 @@ public class PurchaseTransactions {
         logPurchase(null , name , amount , currency , callback);
     }
 
-    private static void logPurchase(final String userId, final String name, final int amount, final String currency , final PurchaseTransactionsCallback callBack) {
-        Appgain.AppgainParseAuth(new ParseAuthCallBack() {
-            @Override
-            public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
-                pushNewPurchaceObject(userId , parseUserId , name , amount , currency , callBack);
-            }
-
-            @Override
-            public void onFailure(BaseResponse failure) {
-                if (callBack !=null)
-                    callBack.onFail(failure);
-            }
-        });
+    public static void logPurchase(final String userId, final String name,  float amount, final String currency , final PurchaseTransactionsCallback callBack) {
+        pushNewPurchaseObject(userId  , name , amount , currency , callBack);
 
     }
 
-    private static void pushNewPurchaceObject(String userId, String parseUserId, String name, int amount, String currency, final PurchaseTransactionsCallback callBack) {
+    private static void pushNewPurchaseObject(String userId, String name, float amount, String currency, final PurchaseTransactionsCallback callBack) {
         ParseObject purchaseTransactionsObj = new ParseObject(Config.PurchaseTransactions);
-        purchaseTransactionsObj.put("userId", userId ==null ? parseUserId : userId);
+        purchaseTransactionsObj.put(Config.USER_ID_KEY, userId ==null ? Appgain.getPreferencesManager().getUserId() : userId);
         purchaseTransactionsObj.put("name", name);
         purchaseTransactionsObj.put("amount", amount);
         purchaseTransactionsObj.put("currency", currency);

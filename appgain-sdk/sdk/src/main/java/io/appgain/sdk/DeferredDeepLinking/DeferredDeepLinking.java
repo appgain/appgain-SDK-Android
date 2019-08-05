@@ -18,8 +18,8 @@ import io.appgain.sdk.Service.CallbackWithRetry;
 import io.appgain.sdk.Service.Injector;
 import io.appgain.sdk.Service.onRequestFailure;
 import io.appgain.sdk.DeferredDeepLinking.ResponseModels.DeferredDeepLinkingResponse;
-import io.appgain.sdk.Utils.Utils;
-import io.appgain.sdk.Utils.Validator;
+import io.appgain.sdk.Controller.Utils;
+import io.appgain.sdk.Controller.Validator;
 import io.appgain.sdk.interfaces.ParseAuthCallBack;
 import io.appgain.sdk.interfaces.SDKInitCallBack;
 import retrofit2.Response;
@@ -164,7 +164,7 @@ public class DeferredDeepLinking {
                         Map.Entry<String, String> entry = map.entrySet().iterator().next();
                         currentUser.put(entry.getKey() , entry.getValue());
                     }
-                if (response.getDeferredDeepLink()!=null)
+                    if (response.getDeferredDeepLink()!=null)
                     currentUser.add("SDL",response.getDeferredDeepLink());
                     currentUser.saveInBackground();
             }

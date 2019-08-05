@@ -2,12 +2,14 @@ package io.appgain.sdk.Model;
 
 import java.io.Serializable;
 
+import io.appgain.sdk.Controller.Appgain;
+
 /**
  * Created by developers@appgain.io on 2/20/2018.
  */
 
 /**
- *  {@link io.appgain.sdk.Controller.Appgain}  initialize user model
+ *  {@link Appgain}  initialize user model
  */
 
 public class User  implements Serializable

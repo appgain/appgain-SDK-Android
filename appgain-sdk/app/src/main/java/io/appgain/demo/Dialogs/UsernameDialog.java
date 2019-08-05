@@ -12,8 +12,6 @@ import io.appgain.demo.R;
 import io.appgain.demo.app.AppController;
 import io.appgain.sdk.Model.User;
 
-import static io.appgain.sdk.Controller.Appgain.getContext;
-
 /**
  * Created by developers@appgain.io on 7/4/2018.
  */

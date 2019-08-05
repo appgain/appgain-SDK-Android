@@ -13,6 +13,6 @@ import io.appgain.sdk.Model.User;
 
 public interface ParseSignUpCallBack {
         void onSuccess(User user) ;
-        void onFail(ParseException failResponse );
+        void onFail(ParseException failResponse);
 
 }

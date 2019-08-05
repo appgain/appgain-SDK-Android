@@ -1,4 +1,4 @@
-package io.appgain.sdk.Utils;
+package io.appgain.sdk.Controller;
 
 import android.app.Notification;
 import android.app.PendingIntent;

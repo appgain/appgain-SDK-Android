@@ -6,13 +6,9 @@ import com.parse.ParseException;
 import com.parse.ParseObject;
 import com.parse.SaveCallback;
 
-import io.appgain.sdk.Controller.Appgain;
 import io.appgain.sdk.Controller.Config;
 import io.appgain.sdk.Model.BaseResponse;
-import io.appgain.sdk.Model.SDKKeys;
-import io.appgain.sdk.RevenueUtils.PurchaseTransactions;
-import io.appgain.sdk.Utils.Utils;
-import io.appgain.sdk.interfaces.ParseAuthCallBack;
+import io.appgain.sdk.Controller.Utils;
 
 /**
  * Created by developers@appgain.io on 7/31/2019.
@@ -25,7 +21,7 @@ public class AppSessions {
 
     private static void pushNewSessionObject(final String userId , final AppSessionsCallback callBack) {
         ParseObject purchaseTransactionsObj = new ParseObject(Config.AppSession);
-        purchaseTransactionsObj.put("userId", userId);
+        purchaseTransactionsObj.put(Config.USER_ID_KEY, userId);
         purchaseTransactionsObj.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {

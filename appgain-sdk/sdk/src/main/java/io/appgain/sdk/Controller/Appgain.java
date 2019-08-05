@@ -1,18 +1,13 @@
 package io.appgain.sdk.Controller;
-
 import android.content.Context;
 import android.util.Log;
-
 import com.parse.ParseException;
 import com.parse.ParseUser;
-
 import java.util.Random;
-
 import io.appgain.sdk.Model.SDKKeys;
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.Model.User;
 import io.appgain.sdk.SessionUtills.AppSessions;
-import io.appgain.sdk.Utils.Validator;
 import io.appgain.sdk.interfaces.ParseAuthCallBack;
 import io.appgain.sdk.interfaces.ParsePushSetupCallBack;
 import io.appgain.sdk.interfaces.SDKInitCallBack;
@@ -20,11 +15,9 @@ import io.appgain.sdk.interfaces.AppgainSDKInitCallBack;
 import io.appgain.sdk.interfaces.ParseLoginCallBack;
 import io.appgain.sdk.interfaces.UpdateUserIdCallBack;
 import timber.log.Timber;
-
 /**
  * Created by developers@appgain.io  on 2/12/2018.
  */
-
 public class Appgain {
 
     private static Appgain appGain ;
@@ -37,8 +30,6 @@ public class Appgain {
         }
         return appGain;
     }
-
-
     /**
      *  initialize base case with appID  , appApiKey
      *  save appID , appApiKey
@@ -50,8 +41,6 @@ public class Appgain {
     public  static void initialize(final Context context , String appID , final String appApiKey) throws Exception {
         initialize(context , appID , appApiKey , null);
     }
-
-
     /**
      *  initialize  case with  given  user data with callback
      */
@@ -90,10 +79,8 @@ public class Appgain {
      *  save sdk keys
      */
     public  static void initializeWithParseAnonymous( Context context , String appID , final String appApiKey, String parseApplicationId , String serverName ,  AppgainSDKInitCallBack appgainSDKInitCallBack) throws Exception {
-        initializeWithParse(context , appID , appApiKey  , parseApplicationId , serverName, (User) getTempUser() , appgainSDKInitCallBack) ;
+        initializeWithParse(context,appID,appApiKey,parseApplicationId,serverName,null,null , appgainSDKInitCallBack);
     }
-
-
 
     /**
      *  initialize  case with  given  user data
@@ -106,40 +93,34 @@ public class Appgain {
     public  static void initializeWithParse(Context context , String appID , String appApiKey , String parseApplicationId , String serverName , final User user , final AppgainSDKInitCallBack appgainSDKInitCallBack) throws Exception{
         initializeWithParse(context,appID,appApiKey,parseApplicationId,serverName,null,user , appgainSDKInitCallBack);
     }
-    public  static void initializeWithParse(Context context , String appID , String appApiKey , String parseApplicationId , String serverName ,String clientKey ,  final User user , final AppgainSDKInitCallBack appgainSDKInitCallBack) throws Exception{
+    public  static void initializeWithParse(Context context , String appID , String appApiKey , String parseApplicationId ,
+                                            String serverName ,String clientKey ,  final User user , final AppgainSDKInitCallBack appgainSDKInitCallBack
+    ) throws Exception{
         validateAppData(context,appID,appApiKey , parseApplicationId , serverName);
         setContext(context);
         setAppID(appID);
         setAppApiKey(appApiKey);
-
-        if (isUserValid(user))
+        if (user !=null && isUserValid(user))
             getInstance().getPreferencesManager().saveUserProvidedData(user);
-
         try {
             if (ParseUser.getCurrentUser() !=null)
                 ParseUser.logOut();
         }catch (Exception ignore){}
-
         ParseUtil.setupParse(parseApplicationId, serverName , clientKey, new ParseLoginCallBack() {
             @Override
             public void onSuccess(final String userId) {
+                // save app session
 
+                saveAppSession(getPreferencesManager().getUserId() , null);
+                // setup appgain project keys
                 AppgainSuitUtil.setupServerKeys(new SDKInitCallBack() {
                     @Override
                     public void onSuccess(SDKKeys sdkKeys) {
-                        if (user.getEmail().contains("@user.temp")){
-                            if(appgainSDKInitCallBack !=null){
-                                appgainSDKInitCallBack.onSuccess();
-                            }
-                            Log.d("initializeWithParse" , "success") ;
-                        }else {
-
-
-                            // save appsession
-                                saveAppSession(userId , null);
-                            // save email channel
-                                saveEmailChannel(userId , user.getEmail() , appgainSDKInitCallBack);
-                        }
+                        // save email channel if user was login with email not a temp mail
+                        if (user!=null)
+                            saveEmailChannel(userId , user.getEmail() , appgainSDKInitCallBack);
+                        else
+                        appgainSDKInitCallBack.onSuccess();
                     }
 
                     @Override
@@ -149,7 +130,6 @@ public class Appgain {
                             appgainSDKInitCallBack.onFail(failure);
                     }
                 });
-
             }
 
             @Override
@@ -326,7 +306,7 @@ public class Appgain {
 
 
     public static void updateUserId(String userId , UpdateUserIdCallBack callBack){
-        ParseUtil.updateParseUserId(userId , callBack);
+        UpdateUtils.updateParseUserId(userId , callBack);
     }
 
 

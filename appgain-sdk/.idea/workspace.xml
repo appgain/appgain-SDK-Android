@@ -7,7 +7,7 @@
   </component>
   <component name="AndroidLogFilters">
     <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
-    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="Show only selected application" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
     <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
   </component>
   <component name="AvailableLibraryUpdateStorage">
@@ -101,63 +101,157 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="08afde3b-9ed2-4184-b161-1a2419bb9f57" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Adapter/GenericAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Adapter/GenericItemClickCallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Adapter/PersonalizationAdapter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Adapter/PersonalizationModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baseline_delete_outline_black_18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baseline_delete_outline_black_24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baseline_delete_outline_black_36.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-hdpi/baseline_delete_outline_black_48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/baseline_delete_outline_black_18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/baseline_delete_outline_black_24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/baseline_delete_outline_black_36.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-mdpi/baseline_delete_outline_black_48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/baseline_delete_outline_black_18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/baseline_delete_outline_black_24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/baseline_delete_outline_black_36.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/baseline_delete_outline_black_48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/red_circle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/baseline_delete_outline_black_18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/baseline_delete_outline_black_24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/baseline_delete_outline_black_36.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxhdpi/baseline_delete_outline_black_48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/baseline_delete_outline_black_18.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/baseline_delete_outline_black_24.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/baseline_delete_outline_black_36.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable-xxxhdpi/baseline_delete_outline_black_48.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/personalization_item.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/AppgainSuitUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/NotificationChannelCallBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/NotificationChannelUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseLogin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/InstallationReferrer/ReferrerReciver.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/GetImageRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/ParseNotificationManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/sdk/src/main/res/drawable-xxxhdpi/thumb1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/caches/build_file_checksums.ser" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__android_arch_core_common_1_1_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__android_arch_core_runtime_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__android_arch_lifecycle_common_1_1_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__android_arch_lifecycle_livedata_core_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__android_arch_lifecycle_runtime_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__android_arch_lifecycle_viewmodel_1_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_installreferrer_installreferrer_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_animated_vector_drawable_27_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_appcompat_v7_27_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_cardview_v7_27_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_1_1_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_constraint_constraint_layout_solver_1_1_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_design_27_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_multidex_1_0_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_multidex_instrumentation_1_0_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_recyclerview_v7_27_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_support_annotations_27_1_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_support_compat_27_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_support_core_ui_27_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_support_core_utils_27_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_support_fragment_27_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_support_media_compat_26_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_support_media_compat_27_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_support_v4_26_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_support_v4_27_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_support_vector_drawable_27_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_core_3_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_test_espresso_espresso_idling_resource_3_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_test_rules_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_test_runner_1_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_android_support_transition_27_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_crashlytics_sdk_android_answers_1_4_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_crashlytics_sdk_android_beta_1_2_8_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_crashlytics_sdk_android_crashlytics_2_9_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_crashlytics_sdk_android_crashlytics_core_2_6_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_firebase_firebase_jobdispatcher_0_8_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_github_bumptech_glide_annotations_4_8_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_github_bumptech_glide_disklrucache_4_8_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_github_bumptech_glide_gifdecoder_4_8_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_github_bumptech_glide_glide_4_8_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_github_parse_community_Parse_SDK_Android_1_18_5_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_github_parse_community_Parse_SDK_Android_fcm_1_18_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_github_parse_community_Parse_SDK_Android_gcm_1_18_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_github_parse_community_Parse_SDK_Android_ktx_1_18_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_github_parse_community_Parse_SDK_Android_parse_1_18_5_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_android_exoplayer_exoplayer_2_7_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_android_exoplayer_exoplayer_core_2_7_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_android_exoplayer_exoplayer_dash_2_7_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_android_exoplayer_exoplayer_hls_2_7_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_android_exoplayer_exoplayer_smoothstreaming_2_7_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_android_exoplayer_exoplayer_ui_2_7_2_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_android_gms_play_services_base_15_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_15_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_android_gms_play_services_gcm_12_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_android_gms_play_services_gcm_license_12_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_android_gms_play_services_iid_12_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_android_gms_play_services_iid_license_12_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_android_gms_play_services_stats_15_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_15_0_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_code_gson_gson_2_7_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_firebase_firebase_common_16_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_firebase_firebase_iid_16_2_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_firebase_firebase_iid_interop_16_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_firebase_firebase_measurement_connector_16_0_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_google_firebase_firebase_messaging_17_1_0_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_jakewharton_butterknife_8_8_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_jakewharton_butterknife_annotations_8_8_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_jakewharton_timber_timber_3_1_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_parse_bolts_bolts_tasks_1_4_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_squareup_okhttp3_logging_interceptor_3_8_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_squareup_okhttp3_okhttp_3_11_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_squareup_okio_okio_1_14_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_squareup_retrofit2_converter_gson_2_3_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__com_squareup_retrofit2_retrofit_2_3_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__io_fabric_sdk_android_fabric_1_4_3_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__org_jetbrains_annotations_13_0_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_1_2_51_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_common_1_2_51_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/libraries/Gradle__org_jetbrains_kotlin_kotlin_stdlib_jdk7_1_2_51_jar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseSetupUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/UpdateUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/LandingPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/LandingPageCallBack.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/LandingPageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/ComponentsModels/ButtonType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/ComponentsModels/Component.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/ComponentsModels/DeepPageComponentCreator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/ComponentsModels/DeepPageContent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/ComponentsModels/DeepPageHeader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/ComponentsModels/InfoImage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/ComponentsModels/InfoSLider.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/Header.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/Image.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/SocialMedia.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/Targets.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/AutomatorDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/AutomatorDialog.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/UsernameDialog.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/UsernameDialog.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/automator_dialog.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/automator_dialog.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/AppController.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/AppController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sdk/bintray.script.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/bintray.script.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Automator/Automator.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Automator/Automator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Config/Errors.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Config/Errors.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Appgain.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Appgain.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/AppgainSuitUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/AppgainSuitUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/PreferencesManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/PreferencesManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/NotificationChannelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/NotificationChannelUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinking.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/ComponentsModels/LandingPageComponentCreator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/ComponentsModels/LandingPageContent.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/ComponentsModels/LandingPageHeader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Model/User.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/AppGainPushReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/AppGainPushReceiver.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/PushDataReceiveModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/PushDataReceiveModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Utils/Utils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/interfaces/ParsePushSetupCallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/interfaces/ParsePushSetupCallBack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sdk/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/AppgainAppPushApi.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/AppgainAppPushApi.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/GetImageRequest.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/GetImageRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/PowerMangerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/PowerMangerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/WebViewActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/WebViewActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/RevenueUtils/PurchaseTransactions.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/RevenueUtils/PurchaseTransactions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Service/ApiInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Service/ApiInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/SessionUtills/AppSessions.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/SessionUtills/AppSessions.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/SmartLinkCreate/SmartDeepLinkCreator.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/SmartLinkCreate/SmartDeepLinkCreator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Utils/PowerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PowerUtils/PowerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Utils/Utils.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Utils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Utils/Validator.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Validator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/VideoUtils/ExoplayerUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/VideoUtils/ExoplayerUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/interfaces/AppgainSDKInitCallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/interfaces/AppgainSDKInitCallBack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/interfaces/ParseAuthCallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/interfaces/ParseAuthCallBack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/interfaces/ParseSignUpCallBack.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/interfaces/ParseSignUpCallBack.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -224,10 +318,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/MainActivity.java">
+        <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Appgain.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
+            <state relative-caret-position="2392">
+              <caret line="119" column="38" selection-start-line="119" selection-start-column="38" selection-end-line="119" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -236,122 +330,79 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sdk/bintray.script.gradle">
+        <entry file="file://$PROJECT_DIR$/sdk/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="138">
-              <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+            <state relative-caret-position="1357">
+              <caret line="59" column="38" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sdk/build.gradle">
+        <entry file="file://$PROJECT_DIR$/sdk/bintray.script.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="402">
-              <caret line="68" selection-start-line="68" selection-end-line="68" />
+            <state relative-caret-position="151">
+              <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sdk/build/intermediates/bundles/debug/res/layout/exo_layout.xml">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/build.gradle">
+        <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/UpdateUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Utils/PowerUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="41" column="73" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseUtil.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="148" column="27" selection-start-line="148" selection-start-column="27" selection-end-line="148" selection-end-column="27" />
-              <folding>
-                <element signature="method#updateUserIdInParseUserObject#0;class#ParseUtil#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Appgain.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="269" column="17" selection-start-line="269" selection-start-column="11" selection-end-line="269" selection-end-column="17" />
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#10308#10309#0" expanded="true" />
-                <element signature="e#10365#10366#0" expanded="true" />
-                <element signature="e#11732#11733#0" expanded="true" />
-                <element signature="e#11793#11794#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinking.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="388">
-              <caret line="168" column="51" selection-start-line="168" selection-start-column="51" selection-end-line="168" selection-end-column="51" />
+            <state relative-caret-position="322">
+              <caret line="14" selection-start-line="14" selection-end-line="16" selection-end-column="40" />
             </state>
           </provider>
         </entry>
       </file>
     </leaf>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>CLIP</find>
-      <find>PASSWOR</find>
-      <find>PASSWORD</find>
-      <find>DIALOG</find>
-      <find>showdialog</find>
-      <find>anony</find>
-      <find>layour</find>
-      <find>comp</find>
-      <find>validate</find>
-      <find>smartdeeplink</find>
-      <find>slider</find>
-      <find>automator</find>
-      <find>auto</find>
-      <find>personalizationMap</find>
-      <find>r.lay</find>
-      <find>appPush</find>
-      <find>mobile</find>
-      <find>saveId</find>
-      <find>sms</find>
-      <find>messa</find>
-      <find>email</find>
-      <find>parse</find>
-      <find>core</find>
-      <find>setLogLevel</find>
-      <find>sdkKeys</find>
-      <find>pars</find>
-      <find>tempuser</find>
-      <find>chann</find>
-      <find>setup</find>
-      <find>notifica</find>
+      <find>LandingPage</find>
+      <find>&quot;userid&quot;</find>
+      <find>sponsor</find>
+      <find>apikey</find>
+      <find>appApiKey</find>
+      <find>APPGAIN_IO</find>
+      <find>automessages</find>
+      <find>&quot;UserId&quot;</find>
+      <find>userId</find>
+      <find>firebase</find>
+      <find>ltv</find>
+      <find>lin</find>
+      <find>use</find>
+      <find>e.get</find>
+      <find>builder</find>
+      <find>updateuserid</find>
+      <find>onSuccess</find>
+      <find>notif</find>
+      <find>updateParseUserId</find>
+      <find>AppgainParseAuth</find>
+      <find>ParseUtil.updateTable</find>
+      <find>_User</find>
+      <find>userid</find>
+      <find>_user</find>
+      <find>&quot;objectId&quot;:&quot;6igcJQJIei</find>
+      <find>6igcJQJIei</find>
+      <find>user</find>
+      <find>beta</find>
+      <find>anon</find>
+      <find>https://appbackend.appgain.io/5864ef5223fcb95c7a99a156/ikhair/classes/_User/6igcJQJIei</find>
     </findStrings>
     <replaceStrings>
       <replace>io.appgain.demo</replace>
       <replace>implementation</replace>
       <replace>generateJavadoc</replace>
+      <replace>updateTable</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -360,22 +411,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/CheckoutDialog/BaseDialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/pushReciver.java" />
-        <option value="$PROJECT_DIR$/app/src/main/res/values/strings.xml" />
-        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Config/REGEX.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/CheckoutDialog/ConfigDialog.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/AppController.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/PushReceiver.java" />
-        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Service/CallbackWithRetry.java" />
-        <option value="$PROJECT_DIR$/gradle.properties" />
-        <option value="$PROJECT_DIR$/sdk/proguard-rules.pro" />
-        <option value="$PROJECT_DIR$/settings.gradle" />
-        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/AppGainPushConversion.java" />
-        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/AppgainAppPushApi.java" />
-        <option value="$PROJECT_DIR$/sdk/aarscript" />
-        <option value="$PROJECT_DIR$/sdk/aarscript.gradle" />
-        <option value="$PROJECT_DIR$/build.gradle" />
         <option value="$PROJECT_DIR$/sdk/src/main/res/values/styles.xml" />
         <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/GIFActivity.java" />
         <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/PushDataReceiveModel.java" />
@@ -397,24 +432,42 @@
         <option value="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Adapter/GenericItemClickCallback.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Adapter/GenericAdapter.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Adapter/PersonalizationAdapter.java" />
-        <option value="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/MainActivity.java" />
         <option value="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/AutomatorDialog.java" />
         <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/NotificationChannelUtils/NotificationChannelUtils.java" />
-        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/NotificationChannelUtils.java" />
         <option value="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinking.java" />
         <option value="$PROJECT_DIR$/app/build.gradle" />
-        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseUtil.java" />
-        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Appgain.java" />
         <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Utils/PowerUtils.java" />
-        <option value="$PROJECT_DIR$/sdk/bintray.script.gradle" />
         <option value="$PROJECT_DIR$/sdk/build.gradle" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/LandingPage.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/ComponentsModels/LandingPageContent.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/Header.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Utils/Utils.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/SessionUtills/AppSessions.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/LandingPageLinking.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeepPages/LandingPageResponse.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/LandingPageCallBack.java" />
+        <option value="$PROJECT_DIR$/app/src/main/java/io/appgain/demo/MainActivity.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseUtil.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Utils/ParseSetupUtils.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Appgain.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Utils/UpdateUtils.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Validator.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinking.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Automator/Automator.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/NotificationChannelUtils.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Config.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/RevenueUtils/PurchaseTransactions.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseLogin.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Appgain.java" />
+        <option value="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/UpdateUtils.java" />
+        <option value="$PROJECT_DIR$/sdk/bintray.script.gradle" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="489" />
-    <option name="y" value="40" />
+    <option name="x" value="87" />
+    <option name="y" value="198" />
     <option name="width" value="884" />
     <option name="height" value="735" />
   </component>
@@ -424,17 +477,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="appgain-sdk" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -452,10 +494,16 @@
               <item name="appgain-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
               <item name="build" type="462c0819:PsiDirectoryNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
             <path>
-              <item name="appgain-sdk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appgain-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="appgain-sdk" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
             </path>
           </expand>
           <select />
@@ -491,6 +539,25 @@
           </expand>
           <select />
         </subPane>
+        <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
+          <expand>
+            <path>
+              <item name="appgain-sdk" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+            </path>
+            <path>
+              <item name="appgain-sdk" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="app" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+            <path>
+              <item name="appgain-sdk" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
+              <item name="" type="442cc68d:ScopeViewTreeModel$RootNode" />
+              <item name="sdk" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
       </pane>
       <pane id="PackagesPane" />
     </panes>
@@ -500,7 +567,7 @@
     <property name="android.project.structure.proportion" value="0.15" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548446400385" />
-    <property name="device.picker.selection" value="10cf3e8" />
+    <property name="device.picker.selection" value="192.168.8.100:3989" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../../../appgain-SDK-Android" />
     <property name="not.eligible.for.single.variant.sync" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -510,20 +577,23 @@
     <property name="show.do.not.ask.upgrade.gradle.plugin" value="3.0.1" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="G:\android studio\AppGain\android-sdk-github\appgain-SDK-Android\appgain-sdk\app\src\main\res\drawable-xhdpi" />
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="io.appgain.sdk" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="G:\android studio\AppGain\android-sdk-github\appgain-SDK-Android\appgain-sdk" />
+      <recent name="G:\android studio\AppGain\android-sdk-github\appgain-SDK-Android\appgain-sdk\sdk" />
+      <recent name="G:\android studio\AppGain\android-sdk-github\appgain-SDK-Android\appgain-sdk\sdk\src\main\res\layout" />
+      <recent name="G:\android studio\AppGain\android-sdk-github\appgain-SDK-Android\appgain-sdk\sdk\src\main\res\drawable-mdpi" />
+      <recent name="G:\android studio\AppGain\android-sdk-github\appgain-SDK-Android\appgain-sdk\app\src\main\res\layout" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="io.appgain.demo.Dialogs" />
       <recent name="io.appgain.demo" />
       <recent name="io.appgain.demo.CheckoutDialog" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="G:\android studio\AppGain\android-sdk-github\appgain-SDK-Android\appgain-sdk\sdk\src\main\res\layout" />
-      <recent name="G:\android studio\AppGain\android-sdk-github\appgain-SDK-Android\appgain-sdk\sdk\src\main\res\drawable-mdpi" />
-      <recent name="G:\android studio\AppGain\android-sdk-github\appgain-SDK-Android\appgain-sdk\app\src\main\res\layout" />
-      <recent name="G:\android studio\AppGain\android-sdk-github\appgain-SDK-Android\appgain-sdk\app\src\main\java\io\appgain\demo" />
-      <recent name="G:\android studio\AppGain\android-sdk-github\appgain-SDK-Android\appgain-sdk\app" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="G:\android studio\AppGain\android-sdk-github\appgain-SDK-Android\appgain-sdk\app\src\main\res\drawable-xhdpi" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -810,10 +880,9 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="32" width="1382" height="744" extended-state="7" />
-    <editor active="true" />
+    <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.483965" visible="true" weight="0.2375189" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.483965" visible="true" weight="0.2322239" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" sideWeight="0.51603496" side_tool="true" weight="0.20045386" />
@@ -823,18 +892,18 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="Resources Explorer" order="8" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.3295325" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.3289689" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49924356" weight="0.3289689" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.6147541" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.3289689" />
-      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49785176" weight="0.27986908" />
+      <window_info anchor="bottom" id="Build" order="7" sideWeight="0.49785176" weight="0.2749591" />
       <window_info anchor="bottom" id="Android Profiler" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Logcat" order="10" weight="0.60720134" />
-      <window_info anchor="bottom" id="Version Control" order="11" show_stripe_button="false" weight="0.3295325" />
-      <window_info anchor="bottom" id="Terminal" order="12" weight="0.58756137" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32405892" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.58756137" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -848,20 +917,24 @@
       <window_info anchor="right" id="Preview" order="10" weight="0.3290469" />
     </layout>
   </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/UsernameDialog.java</url>
-          <line>120</line>
+          <line>118</line>
           <properties />
           <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Model/User.java</url>
-          <line>17</line>
-          <properties />
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -872,276 +945,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/user_info_dialog.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1196">
-          <caret line="52" column="28" selection-start-line="52" selection-start-column="28" selection-end-line="52" selection-end-column="28" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/DUMMY.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/MyPreferenceManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="75" column="52" selection-start-line="75" selection-start-column="52" selection-end-line="75" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/activity_main.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="46" selection-start-line="10" selection-start-column="46" selection-end-line="10" selection-end-column="46" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/YoutubeVideoActivity.java" />
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/PushDataReceiveModel.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1127">
-          <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/BaseDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="31" column="41" selection-start-line="31" selection-start-column="41" selection-end-line="31" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/config_dialog.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3772">
-          <caret line="164" column="15" selection-start-line="164" selection-start-column="15" selection-end-line="164" selection-end-column="15" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/PushReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/Keys.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Config/REGEX.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="5" column="17" selection-start-line="5" selection-start-column="17" selection-end-line="5" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeepPages/RequestModels/ComponentsModels/DeepPageComponentCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="6" column="29" selection-start-line="6" selection-start-column="29" selection-end-line="6" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Config/ForbiddenInputs.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="8" column="21" selection-start-line="8" selection-start-column="21" selection-end-line="8" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/UsernameDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="943">
-          <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/res/layout/activity_lock_web_view.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="39" selection-start-line="4" selection-start-column="39" selection-end-line="4" selection-end-column="39" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/SmartDeepLinkDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3381">
-          <caret line="163" column="74" selection-start-line="163" selection-start-column="74" selection-end-line="163" selection-end-column="74" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeepPages/RequestModels/Targets.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeepPages/DeepPage.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4968">
-          <caret line="246" column="37" selection-start-line="246" selection-start-column="37" selection-end-line="246" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/SmartLinkCreate/SmartDeepLinkCreator.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/WebViewActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3036">
-          <caret line="157" selection-start-line="157" selection-end-line="157" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Adapter/PersonalizationModel.java">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/res/layout/personalization_item.xml" />
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/res/layout/activity_main.xml" />
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/drawable-xhdpi/red_circle.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/personalization_item.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Dialogs/AutomatorDialog.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="713">
-          <caret line="50" column="75" selection-start-line="50" selection-start-column="75" selection-end-line="50" selection-end-column="75" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/res/layout/automator_dialog.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-      <provider editor-type-id="android-designer2" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Adapter/PersonalizationAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Adapter/GenericAdapter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="621">
-          <caret line="40" column="69" selection-start-line="40" selection-start-column="69" selection-end-line="40" selection-end-column="69" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/Adapter/GenericItemClickCallback.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="69">
-          <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/ParseNotificationManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="11" column="22" selection-start-line="11" selection-start-column="22" selection-end-line="11" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/NotificationChannelCallBack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="6" column="18" selection-start-line="6" selection-start-column="18" selection-end-line="6" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/AppGainPushReceiver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="747">
-          <caret line="107" column="13" lean-forward="true" selection-start-line="107" selection-start-column="13" selection-end-line="107" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/NotificationChannelUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="333">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1173#1174#0" expanded="true" />
-            <element signature="e#1240#1241#0" expanded="true" />
-            <element signature="e#2147#2148#0" expanded="true" />
-            <element signature="e#2214#2215#0" expanded="true" />
-            <element signature="e#3084#3085#0" expanded="true" />
-            <element signature="e#3151#3152#0" expanded="true" />
-            <element signature="e#4047#5724#0" expanded="true" />
-            <element signature="e#4979#5658#0" expanded="true" />
-            <element signature="e#5657#5658#0" expanded="true" />
-            <element signature="e#5723#5724#0" expanded="true" />
-            <element signature="e#6536#8599#0" expanded="true" />
-            <element signature="e#7726#8501#0" expanded="true" />
-            <element signature="e#8500#8501#0" expanded="true" />
-            <element signature="e#8598#8599#0" expanded="true" />
-            <element signature="e#9389#11443#0" expanded="true" />
-            <element signature="e#10570#11345#0" expanded="true" />
-            <element signature="e#11344#11345#0" expanded="true" />
-            <element signature="e#11442#11443#0" expanded="true" />
-            <element signature="e#11984#13967#0" expanded="true" />
-            <element signature="e#13094#13869#0" expanded="true" />
-            <element signature="e#13868#13869#0" expanded="true" />
-            <element signature="e#13966#13967#0" expanded="true" />
-            <element signature="e#14287#16184#0" expanded="true" />
-            <element signature="e#14845#15774#0" expanded="true" />
-            <element signature="e#15773#15774#0" expanded="true" />
-            <element signature="e#16183#16184#0" expanded="true" />
-            <element signature="e#16704#17488#0" expanded="true" />
-            <element signature="e#17487#17488#0" expanded="true" />
-            <element signature="e#18160#18161#0" expanded="true" />
-            <element signature="e#18221#18222#0" expanded="true" />
-            <element signature="e#18530#19317#0" expanded="true" />
-            <element signature="e#19316#19317#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values/values.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="748" selection-start-line="748" selection-end-line="748" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sdk/src/main/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-231" />
@@ -1162,104 +965,334 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/AppController.java">
+    <entry file="file://$PROJECT_DIR$/local.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="60" column="34" selection-start-line="60" selection-start-column="34" selection-end-line="60" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/PreferencesManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="325">
-          <caret line="81" column="19" selection-start-line="81" selection-start-column="19" selection-end-line="81" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/AppgainSuitUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="72">
-          <caret line="53" column="26" selection-start-line="53" selection-start-column="26" selection-end-line="53" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="133">
-          <caret line="25" column="40" selection-start-line="25" selection-start-column="40" selection-end-line="25" selection-end-column="40" />
-        </state>
-      </provider>
-      <provider editor-type-id="android-manifest" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="66" column="13" selection-start-line="66" selection-start-column="13" selection-end-line="66" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="388">
-          <caret line="168" column="51" selection-start-line="168" selection-start-column="51" selection-end-line="168" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="148" column="27" selection-start-line="148" selection-start-column="27" selection-end-line="148" selection-end-column="27" />
-          <folding>
-            <element signature="method#updateUserIdInParseUserObject#0;class#ParseUtil#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Appgain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="269" column="17" selection-start-line="269" selection-start-column="11" selection-end-line="269" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#10308#10309#0" expanded="true" />
-            <element signature="e#10365#10366#0" expanded="true" />
-            <element signature="e#11732#11733#0" expanded="true" />
-            <element signature="e#11793#11794#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Utils/PowerUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="41" column="73" selection-start-line="41" selection-start-column="73" selection-end-line="41" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/bintray.script.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="138">
-          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        <state relative-caret-position="322">
+          <caret line="14" selection-start-line="14" selection-end-line="14" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sdk/build/intermediates/bundles/debug/res/layout/exo_layout.xml">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/ComponentsModels/LandingPageContent.java" />
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/RequestModels/Header.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="13" column="5" lean-forward="true" selection-start-line="13" selection-start-column="5" selection-end-line="13" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="80" lean-forward="true" selection-start-line="80" selection-end-line="80" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/build/docs/javadoc/io/appgain/sdk/Service/Injector.html" />
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Service/Injector.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="338">
+          <caret line="64" column="5" lean-forward="true" selection-start-line="64" selection-start-column="5" selection-end-line="64" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Service/ApiInterface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="78" column="29" lean-forward="true" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/app/AppController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="23" column="51" selection-start-line="23" selection-start-column="51" selection-end-line="23" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1587">
+          <caret line="69" column="64" selection-start-line="69" selection-start-column="64" selection-end-line="69" selection-end-column="64" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.github.parse-community.Parse-SDK-Android/fcm/1.18.5/18c2ecf430e1f752c8f9d8114d6691b473d352bd/fcm-1.18.5-sources.jar!/com/parse/fcm/ParseFirebaseMessagingService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="10" column="63" selection-start-line="10" selection-start-column="63" selection-end-line="10" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-messaging-17.1.0.aar/8012361c128fb8684c8ccd2ba4833727/jars/classes.jar!/com/google/firebase/messaging/FirebaseMessagingService.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="26" column="46" selection-start-line="26" selection-start-column="46" selection-end-line="26" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/.gradle/caches/transforms-1/files-1.1/firebase-iid-17.0.3.aar/f213d56c4be22b6f7d00ecbce86f659e/jars/classes.jar!/com/google/firebase/iid/zzb.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="644">
+          <caret line="40" column="33" selection-start-line="40" selection-start-column="33" selection-end-line="40" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/NotificationChannelCallBack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="7" selection-start-line="7" selection-end-line="8" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/interfaces/AppgainSDKInitCallBack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/build.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="9" column="25" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/LandingPageResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="129">
+          <caret line="19" column="13" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinkingCallBack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="14" column="18" selection-start-line="14" selection-start-column="18" selection-end-line="14" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/LandingPageCallBack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="253">
+          <caret line="13" column="18" selection-start-line="13" selection-start-column="18" selection-end-line="13" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/LandingPages/LandingPage.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="42" column="13" selection-start-line="42" selection-start-column="13" selection-end-line="42" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/ResponseModels/ExtraData.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="25" column="44" selection-start-line="25" selection-start-column="44" selection-end-line="25" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/ResponseModels/DeferredDeepLinkingResponse.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="21" selection-end-line="20" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/SmartLinkCreate/SmartDeepLinkCreator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="276">
+          <caret line="36" column="19" selection-start-line="36" selection-start-column="19" selection-end-line="36" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/sdk/src/main/res/layout/exo_layout.xml" />
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/res/layout/exo_layout.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+      <provider editor-type-id="android-designer2" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/build/generated/source/buildConfig/debug/io/appgain/sdk/BuildConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="5" column="19" selection-start-line="5" selection-start-column="19" selection-end-line="5" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/SessionUtills/AppSessions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="21" column="28" selection-start-line="21" selection-start-column="28" selection-end-line="21" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/interfaces/UpdateUserIdCallBack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PowerUtils/PowerUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="41" column="61" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Utils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="36" column="13" selection-start-line="36" selection-start-column="13" selection-end-line="36" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/AppgainSuitUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="62" column="32" selection-start-line="62" selection-start-column="32" selection-end-line="62" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Validator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/PreferencesManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="120" column="16" selection-start-line="120" selection-start-column="16" selection-end-line="120" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="45" column="41" lean-forward="true" selection-start-line="45" selection-start-column="41" selection-end-line="45" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Automator/Automator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="48" column="91" selection-start-line="48" selection-start-column="91" selection-end-line="48" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/src/main/java/io/appgain/demo/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="301" column="16" selection-start-line="301" selection-start-column="16" selection-end-line="301" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/NotificationChannelUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="256">
+          <caret line="41" column="82" selection-start-line="41" selection-start-column="82" selection-end-line="41" selection-end-column="82" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="22" column="46" selection-start-line="22" selection-start-column="46" selection-end-line="22" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/RevenueUtils/PurchaseTransactions.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="80">
+          <caret line="25" column="77" lean-forward="true" selection-start-line="25" selection-start-column="77" selection-end-line="25" selection-end-column="77" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://G:/sdk/platforms/android-27/android.jar!/java/lang/String.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="5" column="18" lean-forward="true" selection-start-line="4" selection-end-line="5" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/InstallationReferrer/ReferrerReciver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1311">
+          <caret line="111" column="5" selection-start-line="111" selection-start-column="5" selection-end-line="111" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseLogin.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="27" column="26" selection-start-line="27" selection-start-column="26" selection-end-line="27" selection-end-column="26" />
+          <folding>
+            <element signature="e#836#1500#0" expanded="true" />
+            <element signature="e#1499#1500#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseSetupUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="181">
+          <caret line="21" column="32" selection-start-line="21" selection-start-column="32" selection-end-line="21" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="78" column="29" selection-start-line="78" selection-start-column="29" selection-end-line="78" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Appgain.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2392">
+          <caret line="119" column="38" selection-start-line="119" selection-start-column="38" selection-end-line="119" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sdk/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="402">
-          <caret line="68" selection-start-line="68" selection-end-line="68" />
+        <state relative-caret-position="1357">
+          <caret line="59" column="38" selection-start-line="59" selection-start-column="38" selection-end-line="59" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/UpdateUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="322">
+          <caret line="14" selection-start-line="14" selection-end-line="16" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/bintray.script.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="151">
+          <caret line="26" column="31" selection-start-line="26" selection-start-column="31" selection-end-line="26" selection-end-column="31" />
         </state>
       </provider>
     </entry>

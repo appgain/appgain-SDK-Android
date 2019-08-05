@@ -133,16 +133,17 @@ public class MainActivity extends AppCompatActivity {
                     .withSocialMedia("test create", "test create deep page", "https://i.imgur.com/HwieXuR.jpg")
                     .build();
 
+
             deepPage.enqueue(new LandingPageCallBack() {
                 @Override
-                public void onDeepPageCreated(@Nullable LandingPageResponse response) {
+                public void onLandingPageCreated(@Nullable LandingPageResponse response) {
                     showLoading(false);
                     showLinkDialog("deep page created" , response.getLink());
                 }
 
 
                 @Override
-                public void onDeepPageFail(@Nullable BaseResponse failure) {
+                public void onLandingPageFail(@Nullable BaseResponse failure) {
                     showLoading(false);
                     showDialog(failure.getMessage());
                     Timber.e(failure.toString());

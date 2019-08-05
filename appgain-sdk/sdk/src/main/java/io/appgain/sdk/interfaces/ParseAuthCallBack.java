@@ -13,6 +13,6 @@ import io.appgain.sdk.Model.SDKKeys;
  */
 
 public interface ParseAuthCallBack {
-    void  onSuccess(SDKKeys sdkKeys , String parseUserId);
+    void  onSuccess(SDKKeys sdkKeys, String parseUserId);
     void  onFailure(BaseResponse failure);
 }

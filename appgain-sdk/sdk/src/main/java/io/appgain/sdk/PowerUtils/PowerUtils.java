@@ -1,4 +1,4 @@
-package io.appgain.sdk.Utils;
+package io.appgain.sdk.PowerUtils;
 
 import android.app.Activity;
 import android.app.AlertDialog;
