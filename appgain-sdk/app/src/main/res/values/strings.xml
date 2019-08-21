@@ -1,8 +1,0 @@
-<resources>
-    <string name="app_name">Android Sdk demo </string>
-    <string name="smart_deep_link">Smart Deep Link</string>
-    <string name="deferred_deep_linking">Deferred Deep linking</string>
-    <string name="deep_page_create">Deep Page Create</string>
-    <string name="init_anonymous">Init anonymous</string>
-    <string name="inti_with_username">Inti With Username</string>
-</resources>

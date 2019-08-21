@@ -24,10 +24,14 @@ public class ParseLogin {
 
     /**
      * parse login as anonymous user in case of no username , password , email provided before
+
+     /**
+     * parse login as anonymous user in case of no username , password , email provided before
      */
     public static void login(final ParseLoginCallBack parseLoginListener){
         Timber.e("login as anonymous entered");
         ParseAnonymousUtils.logIn(new LogInCallback() {
+
             @Override
             public void done(ParseUser parseUser, ParseException e) {
                 if (e != null) {
@@ -36,15 +40,34 @@ public class ParseLogin {
                         parseLoginListener.onFail(e);
                 } else {
                     Timber.e( "Anonymous login sucess " );
-                    Appgain.getPreferencesManager().saveId(parseUser.getObjectId());
+                    String userId = getAndSaveUserIdInUpdateCase(parseUser);
                     if (parseLoginListener!=null)
-                        parseLoginListener.onSuccess(parseUser.getObjectId());
+                        parseLoginListener.onSuccess(userId);
 
                 }
             }
         });
+
     }
 
+    private static String getAndSaveUserIdInUpdateCase(ParseUser parseUser) {
+        /// if userid not set yet
+        if (Appgain.getPreferencesManager().getUserId()==null){
+            if (parseUser.getString(Config.USER_ID_KEY)==null){
+                Appgain.getPreferencesManager().saveId(parseUser.getObjectId());
+                parseUser.put(Config.USER_ID_KEY , parseUser.getObjectId());
+                return parseUser.getObjectId() ;
+            }else {
+                Appgain.getPreferencesManager().saveId(parseUser.getString(Config.USER_ID_KEY));
+                return parseUser.getString(Config.USER_ID_KEY);
+            }
+        }else {
+            if (parseUser.getString(Config.USER_ID_KEY)==null) {
+                parseUser.put(Config.USER_ID_KEY , Appgain.getPreferencesManager().getUserId());
+            }
+        }
+        return Appgain.getPreferencesManager().getUserId();
+    }
 
     /**
      * parse login with user provided data
@@ -55,9 +78,10 @@ public class ParseLogin {
             @Override
             public void done(ParseUser parseUser, ParseException e) {
                 if (parseUser != null) {
-                    Appgain.getPreferencesManager().saveId(parseUser.getObjectId());
+                    String userId = parseUser.getString(Config.USER_ID_KEY)==null?parseUser.getObjectId() : parseUser.getString(Config.USER_ID_KEY) ;
+                    Appgain.getPreferencesManager().saveId(userId);
                     if (parseLoginListener!=null)
-                    parseLoginListener.onSuccess(parseUser.getObjectId());
+                        parseLoginListener.onSuccess(userId);
                 } else {
                     e.printStackTrace();
                     Timber.e( "user login failed. "+e.toString());

@@ -26,67 +26,79 @@ public class UpdateUtils {
 
     // update parse installation , users , notification channel
      static void updateParseUserId(final String userId, final UpdateUserIdCallBack callBack) {
-        final String curuntUserId = getCurrentUserId();
+        final String installationUserId = getCurrentUserId();
+        final  String parseUserObjUserIdFiled = ParseUser.getCurrentUser().getString(Config.USER_ID_KEY) ;
         // case Appgain sdk  initialized
-        if (userId == null || (curuntUserId !=null&& curuntUserId.equals(userId)) ){
-            return;
-        }
-        Timber.e("updateParseUserId" +" curuntUserId "+ curuntUserId+ "  newUserId " + userId );
-        updateUserIdInInstallationObject(userId , new UpdateUserIdCallBack() {
-            @Override
-            public void onSuccess() {
-                updateUserIdInParseUserObject( curuntUserId , userId, new UpdateUserIdCallBack() {
-                    @Override
-                    public void onSuccess() {
-                        updateNotificationsChannel(curuntUserId , userId , new UpdateUserIdCallBack() {
-                            @Override
-                            public void onSuccess() {
-                                updatePurchaseUserId(curuntUserId , userId , new UpdateUserIdCallBack(){
-                                    @Override
-                                    public void onSuccess() {
-                                        updateAppSessionId(curuntUserId , userId , new UpdateUserIdCallBack() {
-                                            @Override
-                                            public void onSuccess() {
-                                                //ParseInstallation succeed
-                                                Timber.e("ParseInstallation update succeed");
-                                                //update preference manger userId
-                                                Appgain.getPreferencesManager().saveId(userId);
-                                                callBack.onSuccess();
-                                            }
-
-                                            @Override
-                                            public void onFailure(BaseResponse failure) {
-                                                callBack.onFailure(failure);
-                                            }
-                                        });
-                                    }
-
-                                    @Override
-                                    public void onFailure(BaseResponse failure) {
-                                        callBack.onFailure(failure);
-                                    }
-                                });
-                            }
-
-                            @Override
-                            public void onFailure(BaseResponse failure) {
-                                callBack.onFailure(failure);
-                            }
-                        }) ;
-                    }
-
-                    @Override
-                    public void onFailure(BaseResponse failure) {
-                        callBack.onFailure(failure);
-                    }
-                });
+         final String currentUserId;
+         if (installationUserId !=null&& installationUserId.equals(userId)){
+            if (parseUserObjUserIdFiled!=null&&parseUserObjUserIdFiled.equals(userId)){
+                //  installation and parse user update so cancel update
+                return;
+            }else {
+                currentUserId=ParseUser.getCurrentUser().getObjectId();
             }
+        }else {
+             currentUserId = installationUserId;
+         }
+        Timber.e("updateParseUserId" +" curuntUserId "+ currentUserId+ "  newUserId " + userId );
+         updateUserIdInParseUserObject( currentUserId , userId, new UpdateUserIdCallBack() {
+             @Override
+             public void onSuccess() {
+                 updateNotificationsChannel(currentUserId , userId , new UpdateUserIdCallBack() {
+                     @Override
+                     public void onSuccess() {
+                         updatePurchaseUserId(currentUserId , userId , new UpdateUserIdCallBack(){
+                             @Override
+                             public void onSuccess() {
 
-            @Override
-            public void onFailure(BaseResponse failure) {
-                callBack.onFailure(failure);
-            }
-        });
+                                 updateAppSessionId(currentUserId , userId , new UpdateUserIdCallBack() {
+                                     @Override
+                                     public void onSuccess() {
+                                         updateUserIdInInstallationObject(userId , new UpdateUserIdCallBack() {
+                                             @Override
+                                             public void onSuccess() {
+                                                 //ParseInstallation succeed
+                                                 Timber.e("ParseInstallation update succeed");
+                                                 //update preference manger userId
+                                                 Appgain.getPreferencesManager().saveId(userId);
+                                                 callBack.onSuccess();
+                                             }
+
+                                             @Override
+                                             public void onFailure(BaseResponse failure) {
+                                                 callBack.onFailure(failure);
+                                             }
+                                         });
+
+
+                                     }
+
+                                     @Override
+                                     public void onFailure(BaseResponse failure) {
+                                         callBack.onFailure(failure);
+                                     }
+                                 });
+                             }
+
+                             @Override
+                             public void onFailure(BaseResponse failure) {
+                                 callBack.onFailure(failure);
+                             }
+                         });
+                     }
+
+                     @Override
+                     public void onFailure(BaseResponse failure) {
+                         callBack.onFailure(failure);
+                     }
+                 }) ;
+             }
+
+             @Override
+             public void onFailure(BaseResponse failure) {
+                 callBack.onFailure(failure);
+             }
+         });
 
     }
 
@@ -157,7 +169,7 @@ public class UpdateUtils {
                                                 if (callBack !=null && (objects.size()-1)!= finalIndex)
                                                     callBack.onFailure(new BaseResponse(e.getCode()+"" , e.getMessage()));
                                             }else {
-                                                if (callBack !=null && (objects.size()-1)!= finalIndex)
+                                                if (callBack !=null && (objects.size()-1)== finalIndex)
                                                     callBack.onSuccess();
                                             }
                                         }

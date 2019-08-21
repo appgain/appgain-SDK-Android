@@ -25,7 +25,7 @@ public class ExtraData {
     @Expose
     private List<Map<String,String>> params;
 
-    public List<Map<String, String>> getParams() {
+    public List<Map<String, String>>  getParams() {
         return params;
     }
 

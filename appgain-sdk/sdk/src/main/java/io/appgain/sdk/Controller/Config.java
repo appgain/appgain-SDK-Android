@@ -21,7 +21,7 @@ public final class Config {
     public static String NETWORK_FAILED = "network failed";
     public static boolean io =true;
     public final static String PurchaseTransactions = "PurchaseTransactions";
-    public final static String AppSession = "AppSession";
+    public final static String AppSession = "appSessions";
     public final static String NotificationChannels = "NotificationChannels";
 
 

@@ -18,6 +18,7 @@ import timber.log.Timber;
 /**
  * Created by developers@appgain.io  on 2/12/2018.
  */
+
 public class Appgain {
 
     private static Appgain appGain ;
@@ -308,8 +309,6 @@ public class Appgain {
     public static void updateUserId(String userId , UpdateUserIdCallBack callBack){
         UpdateUtils.updateParseUserId(userId , callBack);
     }
-
-
 
     /**
      *
