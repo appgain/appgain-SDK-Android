@@ -19,69 +19,21 @@
         <repository>JCenter</repository>
       </library-update>
       <library-update>
-        <group-id>com.jakewharton</group-id>
-        <name>butterknife-compiler</name>
-        <version>10.1.0</version>
-        <repository>JCenter</repository>
+        <group-id>com.android.support</group-id>
+        <name>appcompat-v7</name>
+        <version>28.0.0</version>
+        <repository>Google,Android Repository</repository>
       </library-update>
       <library-update>
-        <group-id>com.jakewharton</group-id>
-        <name>butterknife</name>
-        <version>10.1.0</version>
-        <repository>JCenter</repository>
-      </library-update>
-      <library-update>
-        <group-id>com.squareup.retrofit2</group-id>
-        <name>converter-gson</name>
-        <version>2.5.0</version>
-        <repository>JCenter</repository>
+        <group-id>com.android.installreferrer</group-id>
+        <name>installreferrer</name>
+        <version>1.0</version>
+        <repository>Google</repository>
       </library-update>
       <library-update>
         <group-id>com.squareup.okhttp3</group-id>
         <name>logging-interceptor</name>
-        <version>4.0.0-alpha02</version>
-        <repository>JCenter</repository>
-      </library-update>
-      <library-update>
-        <group-id>com.android.support</group-id>
-        <name>multidex</name>
-        <version>1.0.3</version>
-        <repository>Google,Android Repository</repository>
-      </library-update>
-      <library-update>
-        <group-id>com.android.support.constraint</group-id>
-        <name>constraint-layout</name>
-        <version>2.0.0-beta1</version>
-        <repository>Google</repository>
-      </library-update>
-      <library-update>
-        <group-id>junit</group-id>
-        <name>junit</name>
-        <version>4.13-beta-3</version>
-        <repository>JCenter</repository>
-      </library-update>
-      <library-update>
-        <group-id>com.android.support.test</group-id>
-        <name>runner</name>
-        <version>1.0.2</version>
-        <repository>Google,Android Repository</repository>
-      </library-update>
-      <library-update>
-        <group-id>com.android.support.test.espresso</group-id>
-        <name>espresso-core</name>
-        <version>3.0.2</version>
-        <repository>Google,Android Repository</repository>
-      </library-update>
-      <library-update>
-        <group-id>com.github.bumptech.glide</group-id>
-        <name>glide</name>
-        <version>4.9.0</version>
-        <repository>JCenter</repository>
-      </library-update>
-      <library-update>
-        <group-id>com.facebook.android</group-id>
-        <name>facebook-applinks</name>
-        <version>5.0.1</version>
+        <version>4.1.1</version>
         <repository>JCenter</repository>
       </library-update>
       <library-update>
@@ -93,11 +45,11 @@
       <library-update>
         <group-id>com.squareup.retrofit2</group-id>
         <name>retrofit</name>
-        <version>2.5.0</version>
+        <version>2.6.1</version>
         <repository>JCenter</repository>
       </library-update>
     </library-updates>
-    <last-search-timestamp>1560177338338</last-search-timestamp>
+    <last-search-timestamp>1568036809609</last-search-timestamp>
   </component>
   <component name="BookmarkManager">
     <bookmark url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.appgain/sdk/2.1.1-beta2/e1bdb773f5e072e127388df0dd5c786e08bc455f/sdk-2.1.1-beta2-sources.jar!/io/appgain/sdk/Controller/ParseSetupUtils.java" description="if (applicationId ==null || server ==null ){" line="24" />
@@ -176,8 +128,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sdk/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1725">
-              <caret line="75" column="2" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="43" />
+            <state relative-caret-position="528">
+              <caret line="77" selection-start-line="77" selection-end-line="77" />
             </state>
           </provider>
         </entry>
@@ -185,10 +137,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/RevenueUtils/PurchaseTransactions.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="390">
-              <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
+            <state relative-caret-position="-584">
+              <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
             </state>
           </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sdk/src/main/AndroidManifest.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="506">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            </state>
+          </provider>
+          <provider editor-type-id="android-manifest" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -203,8 +165,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sdk/bintray.script.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="17" selection-start-line="17" selection-end-line="17" />
+            <state relative-caret-position="276">
+              <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
             </state>
           </provider>
         </entry>
@@ -220,7 +182,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>apikey</find>
       <find>appApiKey</find>
       <find>APPGAIN_IO</find>
       <find>automessages</find>
@@ -250,6 +211,7 @@
       <find>SAVEID</find>
       <find>auth</find>
       <find>anony</find>
+      <find>INT</find>
     </findStrings>
     <replaceStrings>
       <replace>io.appgain.demo</replace>
@@ -728,9 +690,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.483965" visible="true" weight="0.10181237" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.483965" visible="true" weight="0.10181237" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" sideWeight="0.51603496" side_tool="true" weight="0.20045386" />
@@ -751,7 +712,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Logcat" order="10" weight="0.60720134" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32405892" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.22643554" />
+      <window_info anchor="bottom" id="Terminal" order="12" visible="true" weight="0.22643554" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -799,7 +760,6 @@
     </watches-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/sdk/build/docs/javadoc/io/appgain/sdk/Service/Injector.html" />
     <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Service/Injector.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="338">
@@ -1097,10 +1057,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/AndroidManifest.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="506">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/RevenueUtils/PurchaseTransactions.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="35" column="60" selection-start-line="35" selection-start-column="60" selection-end-line="35" selection-end-column="60" />
+        <state relative-caret-position="-584">
+          <caret line="6" column="30" selection-start-line="6" selection-start-column="30" selection-end-line="6" selection-end-column="30" />
         </state>
       </provider>
     </entry>
@@ -1113,15 +1081,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sdk/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1725">
-          <caret line="75" column="2" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="43" />
+        <state relative-caret-position="528">
+          <caret line="77" selection-start-line="77" selection-end-line="77" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sdk/bintray.script.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="17" selection-start-line="17" selection-end-line="17" />
+        <state relative-caret-position="276">
+          <caret line="12" column="44" lean-forward="true" selection-start-line="12" selection-start-column="44" selection-end-line="12" selection-end-column="44" />
         </state>
       </provider>
     </entry>

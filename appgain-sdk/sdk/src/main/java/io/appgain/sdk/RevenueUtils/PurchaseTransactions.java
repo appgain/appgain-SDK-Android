@@ -18,7 +18,7 @@ import io.appgain.sdk.interfaces.ParseAuthCallBack;
  */
 public class PurchaseTransactions {
 
-    public  static  void logPurchase(String name , int amount , String currency , PurchaseTransactionsCallback callback  ){
+    public  static  void logPurchase(String name , float amount , String currency , PurchaseTransactionsCallback callback  ){
         logPurchase(null , name , amount , currency , callback);
     }
 
