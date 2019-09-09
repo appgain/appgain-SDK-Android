@@ -33,6 +33,7 @@ public class PurchaseTransactions {
         purchaseTransactionsObj.put("name", name);
         purchaseTransactionsObj.put("amount", amount);
         purchaseTransactionsObj.put("currency", currency);
+        purchaseTransactionsObj.put("platform" , "android");
         purchaseTransactionsObj.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
