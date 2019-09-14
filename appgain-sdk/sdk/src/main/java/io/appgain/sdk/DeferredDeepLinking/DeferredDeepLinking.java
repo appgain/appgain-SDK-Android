@@ -25,8 +25,10 @@ import io.appgain.sdk.interfaces.SDKInitCallBack;
 import retrofit2.Response;
 import timber.log.Timber;
 
-/**
- * Created by developers@appgain.io on 2/20/2018.
+import static io.appgain.sdk.Controller.Appgain.getInstance;
+
+/*
+  * Created by developers@appgain.io on 2/20/2018.
  */
 
 /**
@@ -35,6 +37,8 @@ import timber.log.Timber;
 
 
 public class DeferredDeepLinking {
+
+    public  static DeferredDeepLinkingResponse matchedSDL = null;
 
 
     /**
@@ -51,7 +55,7 @@ public class DeferredDeepLinking {
            @Override
            public void onSuccess(SDKKeys sdkKeys, String parseUserId) {
                if (sdkKeys !=null ){
-                   matchApi(sdkKeys.getAppSubDomainName()  , parseUserId, Appgain.isFirstRun(),smartLinkMatchListener);
+                   matchApi(sdkKeys.getAppSubDomainName()  , parseUserId,smartLinkMatchListener);
                }else {
                    Timber.e("SDKKeys" + sdkKeys );
                }
@@ -87,7 +91,7 @@ public class DeferredDeepLinking {
             @Override
             public void onSuccess(SDKKeys sdkKeys) {
                 if (sdkKeys !=null ){
-                    matchApi(sdkKeys.getAppSubDomainName()  , internalUserId , Appgain.isFirstRun(),smartLinkMatchListener);
+                    matchApi(sdkKeys.getAppSubDomainName()  , internalUserId ,smartLinkMatchListener);
                 }else {
                     Timber.e("SDKKeys" + sdkKeys );
                 }
@@ -106,20 +110,19 @@ public class DeferredDeepLinking {
      * automatorApi() calling fireAutomator API
      * @param internalUserId may be from parse or giving by user  independent on enqueue() function
      */
-    private static void matchApi(String subDomain, String internalUserId, boolean firstRun, final DeferredDeepLinkingCallBack smartLinkMatchListener){
-
+    private static void matchApi(String subDomain, String internalUserId, final DeferredDeepLinkingCallBack smartLinkMatchListener){
         retrofit2.Call<DeferredDeepLinkingResponse> call ;
         if (internalUserId!=null){
             call = Injector.Api(
-                    new WebView(Appgain.getInstance().getContext()).getSettings().getUserAgentString()
+                    new WebView(getInstance().getContext()).getSettings().getUserAgentString()
             ).smartLinkMatch(Config.SMART_LINK_MATCH(subDomain) ,
                    internalUserId ,
-                   firstRun
+                    Appgain.isFirstRun()
            ) ;
        }else {
-         call = Injector.Api(new WebView(Appgain.getInstance().getContext()).getSettings().getUserAgentString()).smartLinkMatch(
+         call = Injector.Api(new WebView(getInstance().getContext()).getSettings().getUserAgentString()).smartLinkMatch(
                    Config.SMART_LINK_MATCH(subDomain) ,
-                   firstRun
+                 Appgain.isFirstRun()
            ) ;
        }
         call.enqueue(new CallbackWithRetry<DeferredDeepLinkingResponse>(call, new onRequestFailure() {
@@ -133,12 +136,17 @@ public class DeferredDeepLinking {
             @Override
             public void onResponse(retrofit2.Call<DeferredDeepLinkingResponse> call, Response<DeferredDeepLinkingResponse> response) {
                 if (response.isSuccessful()&&response.body()!=null){
-                    if (smartLinkMatchListener!=null){
+                    if (smartLinkMatchListener!=null)
                         smartLinkMatchListener.onMatch(response.body());
-                        updateUserRecodedWithSmartDeepLinkParams(response.body()) ;
-                    }
 
+                    updateUserRecodedWithSmartDeepLinkParams(response.body()) ;
+
+                    if (Appgain.isFirstRun())
+                    saveMatchedSDL(response.body());
+
+                    changeAppFirstRun();
                 }else {
+                    clearMatchedSDL();
                     if (smartLinkMatchListener!=null)
                         try {
                             smartLinkMatchListener.onFail(Utils.getAppGainFailure(response.errorBody().string()));
@@ -150,6 +158,10 @@ public class DeferredDeepLinking {
 
             }
         });
+    }
+
+    private static void changeAppFirstRun() {
+        Appgain.getPreferencesManager().saveFirstRun();
     }
 
 
@@ -164,8 +176,11 @@ public class DeferredDeepLinking {
                         Map.Entry<String, String> entry = map.entrySet().iterator().next();
                         currentUser.put(entry.getKey() , entry.getValue());
                     }
-                    if (response.getDeferredDeepLink()!=null)
-                    currentUser.add("SDL",response.getDeferredDeepLink());
+                    if (response.getDeferredDeepLink()!=null && (Appgain.isFirstRun())){
+
+                        currentUser.put("SDL",response.getDeferredDeepLink());
+                        currentUser.put("smartlink_id",response.getSmart_link_id());
+                    }
                     currentUser.saveInBackground();
             }
         }catch (Exception e){
@@ -174,5 +189,14 @@ public class DeferredDeepLinking {
         }
     }
 
+    public static DeferredDeepLinkingResponse getMatchedSDL() {
+        return matchedSDL;
+    }
+    public static void saveMatchedSDL(DeferredDeepLinkingResponse matchedSDL) {
+        DeferredDeepLinking.matchedSDL = matchedSDL;
+    }
+    public static void clearMatchedSDL() {
+        saveMatchedSDL(null);
+    }
 
 }

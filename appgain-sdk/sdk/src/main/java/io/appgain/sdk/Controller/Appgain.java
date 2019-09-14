@@ -318,12 +318,6 @@ public class Appgain {
         return getInstance().getPreferencesManager().isFirstRun();
     }
 
-    /**
-     * change app first run to false
-     */
-    public static void changeAppFirstRun() {
-        getInstance().getPreferencesManager().saveFirstRun();
-    }
 
     public static void enableLog() {
         Timber.plant(new Timber.DebugTree());

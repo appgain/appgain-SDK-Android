@@ -22,6 +22,14 @@ public class DeferredDeepLinkingResponse implements Serializable {
     @Expose
     private String deferredDeepLink;
 
+    @SerializedName("smart_link_id")
+    @Expose
+    private String smart_link_id;
+
+    @SerializedName("smart_link_url")
+    @Expose
+    private String smart_link_url;
+
     public ExtraData getExtraData() {
         return extraData;
     }
@@ -38,11 +46,29 @@ public class DeferredDeepLinkingResponse implements Serializable {
         this.deferredDeepLink = smartLinkPrimary;
     }
 
+    public String getSmart_link_id() {
+        return smart_link_id;
+    }
+
+    public void setSmart_link_id(String smart_link_id) {
+        this.smart_link_id = smart_link_id;
+    }
+
+    public String getSmart_link_url() {
+        return smart_link_url;
+    }
+
+    public void setSmart_link_url(String smart_link_url) {
+        this.smart_link_url = smart_link_url;
+    }
+
     @Override
     public String toString() {
-        return "SmartLinkMatchResponse{" +
+        return "DeferredDeepLinkingResponse{" +
                 "extraData=" + extraData +
                 ", deferredDeepLink='" + deferredDeepLink + '\'' +
+                ", smart_link_id='" + smart_link_id + '\'' +
+                ", smart_link_url='" + smart_link_url + '\'' +
                 '}';
     }
 }

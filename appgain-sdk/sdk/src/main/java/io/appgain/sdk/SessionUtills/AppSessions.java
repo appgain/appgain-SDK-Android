@@ -20,9 +20,10 @@ public class AppSessions {
     }
 
     private static void pushNewSessionObject(final String userId , final AppSessionsCallback callBack) {
-        ParseObject purchaseTransactionsObj = new ParseObject(Config.AppSession);
-        purchaseTransactionsObj.put(Config.USER_ID_KEY, userId);
-        purchaseTransactionsObj.saveInBackground(new SaveCallback() {
+        ParseObject session = new ParseObject(Config.AppSession);
+        session.put(Config.USER_ID_KEY, userId);
+        session.put("platform" , "android");
+        session.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
                 if (e!=null){

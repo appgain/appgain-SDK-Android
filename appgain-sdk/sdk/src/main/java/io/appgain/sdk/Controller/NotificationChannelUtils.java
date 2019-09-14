@@ -1,6 +1,7 @@
 package io.appgain.sdk.Controller;
 
 import android.text.TextUtils;
+import android.util.Patterns;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -8,8 +9,10 @@ import com.parse.ParseObject;
 import com.parse.ParseQuery;
 import com.parse.SaveCallback;
 
+import java.security.InvalidParameterException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.regex.Pattern;
 
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.Model.SDKKeys;
@@ -68,7 +71,8 @@ public  class NotificationChannelUtils {
 
     static void saveAppPushNotificationChannel(final String notficationChanelUserId , final ParsePushSetupCallBack callBack) {
         if (TextUtils.isEmpty(notficationChanelUserId)){
-            Timber.tag("saveNotificationChannel").e("userId =  null || empty  >> " + notficationChanelUserId);
+            Timber.tag("saveNotificationChannel").e("please provide notficationChanelUserId ");
+            callBack.onFailure(new ParseException(new InvalidParameterException("please provide notficationChanelUserId")));
             return;
         }
 
@@ -110,11 +114,13 @@ public  class NotificationChannelUtils {
 
     static void saveMessageNotificationChannel(final String notficationChanelUserId, final String mobileNumber, final ParsePushSetupCallBack callBack) {
         if (TextUtils.isEmpty(notficationChanelUserId)){
-            Timber.tag("saveNotificationChannel").e("userId =  null || empty  >> " + notficationChanelUserId);
+            Timber.tag("saveNotificationChannel").e("please provide notficationChanelUserId ");
+            callBack.onFailure(new ParseException(new InvalidParameterException("please provide notficationChanelUserId")));
             return;
         }
-        if (TextUtils.isEmpty(mobileNumber)){
-            Timber.tag("saveNotificationChannel").e("mobileNumber =  null || empty  >> " + notficationChanelUserId);
+        if (TextUtils.isEmpty(mobileNumber) || !Patterns.PHONE.matcher(mobileNumber).matches()){
+            Timber.tag("saveNotificationChannel").e("please provide valid mobileNumber ");
+            callBack.onFailure(new ParseException(new InvalidParameterException("please provide valid mobileNumber")));
             return;
         }
 
@@ -161,11 +167,15 @@ public  class NotificationChannelUtils {
 
     static void saveEmailNotificationChannel(final String notficationChanelUserId , final  String email , final ParsePushSetupCallBack callBack) {
         if (TextUtils.isEmpty(notficationChanelUserId)){
-            Timber.tag("saveNotificationChannel").e("UserId =  null || empty  >> " + notficationChanelUserId);
+            Timber.tag("saveNotificationChannel").e("please provide  notficationChanelUserId" );
+            callBack.onFailure(new ParseException(new InvalidParameterException("please provide notficationChanelUserId")));
+
             return;
         }
-        if (TextUtils.isEmpty(email)){
-            Timber.tag("saveNotificationChannel").e("mobileNumber =  null || empty  >> " + notficationChanelUserId);
+        if (TextUtils.isEmpty(email) || !Patterns.EMAIL_ADDRESS.matcher(email).matches()){
+
+            Timber.tag("saveNotificationChannel").e("please provide valid email");
+            callBack.onFailure(new ParseException(new InvalidParameterException("please provide valid email")));
             return;
         }
 

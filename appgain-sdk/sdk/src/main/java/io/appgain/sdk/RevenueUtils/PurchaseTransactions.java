@@ -8,6 +8,7 @@ import com.parse.SaveCallback;
 
 import io.appgain.sdk.Controller.Appgain;
 import io.appgain.sdk.Controller.Config;
+import io.appgain.sdk.DeferredDeepLinking.DeferredDeepLinking;
 import io.appgain.sdk.Model.BaseResponse;
 import io.appgain.sdk.Model.SDKKeys;
 import io.appgain.sdk.Controller.Utils;
@@ -34,6 +35,8 @@ public class PurchaseTransactions {
         purchaseTransactionsObj.put("amount", amount);
         purchaseTransactionsObj.put("currency", currency);
         purchaseTransactionsObj.put("platform" , "android");
+        if (DeferredDeepLinking.getMatchedSDL()!=null)
+            purchaseTransactionsObj.put("smartlink_id" ,DeferredDeepLinking.getMatchedSDL().getSmart_link_id());
         purchaseTransactionsObj.saveInBackground(new SaveCallback() {
             @Override
             public void done(ParseException e) {
