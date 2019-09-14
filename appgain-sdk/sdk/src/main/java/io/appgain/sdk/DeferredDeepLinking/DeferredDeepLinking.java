@@ -147,6 +147,7 @@ public class DeferredDeepLinking {
                     changeAppFirstRun();
                 }else {
                     clearMatchedSDL();
+                    changeAppFirstRun();
                     if (smartLinkMatchListener!=null)
                         try {
                             smartLinkMatchListener.onFail(Utils.getAppGainFailure(response.errorBody().string()));
