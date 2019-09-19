@@ -51,15 +51,22 @@
     </library-updates>
     <last-search-timestamp>1568036809609</last-search-timestamp>
   </component>
-  <component name="BookmarkManager">
-    <bookmark url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/io.appgain/sdk/2.1.1-beta2/e1bdb773f5e072e127388df0dd5c786e08bc455f/sdk-2.1.1-beta2-sources.jar!/io/appgain/sdk/Controller/ParseSetupUtils.java" description="if (applicationId ==null || server ==null ){" line="24" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="08afde3b-9ed2-4184-b161-1a2419bb9f57" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sdk/bintray.script.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/bintray.script.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseLogin.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseLogin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinking.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinking.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/AppGainPushReceiver.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/AppGainPushReceiver.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/GIFActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/GIFActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/VideoActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/VideoActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/WebViewActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/OverKeyGuardActivities/WebViewActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/PushDataReceiveModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PushNotfication/PushDataReceiveModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/res/layout/activity_lock_gif.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/res/layout/activity_lock_gif.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/res/layout/activity_lock_video_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/res/layout/activity_lock_video_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/res/layout/activity_lock_web_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/res/layout/activity_lock_web_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/res/layout/exo_layout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/res/layout/exo_layout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sdk/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/sdk/src/main/res/values/strings.xml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -125,11 +132,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sdk/build.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1541">
-              <caret line="75" column="2" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="43" />
+            <state relative-caret-position="286">
+              <caret line="75" column="36" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -148,12 +155,12 @@
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sdk/src/main/AndroidManifest.xml">
-          <provider editor-type-id="android-manifest" />
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="506">
               <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
+          <provider editor-type-id="android-manifest" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -165,11 +172,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sdk/bintray.script.gradle">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+            <state relative-caret-position="230">
+              <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PowerUtils/PowerUtils.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1127">
+              <caret line="64" column="57" selection-start-line="64" selection-start-column="57" selection-end-line="64" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Config.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1242">
+              <caret line="59" column="129" selection-start-line="59" selection-start-column="129" selection-end-line="59" selection-end-column="129" />
             </state>
           </provider>
         </entry>
@@ -177,8 +202,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinking.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="66">
-              <caret line="147" column="23" selection-start-line="147" selection-start-column="23" selection-end-line="147" selection-end-column="23" />
+            <state relative-caret-position="2760">
+              <caret line="144" column="23" selection-start-line="144" selection-start-column="23" selection-end-line="144" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -293,8 +318,8 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="87" />
-    <option name="y" value="198" />
+    <option name="x" value="88" />
+    <option name="y" value="40" />
     <option name="width" value="884" />
     <option name="height" value="735" />
   </component>
@@ -304,6 +329,43 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView">
+        <subPane>
+          <expand>
+            <path>
+              <item name="appgain-sdk" type="1abcf292:AndroidViewProjectNode" />
+              <item name="sdk" type="feadf853:AndroidModuleNode" />
+            </path>
+            <path>
+              <item name="appgain-sdk" type="1abcf292:AndroidViewProjectNode" />
+              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="appgain-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appgain-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="appgain-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appgain-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+            </path>
+            <path>
+              <item name="appgain-sdk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="appgain-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
+              <item name="build" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Project Files">
           <expand>
@@ -344,39 +406,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="appgain-sdk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appgain-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="appgain-sdk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appgain-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="app" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-            </path>
-            <path>
-              <item name="appgain-sdk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="appgain-sdk" type="8a07ba80:GradleTreeStructureProvider$GradleModuleDirectoryNode" />
-              <item name="build" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="AndroidView">
-        <subPane>
-          <expand>
-            <path>
-              <item name="appgain-sdk" type="1abcf292:AndroidViewProjectNode" />
-              <item name="Gradle Scripts" type="ae0cef3a:AndroidBuildScriptsGroupNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -699,7 +728,7 @@
   <component name="ToolWindowManager">
     <frame x="-8" y="32" width="1382" height="744" extended-state="6" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.483965" visible="true" weight="0.14372164" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.483965" visible="true" weight="0.0892587" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Build Variants" order="3" sideWeight="0.51603496" side_tool="true" weight="0.20045386" />
@@ -720,7 +749,7 @@
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50075644" side_tool="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Logcat" order="10" weight="0.60720134" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32405892" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.34042552" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" visible="true" weight="0.33387887" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -865,13 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="14" column="17" selection-start-line="14" selection-start-column="17" selection-end-line="14" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PowerUtils/PowerUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="41" column="61" selection-start-line="41" selection-start-column="61" selection-end-line="41" selection-end-column="61" />
         </state>
       </provider>
     </entry>
@@ -1026,13 +1048,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="276">
-          <caret line="13" column="31" selection-start-line="13" selection-start-column="31" selection-end-line="13" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/ParseUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2967">
@@ -1069,10 +1084,38 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/sdk/src/main/AndroidManifest.xml">
-      <provider editor-type-id="android-manifest" />
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="506">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+      <provider editor-type-id="android-manifest" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/bintray.script.gradle">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="10" column="35" selection-start-line="10" selection-start-column="35" selection-end-line="10" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/PowerUtils/PowerUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1127">
+          <caret line="64" column="57" selection-start-line="64" selection-start-column="57" selection-end-line="64" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/Controller/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1242">
+          <caret line="59" column="129" selection-start-line="59" selection-start-column="129" selection-end-line="59" selection-end-column="129" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinking.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2760">
+          <caret line="144" column="23" selection-start-line="144" selection-start-column="23" selection-end-line="144" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -1083,24 +1126,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/src/main/java/io/appgain/sdk/DeferredDeepLinking/DeferredDeepLinking.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="66">
-          <caret line="147" column="23" selection-start-line="147" selection-start-column="23" selection-end-line="147" selection-end-column="23" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sdk/build.gradle">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1541">
-          <caret line="75" column="2" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sdk/bintray.script.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" column="27" selection-start-line="9" selection-start-column="27" selection-end-line="9" selection-end-column="27" />
+        <state relative-caret-position="286">
+          <caret line="75" column="36" selection-start-line="75" selection-start-column="2" selection-end-line="75" selection-end-column="43" />
         </state>
       </provider>
     </entry>

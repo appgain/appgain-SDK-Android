@@ -138,12 +138,9 @@ public class DeferredDeepLinking {
                 if (response.isSuccessful()&&response.body()!=null){
                     if (smartLinkMatchListener!=null)
                         smartLinkMatchListener.onMatch(response.body());
-
                     updateUserRecodedWithSmartDeepLinkParams(response.body()) ;
-
                     if (Appgain.isFirstRun())
                     saveMatchedSDL(response.body());
-
                     changeAppFirstRun();
                 }else {
                     clearMatchedSDL();

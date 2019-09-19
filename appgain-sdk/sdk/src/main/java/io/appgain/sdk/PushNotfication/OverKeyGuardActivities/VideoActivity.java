@@ -14,6 +14,7 @@ import android.util.Log;
 import android.view.View;
 import android.webkit.ConsoleMessage;
 import android.webkit.WebChromeClient;
+import android.widget.Button;
 
 import com.google.android.exoplayer2.ui.PlayerView;
 
@@ -24,11 +25,13 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 public class VideoActivity extends AppCompatActivity {
     private static final String ORIENTATION_KEY = "ORIENTATION";
+    private static final String CALL_2_ACTION_KEY = "CALL2ACTION";
     private final  PowerMangerUtils  powerMangerUtils =  PowerMangerUtils.getInstance(this); ;
     String webViewData;
     public static  final  String WEBVIEW_DATA = "url" ;
     private String oriantaion;
     private PlayerView playerView;
+    private Button actionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class VideoActivity extends AppCompatActivity {
             playNotificationSound();
             wakeLook();
             binViews();
+            setupActionButton();
             setupCloseButton();
     }
 
@@ -77,6 +81,33 @@ public class VideoActivity extends AppCompatActivity {
         ExoplayerUtils.play(getApplicationContext() , this , playerView  , true , webViewData) ;
     }
 
+    void setupActionButton(){
+        actionButton = findViewById(R.id.actionButton) ;
+        if (getIntent().getExtras().getString(CALL_2_ACTION_KEY) !=null){
+            actionButton.setVisibility(View.VISIBLE);
+        }else {
+            actionButton.setVisibility(View.GONE);
+        }
+        actionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(getIntent().getExtras().getString(CALL_2_ACTION_KEY)));
+                i.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                if (canResolveIntent(i,getApplicationContext()))
+                    startActivity(i);
+            }
+        });
+    }
+
+    boolean canResolveIntent(Intent intent,Context context){
+        if (intent.resolveActivity(context.getPackageManager()) != null) {
+            return true;
+        }
+        return  false;
+    }
+
+
+
     private void wakeLook() {
         powerMangerUtils.wakeLock();
         powerMangerUtils.release();
@@ -102,10 +133,11 @@ public class VideoActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
     }
-    public static void start(Context context, String data, String oriantation){
+    public static void start(Context context, String data, String oriantation, String call2action){
         Intent intent = new Intent(context , VideoActivity.class) ;
         intent.putExtra(WEBVIEW_DATA, data) ;
         intent.putExtra(ORIENTATION_KEY, oriantation) ;
+        intent.putExtra(CALL_2_ACTION_KEY, call2action) ;
         intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }

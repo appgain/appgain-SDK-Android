@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.bumptech.glide.Glide;
@@ -25,6 +26,9 @@ public class GIFActivity extends AppCompatActivity {
     ImageView overLockImageView ;
     String url;
     public static  final  String URL_KEY = "url" ;
+    private static final String CALL_2_ACTION_KEY = "CALL2ACTION";
+    private Button actionButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         powerMangerUtils.prepareWindow();
@@ -35,6 +39,7 @@ public class GIFActivity extends AppCompatActivity {
         playNotificationSound();
         wakeLook();
         bindViews();
+        setupActionButton();
         setupGIF();
         setupFinish();
 
@@ -53,7 +58,34 @@ public class GIFActivity extends AppCompatActivity {
     private void bindViews() {
         // bind imageview
         overLockImageView = findViewById(R.id.overLockImageView) ;
+
     }
+
+    void setupActionButton(){
+        actionButton = findViewById(R.id.actionButton) ;
+        if (getIntent().getExtras().getString(CALL_2_ACTION_KEY) !=null){
+            actionButton.setVisibility(View.VISIBLE);
+        }else {
+            actionButton.setVisibility(View.GONE);
+        }
+        actionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(getIntent().getExtras().getString(CALL_2_ACTION_KEY)));
+                i.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                if (canResolveIntent(i,getApplicationContext()))
+                    startActivity(i);
+            }
+        });
+    }
+
+    boolean canResolveIntent(Intent intent,Context context){
+        if (intent.resolveActivity(context.getPackageManager()) != null) {
+            return true;
+        }
+        return  false;
+    }
+
 
     private void wakeLook() {
         powerMangerUtils.wakeLock();
@@ -97,9 +129,10 @@ public class GIFActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
     }
-    public static void start(Context context , String url ){
+    public static void start(Context context, String url, String call2action){
         Intent intent = new Intent(context , GIFActivity.class) ;
         intent.putExtra(URL_KEY, url) ;
+        intent.putExtra(CALL_2_ACTION_KEY, call2action) ;
         intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }

@@ -151,19 +151,34 @@ public abstract class AppGainPushReceiver extends ParsePushBroadcastReceiver {
         switch (pushDataReciveModel.getType()){
             case PushDataReceiveModel.WEB_VIEW_TYPE :
                 if (pushDataReciveModel.getAttachment() != null)
-                WebViewActivity.start(context,pushDataReciveModel.getAttachment(),true ,  pushDataReciveModel.getOrientation());
+                WebViewActivity.start(context,pushDataReciveModel.getAttachment(),true ,  pushDataReciveModel.getOrientation(),pushDataReciveModel.getCall2action());
                 break;
             case PushDataReceiveModel.WEB_VIEW_HTML_TYPE :
                 if (pushDataReciveModel.getAttachment() != null)
-                    WebViewActivity.start(context,pushDataReciveModel.getAttachment(),false , pushDataReciveModel.getOrientation());
+                    WebViewActivity.start(
+                            context,
+                            pushDataReciveModel.getAttachment(),
+                            false ,
+                            pushDataReciveModel.getOrientation(),
+                            pushDataReciveModel.getCall2action()
+                    );
                 break;
             case PushDataReceiveModel.GIF_TYPE :
                 if (pushDataReciveModel.getAttachment() != null)
-                    GIFActivity.start(context,pushDataReciveModel.getAttachment());
+                    GIFActivity.start(
+                            context,
+                            pushDataReciveModel.getAttachment(),
+                            pushDataReciveModel.getCall2action()
+                    );
                 break;
             case PushDataReceiveModel.VIDEO_TYPE :
                 if (pushDataReciveModel.getAttachment() != null)
-                    VideoActivity.start(context,pushDataReciveModel.getAttachment(),pushDataReciveModel.getOrientation());
+                    VideoActivity.start(
+                            context,
+                            pushDataReciveModel.getAttachment(),
+                            pushDataReciveModel.getOrientation(),
+                            pushDataReciveModel.getCall2action()
+                    );
                 break;
         }
     }

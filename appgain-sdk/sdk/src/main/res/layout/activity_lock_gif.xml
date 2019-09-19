@@ -14,30 +14,54 @@
         android:layout_height="match_parent"
         >
 
-
         <FrameLayout
+            app:layout_constraintVertical_chainStyle="packed"
+            android:id="@+id/youtube_player_view_layout"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="8dp"
             android:animateLayoutChanges="true"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/actionButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            app:layout_constraintHeight_percent="0.95"
             app:layout_constraintWidth_percent="0.95"
             >
-
             <ImageView
                 android:layout_gravity="center"
-                android:background="@drawable/white_rect_corner_2p"
+                android:background="#212121"
                 android:adjustViewBounds="true"
-                android:minHeight="148dp"
-                android:layout_height="wrap_content"
+                android:layout_height="match_parent"
                 android:layout_width="match_parent"
                 android:id="@+id/overLockImageView"
 
                 />
         </FrameLayout>
+
+
+
+        <Button
+            android:visibility="visible"
+            app:layout_constraintVertical_chainStyle="packed"
+            android:textStyle="bold"
+            android:textColor="#ffff"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/blue_rect"
+            android:text="@string/view"
+            app:layout_constraintWidth_max="wrap"
+            android:id="@+id/actionButton"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/youtube_player_view_layout"
+            android:layout_width="wrap_content"
+            android:paddingStart="48dp"
+            android:paddingTop="12dp"
+            android:paddingBottom="12dp"
+            android:paddingEnd="48dp"
+            android:layout_height="wrap_content" />
 
     </android.support.constraint.ConstraintLayout>
 

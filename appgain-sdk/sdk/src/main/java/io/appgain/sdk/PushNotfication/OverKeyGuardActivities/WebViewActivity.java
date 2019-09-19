@@ -17,6 +17,7 @@ import android.webkit.WebChromeClient;
 import android.webkit.WebResourceRequest;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
+import android.widget.Button;
 
 import io.appgain.sdk.R;
 import timber.log.Timber;
@@ -25,6 +26,7 @@ import static android.content.Intent.FLAG_ACTIVITY_NEW_TASK;
 
 public class WebViewActivity extends AppCompatActivity {
     private static final String ORIENTATION_KEY = "ORIENTATION";
+    private static final String CALL_2_ACTION_KEY = "CALL2ACTION";
     private final  PowerMangerUtils  powerMangerUtils =  PowerMangerUtils.getInstance(this); ;
     WebView webView ;
     boolean isUrl =true;
@@ -32,6 +34,7 @@ public class WebViewActivity extends AppCompatActivity {
     public static  final  String WEBVIEW_DATA = "url" ;
     private static String isUrlViewKEY = "isUrlViewKEY";
     private String oriantaion;
+    private Button actionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +53,7 @@ public class WebViewActivity extends AppCompatActivity {
             playNotificationSound();
             wakeLook();
             binViews();
+            setupActionButton();
             setupWebView(savedInstanceState);
             setupCloseButton();
         }
@@ -120,6 +124,32 @@ public class WebViewActivity extends AppCompatActivity {
         webView.getSettings().setUserAgentString("Mozilla/5.0 (Linux; Android 4.4.2; Nexus 4 Build/KOT49H) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/34.0.1847.114 Mobile Safari/537.36");
     }
 
+    void setupActionButton(){
+        actionButton = findViewById(R.id.actionButton) ;
+        if (getIntent().getExtras().getString(CALL_2_ACTION_KEY) !=null){
+            actionButton.setVisibility(View.VISIBLE);
+        }else {
+            actionButton.setVisibility(View.GONE);
+        }
+        actionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(getIntent().getExtras().getString(CALL_2_ACTION_KEY)));
+                i.setFlags(FLAG_ACTIVITY_NEW_TASK);
+                if (canResolveIntent(i,getApplicationContext()))
+                    startActivity(i);
+            }
+        });
+    }
+
+    boolean canResolveIntent(Intent intent,Context context){
+        if (intent.resolveActivity(context.getPackageManager()) != null) {
+            return true;
+        }
+        return  false;
+    }
+
+
     private void wakeLook() {
         powerMangerUtils.wakeLock();
         powerMangerUtils.release();
@@ -146,11 +176,12 @@ public class WebViewActivity extends AppCompatActivity {
     public void onBackPressed() {
         super.onBackPressed();
     }
-    public static void start(Context context, String data, boolean isUrl, String oriantation){
+    public static void start(Context context, String data, boolean isUrl, String oriantation , String call2action){
         Intent intent = new Intent(context , WebViewActivity.class) ;
         intent.putExtra(WEBVIEW_DATA, data) ;
         intent.putExtra(isUrlViewKEY, isUrl) ;
         intent.putExtra(ORIENTATION_KEY, oriantation) ;
+        intent.putExtra(CALL_2_ACTION_KEY, call2action) ;
         intent.addFlags(FLAG_ACTIVITY_NEW_TASK);
         context.startActivity(intent);
     }

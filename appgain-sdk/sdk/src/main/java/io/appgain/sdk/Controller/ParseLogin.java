@@ -20,11 +20,8 @@ import timber.log.Timber;
  * Created by developers@appgain.io on 7/2/2019.
  */
 public class ParseLogin {
-
-
     /**
      * parse login as anonymous user in case of no username , password , email provided before
-
      /**
      * parse login as anonymous user in case of no username , password , email provided before
      */
@@ -72,6 +69,7 @@ public class ParseLogin {
     /**
      * parse login with user provided data
      */
+
     public static void login(final User user, final ParseLoginCallBack parseLoginListener){
         Timber.e("login with data entered");
         ParseUser.logInInBackground(user.getUsername() , user.getPassword(), new LogInCallback() {
@@ -126,7 +124,8 @@ public class ParseLogin {
 
     private static void signUpNewUser(final User user, final ParseSignUpCallBack parseSignUpListener) {
         final ParseUser parseUser = new ParseUser();
-        parseUser.setUsername(user.getUsername()+"");
+        parseUser.setUsername(user.getUsername()+""
+        );
         parseUser.setPassword(user.getPassword());
         parseUser.setEmail(user.getEmail());
         parseUser.signUpInBackground(new SignUpCallback() {

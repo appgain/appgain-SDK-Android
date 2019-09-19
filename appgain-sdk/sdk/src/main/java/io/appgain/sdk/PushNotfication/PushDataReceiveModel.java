@@ -51,6 +51,10 @@ public class PushDataReceiveModel implements Serializable {
     @Expose
     private String orientation;
 
+    @SerializedName("call2action")
+    @Expose
+    private String call2action;
+
     public  static  final  String WEB_VIEW_TYPE = "webView" ;
     public  static  final  String VIDEO_TYPE = "video" ;
     public  static  final  String GIF_TYPE = "gif" ;
@@ -143,5 +147,9 @@ public class PushDataReceiveModel implements Serializable {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+    public String getCall2action() {
+        return call2action;
     }
 }
